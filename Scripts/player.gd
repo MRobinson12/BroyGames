@@ -21,6 +21,7 @@ var current_state = State.IDLE
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
 	
 
 func _physics_process(delta):
@@ -70,7 +71,6 @@ func _physics_process(delta):
 	if is_on_floor():
 		if current_state == State.JUMP:
 			$AnimatedSprite2D.play("land")
-			$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
 			current_state = State.LAND
 		elif current_state == State.LAND and not $AnimatedSprite2D.is_playing():
 			current_state = State.IDLE
