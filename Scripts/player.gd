@@ -23,7 +23,6 @@ func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
 	
-
 func _physics_process(delta):
 	if current_state != State.JUMP:
 		if Input.is_action_pressed("ui_right") and is_on_floor():
@@ -40,7 +39,10 @@ func _physics_process(delta):
 				$AnimatedSprite2D.play("idle")
 				current_state = State.IDLE
 				_stop_running_sound()
-	
+				
+		if Input.is_action_pressed("ui_cancel"):
+			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+				
 		if $AnimatedSprite2D.is_playing() == false and is_on_floor():
 			$AnimatedSprite2D.play("idle")
 			current_state = State.IDLE

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cs776o4pxw0ou"]
 
-[ext_resource type="Script" path="res://credits.gd" id="1_tfl5p"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_tfl5p"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -24,7 +24,62 @@ offset_bottom = 574.0
 
 [node name="Return" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = -23.0
+offset_right = 383.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 36
+text = "Developed By:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -192.0
+offset_top = 248.0
+offset_right = 134.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 36
+text = "Morgan - PM + Dev"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -188.0
+offset_top = 306.0
+offset_right = 59.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 36
+text = "Rob - Artist"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = -191.0
+offset_top = 192.0
+offset_right = 56.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 36
+text = "Kyle - Dev"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = -188.0
+offset_top = 132.0
+offset_right = 59.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 36
+text = "Josh - Dev"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = -191.0
+offset_top = 80.0
+offset_right = 122.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 36
+text = "Ben - Dev + Sound"
 
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_play_pressed"]
