@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw6pcgvpmser1"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/item_slot.gd" id="1_1bim1"]
+[ext_resource type="Texture2D" uid="uid://cxuwqy7o5a307" path="res://Assets/Icons/item_frame.png" id="1_xafhc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b847s"]
+
+[node name="ItemSlot" type="PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b847s")
+script = ExtResource("1_1bim1")
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_xafhc")
+expand_mode = 1
+
+[node name="Item" type="TextureRect" parent="."]
+layout_mode = 2
+expand_mode = 1
