@@ -40,9 +40,6 @@ func _physics_process(delta):
 				current_state = State.IDLE
 				_stop_running_sound()
 				
-		if Input.is_action_pressed("ui_cancel"):
-			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-				
 		if $AnimatedSprite2D.is_playing() == false and is_on_floor():
 			$AnimatedSprite2D.play("idle")
 			current_state = State.IDLE
@@ -76,6 +73,9 @@ func _physics_process(delta):
 			current_state = State.LAND
 		elif current_state == State.LAND and not $AnimatedSprite2D.is_playing():
 			current_state = State.IDLE
+			
+	if Input.is_action_pressed("ui_cancel"):
+			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func _handle_run(delta, flip_h):
 	$AnimatedSprite2D.play("run")
