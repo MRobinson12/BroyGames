@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc7hx6tru28vq"]
+
+[ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_rsk4x"]
+[ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="2_dxwup"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="3_g8dtu"]
+[ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
+[ext_resource type="Script" path="res://Scenes/add_item.gd" id="5_mky20"]
+[ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/Pickups/test_item.tscn" id="6_iq4cb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esmq6"]
+size = Vector2(1907, 59)
+
+[node name="Level" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -4)
+zoom = Vector2(5, 5)
+process_callback = 0
+limit_top = -500
+limit_bottom = 60
+position_smoothing_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_rsk4x")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Temporary Ground" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(56, -408)
+texture = ExtResource("2_dxwup")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Temporary Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Temporary Ground/StaticBody2D"]
+position = Vector2(-19.5, 450.5)
+shape = SubResource("RectangleShape2D_esmq6")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_g8dtu")
+
+[node name="Toggle Inventory" type="Button" parent="UI"]
+offset_left = 1031.0
+offset_top = 510.0
+offset_right = 1114.0
+offset_bottom = 541.0
+text = "Inventory"
+
+[node name="InventoryDisplay" parent="UI" instance=ExtResource("4_48blj")]
+unique_name_in_owner = true
+
+[node name="AddItem" type="Button" parent="UI"]
+offset_left = 1014.0
+offset_top = 172.0
+offset_right = 1129.0
+offset_bottom = 203.0
+text = "Add Test Item"
+script = ExtResource("5_mky20")
+
+[node name="Area2D" parent="." instance=ExtResource("6_iq4cb")]
+position = Vector2(-56, -5)
+
+[connection signal="pressed" from="UI/Toggle Inventory" to="UI" method="_on_toggle_inventory_pressed"]
+[connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
