@@ -8,7 +8,6 @@ const ROTATION_SPEED = 10.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
 var selected_object: RigidBody2D = null
-@onready var player = get_node("/root/TestScene/Player")
 
 enum State {
 	IDLE,
@@ -24,6 +23,9 @@ var current_state = State.IDLE
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
+
+func pickup_item(item : Item):
+	GlobalData.inventory.add_item(item)
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()

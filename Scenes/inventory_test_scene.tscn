@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc7hx6tru28vq"]
+[gd_scene load_steps=8 format=3 uid="uid://cc7hx6tru28vq"]
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_rsk4x"]
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="2_dxwup"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="3_g8dtu"]
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
 [ext_resource type="Script" path="res://Scenes/add_item.gd" id="5_mky20"]
+[ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/Pickups/test_item.tscn" id="6_iq4cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esmq6"]
 size = Vector2(1907, 59)
@@ -56,6 +57,9 @@ offset_right = 1129.0
 offset_bottom = 203.0
 text = "Add Test Item"
 script = ExtResource("5_mky20")
+
+[node name="Area2D" parent="." instance=ExtResource("6_iq4cb")]
+position = Vector2(-56, -5)
 
 [connection signal="pressed" from="UI/Toggle Inventory" to="UI" method="_on_toggle_inventory_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]

@@ -5,7 +5,6 @@ var null_item : Item
 var inventory_size = 12
 
 func _init():
-	print("test")
 	null_item = load("res://Data/Items/null_item.tres")
 	
 	contents.resize(inventory_size)
