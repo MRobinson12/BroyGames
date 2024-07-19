@@ -28,7 +28,7 @@ func _ready():
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
 	if Input.is_action_pressed("ui_leftclick"):
-		_lift_object(mouse_position)
+		_lift_object(mouse_position)	
 	if current_state != State.JUMP:
 		if Input.is_action_pressed("ui_right") and is_on_floor():
 			_handle_run(delta, false)
@@ -120,7 +120,14 @@ func _lift_object(mouse_position: Vector2):
 	if result.size() > 0:
 		var selected = result[0]
 		if selected.collider is RigidBody2D:
-			selected_object = selected.collider
+			if selected_object and selected.collider.name != selected_object.name:
+				selected_object.set_collision_mask_value(2, true)
+				selected_object.set_collision_mask_value(3, true)
+				selected_object.set_collision_layer_value(3, true)
+				selected_object.set_linear_damp(0)
+				selected_object = selected.collider
+			else:
+				selected_object = selected.collider
 	if selected_object:
 		selected_object.set_collision_mask_value(2, false)
 		selected_object.set_collision_mask_value(3, false)
@@ -133,9 +140,11 @@ func _move_object(mouse_position: Vector2, selected_object: RigidBody2D):
 	var distance = direction.length()
 	direction = direction.normalized()
 	var max_force_magnitude = 700.0
-	var min_force_magnitude = 50.0
-	var decrease_distance = 20.0
+	var min_force_magnitude = 10.0
+	var decrease_distance = 5.0
 	var force_magnitude = max(min_force_magnitude, max_force_magnitude * (distance / decrease_distance))
+	var linear_damping_level = max(0, 4 * (distance / decrease_distance))
+	selected_object.set_linear_damp(linear_damping_level)
 	selected_object.apply_force(direction * force_magnitude)
 
 func _unhandled_input(event):
@@ -144,4 +153,5 @@ func _unhandled_input(event):
 			selected_object.set_collision_mask_value(2, true)
 			selected_object.set_collision_mask_value(3, true)
 			selected_object.set_collision_layer_value(3, true)
+			selected_object.set_linear_damp(0)
 		selected_object = null
