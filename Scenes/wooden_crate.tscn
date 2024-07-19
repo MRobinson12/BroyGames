@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0pti8btoojyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmg5c"]
+
+[sub_resource type="Gradient" id="Gradient_1uycv"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mfi64"]
+gradient = SubResource("Gradient_1uycv")
+
+[node name="WoodenCrate" type="RigidBody2D"]
+collision_layer = 12
+collision_mask = 15
+linear_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("RectangleShape2D_kmg5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.0755298, -19.76)
+texture = SubResource("GradientTexture1D_mfi64")
