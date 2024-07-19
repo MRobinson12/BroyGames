@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_rgad3"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7v8tv"]
-size = Vector2(50, 50)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_82650"]
+size = Vector2(25, 25)
 
 [sub_resource type="PackedScene" id="PackedScene_u1i38"]
 
@@ -11,4 +11,4 @@ size = Vector2(50, 50)
 script = ExtResource("1_rgad3")
 name = "null"
 scene = SubResource("PackedScene_u1i38")
-icon = SubResource("PlaceholderTexture2D_7v8tv")
+icon = SubResource("PlaceholderTexture2D_82650")

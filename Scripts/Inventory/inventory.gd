@@ -28,12 +28,12 @@ func add_item(item : Item):
 		if contents[i].name == "null":
 			place_item(item, i)
 			return
-	GlobalData.inventory_updated.emit(self)
+	GlobalData.inventory_updated.emit()
 
 func place_item(item : Item, index):
 	contents[index] = item
-	GlobalData.inventory_updated.emit(self)
+	GlobalData.inventory_updated.emit()
 
 func remove_item(index):
 	contents[index] = null_item
-	GlobalData.inventory_updated.emit(self)
+	GlobalData.inventory_updated.emit()
