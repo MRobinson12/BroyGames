@@ -83,6 +83,21 @@ func _physics_process(delta):
 			
 	if Input.is_action_pressed("ui_cancel"):
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+			
+	if Input.is_action_just_pressed("interact"):
+		var items_in_range = $PickupArea.get_overlapping_areas()
+		if not items_in_range.is_empty():
+			var nearest_item = null
+			var shortest_distance = INF
+			for item in items_in_range:
+				if item is Pickup:
+					var distance = position.distance_squared_to(item.position)
+					if distance < shortest_distance:
+						nearest_item = item
+						shortest_distance = distance
+			if nearest_item != null:
+				pickup_item(nearest_item.item)
+				nearest_item.queue_free()
 
 func _handle_run(delta, flip_h):
 	$AnimatedSprite2D.play("run")

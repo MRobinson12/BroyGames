@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bfl4mpbg12kf7"]
+[gd_scene load_steps=18 format=3 uid="uid://bfl4mpbg12kf7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fngfp"]
 [ext_resource type="Texture2D" uid="uid://ciage5814qui7" path="res://Assets/wizardidle.png" id="2_8ywdc"]
@@ -106,6 +106,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uir67"]
 size = Vector2(15, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmhqj"]
+size = Vector2(36, 30)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -4)
 script = ExtResource("1_fngfp")
@@ -132,3 +135,9 @@ pitch_scale = 1.75
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(3, 5)
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_vmhqj")
