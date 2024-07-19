@@ -15,6 +15,10 @@ run/main_scene="res://test_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalData="*res://Scripts/Inventory/GlobalData.gd"
+
 [input]
 
 ui_left={
