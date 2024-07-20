@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="5_renpk"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_583rk"]
 [ext_resource type="Texture2D" uid="uid://dljcifuf2t07q" path="res://Assets/lightmask.png" id="7_vcpu3"]
-[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
+[ext_resource type="PackedScene" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0n4l"]
 atlas = ExtResource("2_wlkjn")

@@ -26,8 +26,20 @@ func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
 
-func pickup_item(item : Item):
-	GlobalData.inventory.add_item(item)
+func pickup_item():
+	var items_in_range = $PickupArea.get_overlapping_areas()
+	if not items_in_range.is_empty():
+		var nearest_item = null
+		var shortest_distance = INF
+		for item in items_in_range:
+			if item is Pickup:
+				var distance = position.distance_squared_to(item.position)
+				if distance < shortest_distance:
+					nearest_item = item
+					shortest_distance = distance
+		if nearest_item != null:
+			GlobalData.player_inventory.add_item(nearest_item.item)
+			nearest_item.queue_free()
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
@@ -88,19 +100,7 @@ func _physics_process(delta):
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 			
 	if Input.is_action_just_pressed("interact"):
-		var items_in_range = $PickupArea.get_overlapping_areas()
-		if not items_in_range.is_empty():
-			var nearest_item = null
-			var shortest_distance = INF
-			for item in items_in_range:
-				if item is Pickup:
-					var distance = position.distance_squared_to(item.position)
-					if distance < shortest_distance:
-						nearest_item = item
-						shortest_distance = distance
-			if nearest_item != null:
-				pickup_item(nearest_item.item)
-				nearest_item.queue_free()
+		pickup_item()
 
 func _handle_run(delta, flip_h):
 	$AnimatedSprite2D.play("run")

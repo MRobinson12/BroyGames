@@ -1,8 +1,6 @@
 class_name DataManager
 extends Node
 
-signal inventory_updated
+signal player_inv_updated
 
-var inventory : Inventory = Inventory.new()
-
-var test_item : Item = load("res://Data/Items/test_item.tres")
+var player_inventory : PlayerInventory = PlayerInventory.new()

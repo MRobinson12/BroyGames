@@ -6,5 +6,5 @@ var test_item2 : Item = load("res://Data/Items/test_item2.tres")
 
 
 func _on_pressed() -> void:
-	GlobalData.inventory.add_item(test_item)
-	GlobalData.inventory.add_item(test_item2)
+	GlobalData.player_inventory.add_item(test_item)
+	GlobalData.player_inventory.add_item(test_item2)

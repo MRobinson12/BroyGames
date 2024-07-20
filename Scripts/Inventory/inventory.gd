@@ -1,4 +1,4 @@
-class_name Inventory
+class_name PlayerInventory
 
 var contents : Array[Item]
 var null_item : Item
@@ -27,18 +27,18 @@ func add_item(item : Item):
 		if contents[i].name == "null":
 			place_item(item, i)
 			return
-	GlobalData.inventory_updated.emit()
+	GlobalData.player_inv_updated.emit()
 
 func place_item(item : Item, index : int):
 	contents[index] = item
-	GlobalData.inventory_updated.emit()
+	GlobalData.player_inv_updated.emit()
 	
 func swap_items(item1_index : int, item2_index : int):
 	var temp_item = contents[item1_index]
 	contents[item1_index] = contents[item2_index]
 	contents[item2_index] = temp_item
-	GlobalData.inventory_updated.emit()
+	GlobalData.player_inv_updated.emit()
 
 func remove_item(index : int):
 	contents[index] = null_item
-	GlobalData.inventory_updated.emit()
+	GlobalData.player_inv_updated.emit()

@@ -4,12 +4,12 @@ extends PanelContainer
 @onready var grid_container : GridContainer = %GridContainer
 
 func _ready():
-	GlobalData.inventory_updated.connect(update)
+	GlobalData.player_inv_updated.connect(update)
 
 func update():
-	for i in GlobalData.inventory.size():
+	for i in GlobalData.player_inventory.size():
 		var slot = grid_container.get_child(i)
-		slot.display(GlobalData.inventory.get_item(i))
+		slot.display(GlobalData.player_inventory.get_item(i))
 
 func open():
 	update()

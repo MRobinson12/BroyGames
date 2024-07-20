@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="2_dxwup"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="3_g8dtu"]
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
-[ext_resource type="Script" path="res://Scenes/add_item.gd" id="5_mky20"]
+[ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_mky20"]
 [ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/Pickups/test_item.tscn" id="6_iq4cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esmq6"]
