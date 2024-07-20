@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d1jcp6xo13urh"]
+[gd_scene load_steps=24 format=3 uid="uid://d1jcp6xo13urh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_1o3sh"]
 [ext_resource type="Texture2D" uid="uid://ciage5814qui7" path="res://Assets/wizardidle.png" id="2_wlkjn"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_pg3kl"]
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="5_renpk"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_583rk"]
+[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0n4l"]
 atlas = ExtResource("2_wlkjn")
@@ -107,6 +108,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uir67"]
 size = Vector2(15, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq70s"]
+size = Vector2(28.5, 508.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3wrb"]
+size = Vector2(89, 58.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh6ff"]
+size = Vector2(219, 192.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuvon"]
+size = Vector2(90, 137)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxkcm"]
 size = Vector2(1907, 59)
 
@@ -122,6 +135,8 @@ position_smoothing_enabled = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(0, -4)
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_1o3sh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -158,6 +173,44 @@ texture = ExtResource("5_renpk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Temporary Ground"]
 
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Temporary Ground/StaticBody2D"]
+position = Vector2(465.75, -23.9375)
+shape = SubResource("RectangleShape2D_fq70s")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Temporary Ground/StaticBody2D"]
+position = Vector2(304, 130.875)
+shape = SubResource("RectangleShape2D_u3wrb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Temporary Ground/StaticBody2D"]
+position = Vector2(369.5, 325.75)
+shape = SubResource("RectangleShape2D_xh6ff")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Temporary Ground/StaticBody2D"]
+position = Vector2(144, 361.5)
+shape = SubResource("RectangleShape2D_wuvon")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Temporary Ground/StaticBody2D"]
 position = Vector2(-19.5, 450.5)
 shape = SubResource("RectangleShape2D_kxkcm")
+
+[node name="WoodenCrate" parent="." instance=ExtResource("8_81d5o")]
+position = Vector2(-68, -14)
+linear_damp = 2.04
+
+[node name="WoodenCrate2" parent="." instance=ExtResource("8_81d5o")]
+position = Vector2(-87, -50)
+
+[node name="WoodenCrate3" parent="." instance=ExtResource("8_81d5o")]
+position = Vector2(-56, -49)
+
+[node name="WoodenCrate4" parent="." instance=ExtResource("8_81d5o")]
+position = Vector2(-91, -25)
+
+[node name="WoodenCrate5" parent="." instance=ExtResource("8_81d5o")]
+position = Vector2(-36, -26)
+
+[node name="WoodenCrate6" parent="." instance=ExtResource("8_81d5o")]
+position = Vector2(-70, -93)
+
+[node name="WoodenCrate7" parent="." instance=ExtResource("8_81d5o")]
+position = Vector2(-38, -86)

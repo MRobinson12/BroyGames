@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dhptu6j21hb1p"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_rgad3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_82650"]
+size = Vector2(25, 25)
+
+[sub_resource type="PackedScene" id="PackedScene_u1i38"]
+
+[resource]
+script = ExtResource("1_rgad3")
+name = "null"
+scene = SubResource("PackedScene_u1i38")
+icon = SubResource("PlaceholderTexture2D_82650")

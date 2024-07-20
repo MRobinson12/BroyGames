@@ -7,6 +7,7 @@ const ROTATION_SPEED = 10.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
+var selected_object: RigidBody2D = null
 
 enum State {
 	IDLE,
@@ -22,8 +23,14 @@ var current_state = State.IDLE
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
+
+func pickup_item(item : Item):
+	GlobalData.inventory.add_item(item)
 	
 func _physics_process(delta):
+	var mouse_position = get_global_mouse_position()
+	if Input.is_action_pressed("ui_leftclick"):
+		_lift_object(mouse_position)	
 	if current_state != State.JUMP:
 		if Input.is_action_pressed("ui_right") and is_on_floor():
 			_handle_run(delta, false)
@@ -76,6 +83,21 @@ func _physics_process(delta):
 			
 	if Input.is_action_pressed("ui_cancel"):
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+			
+	if Input.is_action_just_pressed("interact"):
+		var items_in_range = $PickupArea.get_overlapping_areas()
+		if not items_in_range.is_empty():
+			var nearest_item = null
+			var shortest_distance = INF
+			for item in items_in_range:
+				if item is Pickup:
+					var distance = position.distance_squared_to(item.position)
+					if distance < shortest_distance:
+						nearest_item = item
+						shortest_distance = distance
+			if nearest_item != null:
+				pickup_item(nearest_item.item)
+				nearest_item.queue_free()
 
 func _handle_run(delta, flip_h):
 	$AnimatedSprite2D.play("run")
@@ -105,3 +127,48 @@ func _on_landing_animation_finished():
 			current_state = State.RUN
 		else:
 			current_state = State.IDLE
+
+func _lift_object(mouse_position: Vector2):
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = mouse_position
+	var result = space_state.intersect_point(query)
+	
+	if result.size() > 0:
+		var selected = result[0]
+		if selected.collider is RigidBody2D:
+			if selected_object and selected.collider.name != selected_object.name:
+				selected_object.set_collision_mask_value(2, true)
+				selected_object.set_collision_mask_value(3, true)
+				selected_object.set_collision_layer_value(3, true)
+				selected_object.set_linear_damp(0)
+				selected_object = selected.collider
+			else:
+				selected_object = selected.collider
+	if selected_object:
+		selected_object.set_collision_mask_value(2, false)
+		selected_object.set_collision_mask_value(3, false)
+		selected_object.set_collision_layer_value(3, false)
+		_move_object(mouse_position, selected_object)
+
+func _move_object(mouse_position: Vector2, selected_object: RigidBody2D):
+	var object_position = selected_object.position
+	var direction = mouse_position - object_position
+	var distance = direction.length()
+	direction = direction.normalized()
+	var max_force_magnitude = 700.0
+	var min_force_magnitude = 10.0
+	var decrease_distance = 5.0
+	var force_magnitude = max(min_force_magnitude, max_force_magnitude * (distance / decrease_distance))
+	var linear_damping_level = max(0, 4 * (distance / decrease_distance))
+	selected_object.set_linear_damp(linear_damping_level)
+	selected_object.apply_force(direction * force_magnitude)
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		if selected_object:
+			selected_object.set_collision_mask_value(2, true)
+			selected_object.set_collision_mask_value(3, true)
+			selected_object.set_collision_layer_value(3, true)
+			selected_object.set_linear_damp(0)
+		selected_object = null
