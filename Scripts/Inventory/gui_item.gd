@@ -19,11 +19,9 @@ func _get_drag_data(_pos):
 	
 	return slot_index
 	
-func _can_drop_data(_pos, item):
+func _can_drop_data(_pos, _index):
 	return true
 	
 func _drop_data(_pos, old_index):
-	var item = GlobalData.inventory.contents[old_index]
-	GlobalData.inventory.remove_item(old_index)
 	var slot_index = get_parent().get_index()
-	GlobalData.inventory.place_item(item, slot_index)
+	GlobalData.inventory.swap_items(old_index, slot_index)
