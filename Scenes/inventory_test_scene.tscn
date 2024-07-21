@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc7hx6tru28vq"]
+[gd_scene load_steps=10 format=3 uid="uid://cc7hx6tru28vq"]
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_rsk4x"]
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="2_dxwup"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
 [ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_mky20"]
 [ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/Pickups/test_item.tscn" id="6_iq4cb"]
+[ext_resource type="PackedScene" uid="uid://dwgdycnwfhw10" path="res://Scenes/home_menu.tscn" id="6_ykic4"]
+[ext_resource type="Script" path="res://Scripts/move_inv.gd" id="7_55gxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esmq6"]
 size = Vector2(1907, 59)
@@ -21,6 +23,7 @@ limit_bottom = 60
 position_smoothing_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_rsk4x")]
+visible = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -60,8 +63,20 @@ focus_mode = 0
 text = "Add Test Item"
 script = ExtResource("5_mky20")
 
+[node name="HomeMenu" parent="UI" instance=ExtResource("6_ykic4")]
+
+[node name="MoveInv" type="Button" parent="UI"]
+offset_left = 1005.0
+offset_top = 576.0
+offset_right = 1135.0
+offset_bottom = 607.0
+focus_mode = 0
+text = "Move Inventory"
+script = ExtResource("7_55gxv")
+
 [node name="TestPickup" parent="." instance=ExtResource("6_iq4cb")]
 position = Vector2(-55, -7)
 
 [connection signal="pressed" from="UI/Toggle Inventory" to="UI" method="_on_toggle_inventory_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
+[connection signal="pressed" from="UI/MoveInv" to="UI/MoveInv" method="_on_pressed"]

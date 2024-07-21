@@ -43,3 +43,4 @@ func remove_item(index : int):
 func reset():
 	for i in range(size()):
 		contents[i] = null_item
+	GlobalData.player_inv_updated.emit()

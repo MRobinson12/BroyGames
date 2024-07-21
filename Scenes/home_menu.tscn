@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwgdycnwfhw10"]
+
+[ext_resource type="Script" path="res://Scenes/home_menu.gd" id="1_twqwg"]
+
+[node name="HomeMenu" type="TabContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.5
+offset_top = -192.0
+offset_right = 309.5
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+script = ExtResource("1_twqwg")
+
+[node name="Inventory" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory"]
+layout_mode = 2
+
+[node name="ItemList" type="VBoxContainer" parent="Inventory/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="Crafting" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Upgrades" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
