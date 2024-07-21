@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bajmt2ht8e34o"]
+[gd_scene load_steps=8 format=4 uid="uid://bajmt2ht8e34o"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_ydsuc"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="2_pivow"]
+[ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="3_m83fx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3yck"]
 texture = ExtResource("1_ydsuc")
@@ -39,7 +40,7 @@ texture_region_size = Vector2i(32, 32)
 21:0/0 = 0
 22:0/0 = 0
 23:0/0 = 0
-23:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.5, 0.5, 16, -16, 16, 16, -16, 16)
+23:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 24:0/0 = 0
 24:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0.25, 0, 16, 16, -16, 16)
 25:0/0 = 0
@@ -47,13 +48,19 @@ texture_region_size = Vector2i(32, 32)
 29:0/0 = 0
 30:0/0 = 0
 31:0/0 = 0
+31:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 32:0/0 = 0
+32:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 33:0/0 = 0
+33:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 34:0/0 = 0
+34:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 35:0/0 = 0
 36:0/0 = 0
+36:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 37:0/0 = 0
 38:0/0 = 0
+38:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 39:0/0 = 0
 42:0/0 = 0
 43:0/0 = 0
@@ -156,7 +163,8 @@ texture_region_size = Vector2i(32, 32)
 77:1/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-0:0/0 = 0
+26:0/0 = 0
+27:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_pcvp3"]
 tile_size = Vector2i(32, 32)
@@ -164,12 +172,49 @@ physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 255
 sources/0 = SubResource("TileSetAtlasSource_v3yck")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrbi5"]
+texture = ExtResource("3_m83fx")
+texture_region_size = Vector2i(32, 32)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4lr23"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_lrbi5")
+
 [node name="CaveLevelTest" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAJAA4AAAAEAAAAAAAJAA8AAAAEAAAAAAAJABAAAAAEAAAAAAAJAA0AAAAXAAAAAAAKAA0AAAAJAAAAAAALAA0AAAAJAAAAAAALAA4AAAAGAAAAAAAMAA4AAAAGAAAAAAAMAA0AAAAJAAAAAAANAA4AAAAFAAAAAAANAA0AAAAYAAAAAAAKAA4AAAAGAAAAAAAKAA8AAAAGAAAAAAALAA8AAAAGAAAAAAALABAAAAAGAAAAAAAMABAAAAAGAAAAAAAKABAAAAAGAAAAAAAMAA8AAAAGAAAAAAANABAAAAAFAAAAAAA=")
 tile_set = SubResource("TileSet_pcvp3")
-collision_visibility_mode = 1
 
-[node name="Player" parent="TileMapLayer" instance=ExtResource("2_pivow")]
+[node name="Player" parent="." instance=ExtResource("2_pivow")]
 position = Vector2(370, 378)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAAJAA0AAAAGAAAAAAAJAAwAAAAGAAAAAAAKAAwAAAAGAAAAAAAKAA0AAAAGAAAAAAAMAAwAAAAGAAAAAAALAA0AAAAGAAAAAAALAAwAAAAGAAAAAAAMAA0AAAAGAAAAAAANAAwAAAAGAAAAAAANAA0AAAAGAAAAAAA=")
+tile_set = SubResource("TileSet_4lr23")
