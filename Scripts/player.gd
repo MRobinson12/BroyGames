@@ -4,7 +4,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 const RUN_ROTATION = 0.00
 const ROTATION_SPEED = 10.0
-const LIGHT_MASK_MULTIPLIER = 0.999
+const LIGHT_MASK_MULTIPLIER = 0.9999
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	

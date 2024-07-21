@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://ev2g2nqf3koe"]
+
+[ext_resource type="Script" path="res://Scenes/cat.gd" id="1_0eany"]
+[ext_resource type="Texture2D" uid="uid://caginddfxdxoo" path="res://Assets/catidle.png" id="1_hgn8b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtoyc"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhknu"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yujp"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djb4l"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0vuw"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu23p"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xx2l"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udxv7"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plf4l"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrn8v"]
+atlas = ExtResource("1_hgn8b")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfkh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtoyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhknu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yujp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djb4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0vuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu23p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xx2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udxv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plf4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrn8v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sleep",
+"speed": 5.0
+}]
+
+[node name="Cat" type="Node2D"]
+script = ExtResource("1_0eany")
+
+[node name="CatSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_cfkh4")
+animation = &"idle"
+frame_progress = 0.915173
