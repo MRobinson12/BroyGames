@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ced5axb0h75g1"]
+
+[ext_resource type="Texture2D" uid="uid://djoslm7eeraxv" path="res://Assets/stonepuzzledoor.png" id="1_73u3w"]
+[ext_resource type="Script" path="res://Scripts/Interactables/stonedoor.gd" id="1_rhh0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j06on"]
+atlas = ExtResource("1_73u3w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjaqw"]
+atlas = ExtResource("1_73u3w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rveg0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j06on")
+}],
+"loop": false,
+"name": &"door_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjaqw")
+}],
+"loop": false,
+"name": &"door_open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y02na"]
+size = Vector2(8, 32)
+
+[node name="Stonedoor" type="StaticBody2D"]
+script = ExtResource("1_rhh0n")
+
+[node name="StonedoorSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rveg0")
+animation = &"door_closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y02na")
