@@ -21,15 +21,10 @@ enum State {
 }
 
 var current_state = State.IDLE
-var player_position : Vector2
-var shadow_shader : ColorRect
-var camera : Camera2D
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
-	shadow_shader = get_parent().get_node("ShaderLayer/PlayerVignette")
-	camera = get_parent().get_node("Camera2D")
 
 func pickup_item():
 	var items_in_range = $PickupArea.get_overlapping_areas()
@@ -46,10 +41,6 @@ func pickup_item():
 			GlobalData.player_inventory.add_item(nearest_item.item)
 			nearest_item.queue_free()
 			
-func _process(delta):
-	player_position = get_global_transform_with_canvas().get_origin() / Vector2(get_viewport().size)
-	shadow_shader.material.set_shader_parameter("player_position",player_position)
-	shadow_shader.material.set_shader_parameter("camera_zoom",camera.zoom.x)
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
