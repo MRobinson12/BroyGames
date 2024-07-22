@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bajmt2ht8e34o"]
+[gd_scene load_steps=8 format=4 uid="uid://binlv7hhkovgx"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_ydsuc"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="2_pivow"]

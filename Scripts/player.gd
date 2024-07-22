@@ -4,7 +4,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 const RUN_ROTATION = 0.00
 const ROTATION_SPEED = 10.0
-const LIGHT_MASK_MULTIPLIER = 0.999
+const LIGHT_MASK_MULTIPLIER = 0.9999
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
@@ -40,10 +40,10 @@ func pickup_item():
 		if nearest_item != null:
 			GlobalData.player_inventory.add_item(nearest_item.item)
 			nearest_item.queue_free()
+			
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
-	_light_mask()
 	if Input.is_action_pressed("ui_leftclick"):
 		_lift_object(mouse_position)	
 	if current_state != State.JUMP:
@@ -166,12 +166,6 @@ func _move_object(mouse_position: Vector2, selected_object: RigidBody2D):
 	var linear_damping_level = max(0, 4 * (distance / decrease_distance))
 	selected_object.set_linear_damp(linear_damping_level)
 	selected_object.apply_force(direction * force_magnitude)
-
-func _light_mask():
-	if light_mask_current > 0.30:
-		$Light.scale.x = light_mask_current
-		$Light.scale.y = light_mask_current
-		light_mask_current = light_mask_current * LIGHT_MASK_MULTIPLIER
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:

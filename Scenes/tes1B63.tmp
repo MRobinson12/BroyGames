@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1jcp6xo13urh"]
+[gd_scene load_steps=26 format=3 uid="uid://d1jcp6xo13urh"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_1o3sh"]
 [ext_resource type="Texture2D" uid="uid://ciage5814qui7" path="res://Assets/wizardidle.png" id="2_wlkjn"]
@@ -7,9 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_pg3kl"]
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="5_renpk"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_583rk"]
-[ext_resource type="Script" path="res://Scripts/player_light.gd" id="7_rjieq"]
 [ext_resource type="PackedScene" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
-[ext_resource type="Texture2D" uid="uid://dwiv0upexu587" path="res://Assets/lightorb.png" id="8_ealfj"]
 [ext_resource type="Shader" path="res://Assets/Shaders/player_vignette.gdshader" id="10_j41e7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0n4l"]
@@ -171,16 +169,6 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Marker2D" type="Marker2D" parent="Player"]
 position = Vector2(3, 5)
-
-[node name="LightPosition" type="Marker2D" parent="Player"]
-position = Vector2(0, -22)
-
-[node name="PlayerLight" type="Node2D" parent="."]
-script = ExtResource("7_rjieq")
-
-[node name="Sprite" type="Sprite2D" parent="PlayerLight"]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_ealfj")
 
 [node name="Temporary Ground" type="Sprite2D" parent="."]
 z_index = -2
