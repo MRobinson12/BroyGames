@@ -1,7 +1,7 @@
 extends Node2D
 
 var target_marker : Node2D
-var lerp_speed = 5
+var lerp_speed = 3
 
 var player_position : Vector2
 var shadow_shader : ColorRect
