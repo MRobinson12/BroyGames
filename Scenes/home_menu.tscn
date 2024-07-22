@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwgdycnwfhw10"]
 
-[ext_resource type="Script" path="res://Scenes/home_menu.gd" id="1_twqwg"]
+[ext_resource type="Script" path="res://Scripts/home_menu.gd" id="1_twqwg"]
 
 [node name="HomeMenu" type="TabContainer"]
 anchors_preset = 8
@@ -14,10 +14,12 @@ offset_right = 309.5
 offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
+tab_focus_mode = 0
 script = ExtResource("1_twqwg")
 
 [node name="Inventory" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
@@ -34,9 +36,37 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
 [node name="Crafting" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Crafting"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Crafting/VBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Crafting/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 330
+
+[node name="Label" type="Label" parent="Crafting/VBoxContainer/PanelContainer/Header"]
+layout_mode = 2
+text = "Item"
+
+[node name="Label2" type="Label" parent="Crafting/VBoxContainer/PanelContainer/Header"]
+layout_mode = 2
+text = "Requirements"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Crafting/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CraftingList" type="VBoxContainer" parent="Crafting/VBoxContainer/ScrollContainer"]
+layout_mode = 2
 
 [node name="Upgrades" type="MarginContainer" parent="."]
 visible = false

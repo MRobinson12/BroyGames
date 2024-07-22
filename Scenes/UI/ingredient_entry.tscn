@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgsd7wbtfdic7"]
+
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_kn662"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktbag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03o01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v674j"]
+
+[node name="Ingredient" type="HBoxContainer"]
+theme_override_constants/separation = 10
+
+[node name="Icon" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ktbag")
+
+[node name="IconTexture" type="TextureRect" parent="Icon"]
+layout_mode = 2
+texture = ExtResource("1_kn662")
+expand_mode = 1
+
+[node name="Name" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_03o01")
+
+[node name="NameLabel" type="Label" parent="Name"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "test_item"
+autowrap_mode = 2
+
+[node name="Quant" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v674j")
+
+[node name="QuantLabel" type="Label" parent="Quant"]
+layout_mode = 2
+text = "1"

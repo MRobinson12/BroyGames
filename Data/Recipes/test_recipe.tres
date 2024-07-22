@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CraftRecipe" load_steps=9 format=3 uid="uid://bl4x7t13t2okc"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/craft_ingredient.gd" id="1_ka6vg"]
+[ext_resource type="Resource" uid="uid://dacpqa3q3k54o" path="res://Data/Items/test_item.tres" id="2_bjh1x"]
+[ext_resource type="Resource" uid="uid://c8yho1120bdyb" path="res://Data/Items/test_item3.tres" id="3_npcdo"]
+[ext_resource type="Resource" uid="uid://bb4law60r0gvt" path="res://Data/Items/test_item2.tres" id="4_bx4rr"]
+[ext_resource type="Script" path="res://Scripts/Inventory/craft_recipe.gd" id="5_umc27"]
+
+[sub_resource type="Resource" id="Resource_vx54w"]
+script = ExtResource("1_ka6vg")
+item = ExtResource("2_bjh1x")
+quant = 1
+
+[sub_resource type="Resource" id="Resource_c6vle"]
+script = ExtResource("1_ka6vg")
+item = ExtResource("4_bx4rr")
+quant = 1
+
+[sub_resource type="Resource" id="Resource_61f7h"]
+script = ExtResource("1_ka6vg")
+item = ExtResource("3_npcdo")
+quant = 1
+
+[resource]
+script = ExtResource("5_umc27")
+inputs = Array[ExtResource("1_ka6vg")]([SubResource("Resource_vx54w"), SubResource("Resource_c6vle")])
+output = SubResource("Resource_61f7h")

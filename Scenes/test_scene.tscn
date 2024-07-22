@@ -149,7 +149,6 @@ script = ExtResource("1_1o3sh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6un3u")
-animation = &"land"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0.5, 3)
