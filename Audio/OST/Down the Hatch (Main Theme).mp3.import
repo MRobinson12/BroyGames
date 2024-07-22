@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2kop3cm1f11c"
+path="res://.godot/imported/Down the Hatch (Main Theme).mp3-760ce721968b05ea1e01cc409e77edfe.mp3str"
+
+[deps]
+
+source_file="res://Audio/OST/Down the Hatch (Main Theme).mp3"
+dest_files=["res://.godot/imported/Down the Hatch (Main Theme).mp3-760ce721968b05ea1e01cc409e77edfe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

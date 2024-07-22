@@ -21,10 +21,15 @@ enum State {
 }
 
 var current_state = State.IDLE
+var player_position : Vector2
+var shadow_shader : ColorRect
+var camera : Camera2D
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
+	shadow_shader = get_parent().get_node("ShaderLayer/PlayerVignette")
+	camera = get_parent().get_node("Camera2D")
 
 func pickup_item():
 	var items_in_range = $PickupArea.get_overlapping_areas()
@@ -40,10 +45,14 @@ func pickup_item():
 		if nearest_item != null:
 			GlobalData.player_inventory.add_item(nearest_item.item)
 			nearest_item.queue_free()
+			
+func _process(delta):
+	player_position = get_global_transform_with_canvas().get_origin() / Vector2(get_viewport().size)
+	shadow_shader.material.set_shader_parameter("player_position",player_position)
+	shadow_shader.material.set_shader_parameter("camera_zoom",camera.zoom.x)
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
-	_light_mask()
 	if Input.is_action_pressed("ui_leftclick"):
 		_lift_object(mouse_position)	
 	if current_state != State.JUMP:
@@ -166,12 +175,6 @@ func _move_object(mouse_position: Vector2, selected_object: RigidBody2D):
 	var linear_damping_level = max(0, 4 * (distance / decrease_distance))
 	selected_object.set_linear_damp(linear_damping_level)
 	selected_object.apply_force(direction * force_magnitude)
-
-func _light_mask():
-	if light_mask_current > 0.30:
-		$Light.scale.x = light_mask_current
-		$Light.scale.y = light_mask_current
-		light_mask_current = light_mask_current * LIGHT_MASK_MULTIPLIER
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
