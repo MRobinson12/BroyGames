@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwiv0upexu587"
-path="res://.godot/imported/lightorb.png-9141ca969bd06408379217e0988bc1d7.ctex"
+uid="uid://caginddfxdxoo"
+path="res://.godot/imported/catidle.png-536a58f2517f625b4eac6a0164acd588.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lightorb.png"
-dest_files=["res://.godot/imported/lightorb.png-9141ca969bd06408379217e0988bc1d7.ctex"]
+source_file="res://Assets/catidle.png"
+dest_files=["res://.godot/imported/catidle.png-536a58f2517f625b4eac6a0164acd588.ctex"]
 
 [params]
 

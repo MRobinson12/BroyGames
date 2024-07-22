@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5e0wyvj3jc24"
+path="res://.godot/imported/What Once Was (Hallway Lore).mp3-3feed333826bd09cdbd5cde6ef8b4324.mp3str"
+
+[deps]
+
+source_file="res://Audio/OST/What Once Was (Hallway Lore).mp3"
+dest_files=["res://.godot/imported/What Once Was (Hallway Lore).mp3-3feed333826bd09cdbd5cde6ef8b4324.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
