@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://brg21fy65nj3j"]
+
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_504pm"]
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_jd6n1"]
+
+[resource]
+script = ExtResource("1_jd6n1")
+id = "lesser_endurance_potion"
+name = "Lesser Endurance Potion"
+icon = ExtResource("1_504pm")
+description = "Makes you last longer ;)"

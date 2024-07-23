@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dlb0s175146xl"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_d8dpu"]
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_go52q"]
+
+[resource]
+script = ExtResource("1_d8dpu")
+id = "lesser_health_potion"
+name = "Lesser Health Potion"
+icon = ExtResource("1_go52q")
+description = "Heals you"

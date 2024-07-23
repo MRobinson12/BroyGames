@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CraftRecipe" load_steps=7 format=3 uid="uid://dtpss46r7q57b"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/craft_ingredient.gd" id="1_u1b2o"]
+[ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="2_ochfp"]
+[ext_resource type="Resource" uid="uid://bgmn1omhijeu0" path="res://Data/Items/lesser_glow_potion.tres" id="3_0rpop"]
+[ext_resource type="Script" path="res://Scripts/Inventory/craft_recipe.gd" id="4_bkt6l"]
+
+[sub_resource type="Resource" id="Resource_tyh35"]
+script = ExtResource("1_u1b2o")
+item = ExtResource("2_ochfp")
+quant = 2
+
+[sub_resource type="Resource" id="Resource_hpp02"]
+script = ExtResource("1_u1b2o")
+item = ExtResource("3_0rpop")
+quant = 1
+
+[resource]
+script = ExtResource("4_bkt6l")
+inputs = Array[ExtResource("1_u1b2o")]([SubResource("Resource_tyh35")])
+output = SubResource("Resource_hpp02")

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CraftRecipe" load_steps=9 format=3 uid="uid://cq8abvcihm4v0"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/craft_ingredient.gd" id="1_w6prg"]
+[ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="2_28dfd"]
+[ext_resource type="Script" path="res://Scripts/Inventory/craft_recipe.gd" id="2_tv52x"]
+[ext_resource type="Resource" uid="uid://d1b611ejm1prm" path="res://Data/Items/slate_slime.tres" id="3_fkskb"]
+[ext_resource type="Resource" uid="uid://bfojtpnd24jbi" path="res://Data/Items/lesser_bouncing_potion.tres" id="4_mj01l"]
+
+[sub_resource type="Resource" id="Resource_8xm56"]
+script = ExtResource("1_w6prg")
+item = ExtResource("2_28dfd")
+quant = 1
+
+[sub_resource type="Resource" id="Resource_bkyo4"]
+script = ExtResource("1_w6prg")
+item = ExtResource("3_fkskb")
+quant = 1
+
+[sub_resource type="Resource" id="Resource_h4ktk"]
+script = ExtResource("1_w6prg")
+item = ExtResource("4_mj01l")
+quant = 1
+
+[resource]
+script = ExtResource("2_tv52x")
+inputs = Array[ExtResource("1_w6prg")]([SubResource("Resource_8xm56"), SubResource("Resource_bkyo4")])
+output = SubResource("Resource_h4ktk")

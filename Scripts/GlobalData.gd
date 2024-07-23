@@ -5,8 +5,8 @@ signal player_inv_updated
 signal home_inv_updated
 
 var player_inventory : PlayerInventory = PlayerInventory.new()
-
 var home_inventory : HomeInventory = HomeInventory.new()
+var gold : int = 0
 
 func move_inventory():
 	for item in player_inventory.contents:

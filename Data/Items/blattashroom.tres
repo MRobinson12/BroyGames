@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cntjkbdakb4ob"]
+
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_13ifg"]
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_qsotm"]
+
+[resource]
+script = ExtResource("1_qsotm")
+id = "blattashroom"
+name = "Blattashroom"
+icon = ExtResource("1_13ifg")
+description = "A bulbous purple mushroom that thrives in small colonies, where the light never reaches. Aside from their jarring purple color, Blattashrooms are known for their hearty and crunchy taste, often thanks to the bugs that live within."

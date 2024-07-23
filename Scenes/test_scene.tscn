@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="5_renpk"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_583rk"]
 [ext_resource type="Script" path="res://Scripts/player_light.gd" id="7_rjieq"]
-[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
+[ext_resource type="PackedScene" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
 [ext_resource type="Texture2D" uid="uid://dwiv0upexu587" path="res://Assets/lightorb.png" id="8_ealfj"]
 [ext_resource type="Shader" path="res://Assets/Shaders/player_vignette.gdshader" id="10_j41e7"]
 
