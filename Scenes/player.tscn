@@ -115,7 +115,7 @@ size = Vector2(36, 30)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -4)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 21
 script = ExtResource("1_fngfp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

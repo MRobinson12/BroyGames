@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_lhoy1"]
 [ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="2_l1jp0"]
-[ext_resource type="PackedScene" path="res://Scenes/wooden_crate.tscn" id="3_br8qu"]
+[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="3_br8qu"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="4_cpf4q"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="5_whfb8"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_groch"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5akr"]
 texture = ExtResource("1_lhoy1")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
@@ -84,7 +84,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_obw2j"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_groch")
+sources/0 = SubResource("TileSetAtlasSource_h5akr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awtpg"]
 texture = ExtResource("2_l1jp0")
