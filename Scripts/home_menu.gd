@@ -70,3 +70,4 @@ func populate_potions():
 			new_craft.find_child("IngredientList").add_child(new_input)
 		new_craft.find_child("CheckBox").toggled.connect(potion_selected)
 		$"Potion Select/VBoxContainer/ScrollContainer/PotionList".add_child(new_craft)
+	potion_selected(false)

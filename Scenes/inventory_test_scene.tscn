@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cc7hx6tru28vq"]
+[gd_scene load_steps=19 format=3 uid="uid://cc7hx6tru28vq"]
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_rsk4x"]
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="2_dxwup"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://cvpjanhw4bkf0" path="res://Data/Items/lionsbrane.tres" id="11_llsjp"]
 [ext_resource type="Resource" uid="uid://bk5tp2igynusk" path="res://Data/Items/glinting_glassrock.tres" id="12_3a2vp"]
 [ext_resource type="Resource" uid="uid://rrjryjm5i44a" path="res://Data/Items/stal_wart.tres" id="13_y06yf"]
+[ext_resource type="PackedScene" uid="uid://dh7dece7uaj7c" path="res://Scenes/UI/crafting_menu.tscn" id="16_3en4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esmq6"]
 size = Vector2(1907, 59)
@@ -51,7 +52,7 @@ shape = SubResource("RectangleShape2D_esmq6")
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_g8dtu")
 
-[node name="Toggle Inventory" type="Button" parent="UI"]
+[node name="ToggleInventory" type="Button" parent="UI"]
 offset_left = 1031.0
 offset_top = 510.0
 offset_right = 1114.0
@@ -80,6 +81,7 @@ glinting_glassrock = ExtResource("12_3a2vp")
 stal_wart = ExtResource("13_y06yf")
 
 [node name="HomeMenu" parent="UI" instance=ExtResource("6_ykic4")]
+unique_name_in_owner = true
 
 [node name="MoveInv" type="Button" parent="UI"]
 offset_left = 1005.0
@@ -90,17 +92,22 @@ focus_mode = 0
 text = "Move Inventory"
 script = ExtResource("7_55gxv")
 
-[node name="CraftingMenu" type="Button" parent="UI"]
-visible = false
+[node name="ToggleCrafting" type="Button" parent="UI"]
 offset_left = 819.0
 offset_top = 575.0
 offset_right = 934.0
 offset_bottom = 606.0
+focus_mode = 0
 text = "CraftingMenu"
+
+[node name="CraftingMenu" parent="UI" instance=ExtResource("16_3en4u")]
+unique_name_in_owner = true
+visible = false
 
 [node name="TestPickup" parent="." instance=ExtResource("6_iq4cb")]
 position = Vector2(-55, -7)
 
-[connection signal="pressed" from="UI/Toggle Inventory" to="UI" method="_on_toggle_inventory_pressed"]
+[connection signal="pressed" from="UI/ToggleInventory" to="UI" method="_on_toggle_inventory_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
 [connection signal="pressed" from="UI/MoveInv" to="UI/MoveInv" method="_on_pressed"]
+[connection signal="pressed" from="UI/ToggleCrafting" to="UI" method="_on_toggle_crafting_pressed"]

@@ -28,3 +28,4 @@ func populate_crafting(recipes : Array[CraftRecipe]):
 			new_input.find_child("QuantLabel").text = str(input.quant)
 			new_craft.find_child("IngredientList").add_child(new_input)
 		$MarginContainer/CraftingList.add_child(new_craft)
+	refresh_crafting()
