@@ -113,6 +113,7 @@ zoom = Vector2(4, 4)
 
 [node name="Player" parent="." instance=ExtResource("4_cpf4q")]
 position = Vector2(51, -19)
+collision_mask = 21
 
 [node name="PlayerLight" parent="." instance=ExtResource("6_widss")]
 

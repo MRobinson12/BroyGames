@@ -33,6 +33,7 @@ process_callback = 0
 position_smoothing_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_gk1ap")]
+collision_mask = 21
 
 [node name="PlayerLight" parent="." instance=ExtResource("2_oqfku")]
 
