@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://g83d0iqmn2en"]
+[gd_scene load_steps=10 format=3 uid="uid://g83d0iqmn2en"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_8aekl"]
+[ext_resource type="PackedScene" uid="uid://4lvx8ukrf6cq" path="res://Scenes/shader_layer.tscn" id="1_v8t3c"]
 [ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="2_36m5x"]
+[ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="2_lw1p0"]
+[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="3_imw3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvn0p"]
 texture = ExtResource("1_8aekl")
@@ -85,6 +88,17 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_djwv5")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="ShaderLayer" parent="." instance=ExtResource("1_v8t3c")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -4)
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_lw1p0")]
+
+[node name="PlayerLight" parent="." instance=ExtResource("3_imw3e")]
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_6v2o8")

@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc7hx6tru28vq"]
+[gd_scene load_steps=18 format=3 uid="uid://cc7hx6tru28vq"]
 
-[ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_rsk4x"]
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="2_dxwup"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="3_g8dtu"]
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
@@ -30,12 +29,6 @@ process_callback = 0
 limit_top = -500
 limit_bottom = 60
 position_smoothing_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_rsk4x")]
-visible = false
-
-[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
 
 [node name="Temporary Ground" type="Sprite2D" parent="."]
 z_index = -2

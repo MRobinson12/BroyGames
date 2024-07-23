@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://binlv7hhkovgx"]
+[gd_scene load_steps=15 format=4 uid="uid://binlv7hhkovgx"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_ydsuc"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="2_pivow"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="5_wctkw"]
 [ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="6_mn3hr"]
 [ext_resource type="PackedScene" uid="uid://ced5axb0h75g1" path="res://Scenes/Interactables/stonedoor.tscn" id="8_6mri8"]
+[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="9_trw7p"]
+[ext_resource type="PackedScene" uid="uid://4lvx8ukrf6cq" path="res://Scenes/shader_layer.tscn" id="10_npd8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sci0"]
 texture = ExtResource("1_ydsuc")
@@ -92,6 +94,18 @@ sources/0 = SubResource("TileSetAtlasSource_uiyoq")
 
 [node name="CaveLevelTest" type="Node2D"]
 
+[node name="ShaderLayer" parent="." instance=ExtResource("10_npd8e")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(380, 378)
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_pivow")]
+position = Vector2(380, 378)
+
+[node name="PlayerLight" parent="." instance=ExtResource("9_trw7p")]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAJAA4AAAAEAAAAAAAJAA8AAAAEAAAAAAAJABAAAAAEAAAAAAAJAA0AAAAXAAAAAAAKAA0AAAAJAAAAAAALAA0AAAAJAAAAAAALAA4AAAAGAAAAAAAMAA4AAAAGAAAAAAAMAA0AAAAJAAAAAAANAA4AAAAIAAAAAAANAA0AAAAYAAAAAAAKAA4AAAAGAAAAAAAKAA8AAAAGAAAAAAALAA8AAAAGAAAAAAALABAAAAAGAAAAAAAMABAAAAAGAAAAAAAKABAAAAAGAAAAAAAMAA8AAAAGAAAAAAANABAAAAAFAAAAAAAOAA4AAAAJAAAAAAAPAA4AAAAJAAAAAAAQAA4AAAAJAAAAAAARAA4AAAAJAAAAAAASAA4AAAAJAAAAAAATAA4AAAAJAAAAAAAUAA4AAAAJAAAAAAAWAA4AAAAHAAAAAAAXAA4AAAAHAAAAAAAWAA8AAAAEAAAAAAAWABAAAAAEAAAAAAAUAA8AAAAFAAAAAAAUABAAAAAFAAAAAAAVABEAAAAHAAAAAAAWABEAAAALAAAAAAAUABEAAAAKAAAAAAASAAwAAAAhAAAAAAATAAwAAAAiAAAAAAAUAAwAAAAhAAAAAAAVAAwAAAAiAAAAAAAWAAwAAAAhAAAAAAAXAAwAAAAiAAAAAAAQAAwAAAAhAAAAAAARAAwAAAAiAAAAAAA=")
 tile_set = SubResource("TileSet_pcvp3")
@@ -100,9 +114,6 @@ tile_set = SubResource("TileSet_pcvp3")
 z_index = -1
 tile_map_data = PackedByteArray("AAAJAA0AAAAGAAAAAAAKAA0AAAAGAAAAAAAMAAwAAAAGAAAAAAALAA0AAAAGAAAAAAALAAwAAAAGAAAAAAAMAA0AAAAGAAAAAAANAAwAAAAGAAAAAAAKAAwAAAAGAAAAAAANAA0AAAAGAAAAAAA=")
 tile_set = SubResource("TileSet_4lr23")
-
-[node name="Player" parent="." instance=ExtResource("2_pivow")]
-position = Vector2(380, 378)
 
 [node name="Trapdoor" parent="." instance=ExtResource("5_wctkw")]
 position = Vector2(688, 439)
