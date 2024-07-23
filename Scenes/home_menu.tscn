@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwgdycnwfhw10"]
+
+[ext_resource type="Script" path="res://Scripts/home_menu.gd" id="1_twqwg"]
+
+[node name="HomeMenu" type="TabContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.5
+offset_top = -192.0
+offset_right = 310.5
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+tab_focus_mode = 0
+script = ExtResource("1_twqwg")
+
+[node name="Inventory" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory"]
+layout_mode = 2
+
+[node name="ItemList" type="VBoxContainer" parent="Inventory/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="Potion Select" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Potion Select"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Potion Select/VBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Potion Select/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 330
+
+[node name="Label" type="Label" parent="Potion Select/VBoxContainer/PanelContainer/Header"]
+layout_mode = 2
+text = "Item"
+
+[node name="Label2" type="Label" parent="Potion Select/VBoxContainer/PanelContainer/Header"]
+layout_mode = 2
+text = "Requirements"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Potion Select/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PotionList" type="VBoxContainer" parent="Potion Select/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Upgrades" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2

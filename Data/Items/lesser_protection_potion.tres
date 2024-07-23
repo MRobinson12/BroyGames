@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dwcq0evy26w28"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_lcs33"]
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_yggaw"]
+
+[resource]
+script = ExtResource("1_lcs33")
+id = "lesser_protection_potion"
+name = "Lesser Protection Potion"
+icon = ExtResource("1_yggaw")
+description = "Always wear protection"

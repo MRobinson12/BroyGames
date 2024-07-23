@@ -19,9 +19,6 @@ func get_contents():
 func get_item(index : int):
 	return contents[index]
 
-func get_index(item : Item):
-	return contents.find(item)
-
 func add_item(item : Item):
 	for i in range(contents.size()):
 		if contents[i].name == "null":
@@ -41,4 +38,9 @@ func swap_items(item1_index : int, item2_index : int):
 
 func remove_item(index : int):
 	contents[index] = null_item
+	GlobalData.player_inv_updated.emit()
+	
+func reset():
+	for i in range(size()):
+		contents[i] = null_item
 	GlobalData.player_inv_updated.emit()

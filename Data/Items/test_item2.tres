@@ -5,5 +5,7 @@
 
 [resource]
 script = ExtResource("1_j8dbd")
+id = "test_item2"
 name = "Test2"
 icon = ExtResource("1_7hd57")
+description = "This is test item 2's description"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dvitxjnuom4ee"]
+
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_brjx6"]
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_x1qt2"]
+
+[resource]
+script = ExtResource("1_x1qt2")
+id = "lesser_nightvision_potion"
+name = "Lesser Potion of Night Vision"
+icon = ExtResource("1_brjx6")
+description = "Make dark bright"

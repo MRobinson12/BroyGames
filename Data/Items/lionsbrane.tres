@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cvpjanhw4bkf0"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_fd06s"]
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_fknnl"]
+
+[resource]
+script = ExtResource("1_fd06s")
+id = "lionsbrane"
+name = "Lionsbrane"
+icon = ExtResource("1_fknnl")
+description = "This hollow and morel-like mushroom is often found through the sound it makes when wind blows through it; A low, creepy growling that sends adventurers running, soiled pants and all."

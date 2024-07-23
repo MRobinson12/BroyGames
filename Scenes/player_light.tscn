@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4eb7lw1ilvoe"]
+
+[ext_resource type="Script" path="res://Scripts/player_light.gd" id="1_wmo63"]
+[ext_resource type="Texture2D" uid="uid://dwiv0upexu587" path="res://Assets/lightorb.png" id="2_vn4k3"]
+
+[node name="PlayerLight" type="Node2D"]
+script = ExtResource("1_wmo63")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_vn4k3")

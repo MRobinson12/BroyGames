@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bfl4mpbg12kf7"]
+[gd_scene load_steps=18 format=3 uid="uid://bfl4mpbg12kf7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fngfp"]
 [ext_resource type="Texture2D" uid="uid://ciage5814qui7" path="res://Assets/wizardidle.png" id="2_8ywdc"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dy1yhb73m5mc8" path="res://Assets/wizardrun.png" id="4_5s0fb"]
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_ykm0p"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_hlbgl"]
-[ext_resource type="Texture2D" uid="uid://dljcifuf2t07q" path="res://Assets/lightmask.png" id="7_sptec"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0n4l"]
 atlas = ExtResource("2_8ywdc")
@@ -107,21 +106,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uir67"]
 size = Vector2(15, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmhqj"]
-size = Vector2(36, 30)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7f7k8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rydqf"]
+size = Vector2(28, 28)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -4)
 collision_layer = 2
-collision_mask = 21
+collision_mask = 5
 script = ExtResource("1_fngfp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6un3u")
-animation = &"land"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3)
@@ -138,20 +134,17 @@ stream = ExtResource("6_hlbgl")
 volume_db = -27.171
 pitch_scale = 1.75
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../../Camera2D")
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(3, 5)
+
+[node name="LightPosition" type="Marker2D" parent="."]
+position = Vector2(0, -22)
 
 [node name="PickupArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_vmhqj")
-
-[node name="Light" type="Sprite2D" parent="."]
-visibility_layer = 524288
-z_index = 10
-material = SubResource("CanvasItemMaterial_7f7k8")
-texture = ExtResource("7_sptec")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-remote_path = NodePath("../../Camera2D")
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_rydqf")

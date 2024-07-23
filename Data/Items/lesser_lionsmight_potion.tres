@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://le7w1rwdct3q"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_0x47k"]
+[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_j4ovr"]
+
+[resource]
+script = ExtResource("1_0x47k")
+id = "lesser_lionsmight_potion"
+name = "Lesser Potion of Lions Might"
+icon = ExtResource("1_j4ovr")
+description = "Lion go rawr"
