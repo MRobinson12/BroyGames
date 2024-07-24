@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="KeyItem" load_steps=3 format=3 uid="uid://ckrkenamw0ptv"]
+[gd_resource type="Resource" script_class="KeyItem" load_steps=3 format=3 uid="uid://bjrixtppiu03h"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/key_item.gd" id="1_fbts3"]
 [ext_resource type="Texture2D" uid="uid://df3f4f5a0q4qm" path="res://Assets/key.png" id="1_t6j11"]
 
 [resource]
 script = ExtResource("1_fbts3")
-key_id = ""
+key_id = "123"
 key_colour = Color(0, 0, 0, 1)
 id = "key_item"
 name = "Key"

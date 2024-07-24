@@ -8,8 +8,12 @@ func _ready():
 	collision_shape = $CollisionShape2D
 	super._ready()
 
-func try_open(key_id: String) -> bool:
-	if key_id == required_key_id:
-		open()
-		return true
-	return false
+# check the players inventory for a key with the ID 
+# HEY JOSSSHHHHH
+func check_player_inventory():
+	for item in GlobalData.player_inventory.contents:
+		if item is KeyItem:
+			if item.key_id == required_key_id:
+				open()
+				return
+			

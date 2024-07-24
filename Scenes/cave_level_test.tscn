@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://binlv7hhkovgx"]
+[gd_scene load_steps=19 format=4 uid="uid://binlv7hhkovgx"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_ydsuc"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="2_pivow"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://ced5axb0h75g1" path="res://Scenes/Interactables/stonedoor.tscn" id="8_6mri8"]
 [ext_resource type="PackedScene" uid="uid://2yi53ock65go" path="res://Scenes/Interactables/pressureplate.tscn" id="9_qx6ma"]
 [ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/Interactables/wooden_crate.tscn" id="10_nsxvv"]
-[ext_resource type="PackedScene" uid="uid://ckp50jxrl01wh" path="res://Scenes/Interactables/key.tscn" id="11_x3c5n"]
+[ext_resource type="PackedScene" path="res://Scenes/item_pickup.tscn" id="13_xctai"]
+[ext_resource type="Resource" uid="uid://bjrixtppiu03h" path="res://Data/Items/key_item.tres" id="14_t2wcy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sci0"]
 texture = ExtResource("1_ydsuc")
@@ -120,6 +121,7 @@ position = Vector2(371, 400)
 position = Vector2(0, -4)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("5_e063g")]
+visible = false
 
 [node name="Trapdoor" parent="." instance=ExtResource("5_wctkw")]
 position = Vector2(688, 439)
@@ -172,11 +174,11 @@ activator_paths = Array[NodePath]([NodePath("../Pressureplate")])
 position = Vector2(1121, 433)
 required_key_id = "123"
 
-[node name="Key" parent="." instance=ExtResource("11_x3c5n")]
-position = Vector2(1025, 435)
-key_id = "123"
+[node name="Key1" parent="." instance=ExtResource("13_xctai")]
+position = Vector2(1034, 438)
+item = ExtResource("14_t2wcy")
 
 [node name="DoorController5" type="Node" parent="."]
 script = ExtResource("6_mn3hr")
 target_path = NodePath("../DoorWithKey")
-activator_paths = Array[NodePath]([NodePath("../Key")])
+activator_paths = Array[NodePath]([NodePath("../Key1")])

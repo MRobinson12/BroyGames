@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0pti8btoojyf"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/wooden_crate.gd" id="1_pdt3c"]
-[ext_resource type="Texture2D" uid="uid://ddi7t381b3gpm" path="res://Assets/puzzle_crate.png" id="2_iqml6"]
+[ext_resource type="Texture2D" uid="uid://cedyigl2tu2j2" path="res://Assets/puzzle_crate.png" id="2_iqml6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmg5c"]
 
