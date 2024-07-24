@@ -6,6 +6,8 @@ signal home_inv_updated
 
 var player_inventory : PlayerInventory = PlayerInventory.new()
 var home_inventory : HomeInventory = HomeInventory.new()
+var inventory_size = 12
+var max_potion_slots : int = 3
 var gold : int = 0
 
 func move_inventory():

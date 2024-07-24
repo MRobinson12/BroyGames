@@ -1,7 +1,6 @@
 extends TabContainer
 
 var selected_recipes : Array[CraftRecipe]
-var max_potion_slots : int = 3
 
 var item_list_entry = preload("res://Scenes/UI/item_list_entry.tscn")
 
@@ -36,7 +35,7 @@ func potion_selected(_value):
 	for child in find_child("PotionList").get_children():
 		if child.find_child("CheckBox").button_pressed == true:
 			selected_recipes.append(child.recipe)
-	if selected_recipes.size() >= max_potion_slots:
+	if selected_recipes.size() >= GlobalData.max_potion_slots:
 		disable_selection()
 	else:
 		enable_selection()
