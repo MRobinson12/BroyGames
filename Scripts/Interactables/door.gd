@@ -14,9 +14,11 @@ func _process(_delta):
 	
 # check the players inventory for a key with the ID 
 func check_player_inventory():
-	for item in GlobalData.player_inventory.contents:
+	for i in range(GlobalData.player_inventory.contents.size()):
+		var item = GlobalData.player_inventory.contents[i]
 		if item is KeyItem:
 			if item.key_id == required_key_id:
 				open()
+				GlobalData.player_inventory.remove_item(i)
 				return
 			
