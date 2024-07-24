@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cedyigl2tu2j2"
-path="res://.godot/imported/puzzle_crate.png-ece0447011b17843c18750fe416bbefb.ctex"
+uid="uid://c3e5lxw465k87"
+path="res://.godot/imported/wall_torch.png-eb096d344522c6027cea92d7f52e5dd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/puzzle_crate.png"
-dest_files=["res://.godot/imported/puzzle_crate.png-ece0447011b17843c18750fe416bbefb.ctex"]
+source_file="res://Assets/wall_torch.png"
+dest_files=["res://.godot/imported/wall_torch.png-eb096d344522c6027cea92d7f52e5dd8.ctex"]
 
 [params]
 
