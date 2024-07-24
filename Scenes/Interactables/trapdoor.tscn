@@ -18,7 +18,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_k8jkw")
 }],
 "loop": true,
-"name": &"trapdoor_closed",
+"name": &"door_closed",
 "speed": 5.0
 }, {
 "frames": [{
@@ -26,7 +26,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ulofn")
 }],
 "loop": true,
-"name": &"trapdoor_open",
+"name": &"door_open",
 "speed": 5.0
 }]
 
@@ -35,12 +35,12 @@ size = Vector2(32, 7)
 
 [node name="Trapdoor" type="StaticBody2D"]
 collision_layer = 16
-collision_mask = 2
+collision_mask = 15
 script = ExtResource("1_c1t8s")
 
 [node name="TrapdoorSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2gx4d")
-animation = &"trapdoor_closed"
+animation = &"door_open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)

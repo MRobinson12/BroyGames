@@ -1,28 +1,15 @@
-extends StaticBody2D
+extends DoorBase
+class_name Door
 
-signal state_changed(is_open)
-
-@export var is_open = false
-@onready var sprite = $DoorSprite
-@onready var collision_shape = $CollisionShape2D
+@export var required_key_id: String
 
 func _ready():
-	update_state()
+	sprite = $DoorSprite
+	collision_shape = $CollisionShape2D
+	super._ready()
 
-func open():
-	is_open = true
-	update_state()
-
-func close():
-	is_open = false
-	update_state()
-
-func update_state():
-	if is_open:
-		sprite.play("door_open")
-		collision_shape.set_deferred("disabled", true)
-	else:
-		sprite.play("door_closed")
-		collision_shape.set_deferred("disabled", false)
-	
-	emit_signal("state_changed", is_open)
+func try_open(key_id: String) -> bool:
+	if key_id == required_key_id:
+		open()
+		return true
+	return false

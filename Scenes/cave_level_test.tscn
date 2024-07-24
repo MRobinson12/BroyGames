@@ -1,15 +1,18 @@
-[gd_scene load_steps=15 format=4 uid="uid://binlv7hhkovgx"]
+[gd_scene load_steps=18 format=4 uid="uid://binlv7hhkovgx"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_ydsuc"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="2_pivow"]
 [ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="3_m83fx"]
+[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_1upt3"]
 [ext_resource type="PackedScene" uid="uid://dcmaq7wlqd4hq" path="res://Scenes/Interactables/lever.tscn" id="4_3m8jk"]
+[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="5_e063g"]
 [ext_resource type="PackedScene" uid="uid://cm8kn8up46shg" path="res://Scenes/Interactables/door.tscn" id="5_qnj1t"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="5_wctkw"]
 [ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="6_mn3hr"]
 [ext_resource type="PackedScene" uid="uid://ced5axb0h75g1" path="res://Scenes/Interactables/stonedoor.tscn" id="8_6mri8"]
-[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="9_trw7p"]
-[ext_resource type="PackedScene" uid="uid://4lvx8ukrf6cq" path="res://Scenes/shader_layer.tscn" id="10_npd8e"]
+[ext_resource type="PackedScene" uid="uid://2yi53ock65go" path="res://Scenes/Interactables/pressureplate.tscn" id="9_qx6ma"]
+[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/Interactables/wooden_crate.tscn" id="10_nsxvv"]
+[ext_resource type="PackedScene" uid="uid://ckp50jxrl01wh" path="res://Scenes/Interactables/key.tscn" id="11_x3c5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sci0"]
 texture = ExtResource("1_ydsuc")
@@ -94,27 +97,29 @@ sources/0 = SubResource("TileSetAtlasSource_uiyoq")
 
 [node name="CaveLevelTest" type="Node2D"]
 
-[node name="ShaderLayer" parent="." instance=ExtResource("10_npd8e")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(380, 378)
-zoom = Vector2(4, 4)
-
-[node name="Player" parent="." instance=ExtResource("2_pivow")]
-position = Vector2(380, 378)
-collision_mask = 21
-
-[node name="PlayerLight" parent="." instance=ExtResource("9_trw7p")]
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAJAA4AAAAEAAAAAAAJAA8AAAAEAAAAAAAJABAAAAAEAAAAAAAJAA0AAAAXAAAAAAAKAA0AAAAJAAAAAAALAA0AAAAJAAAAAAALAA4AAAAGAAAAAAAMAA4AAAAGAAAAAAAMAA0AAAAJAAAAAAANAA4AAAAIAAAAAAANAA0AAAAYAAAAAAAKAA4AAAAGAAAAAAAKAA8AAAAGAAAAAAALAA8AAAAGAAAAAAALABAAAAAGAAAAAAAMABAAAAAGAAAAAAAKABAAAAAGAAAAAAAMAA8AAAAGAAAAAAANABAAAAAFAAAAAAAOAA4AAAAJAAAAAAAPAA4AAAAJAAAAAAAQAA4AAAAJAAAAAAARAA4AAAAJAAAAAAASAA4AAAAJAAAAAAATAA4AAAAJAAAAAAAUAA4AAAAJAAAAAAAWAA4AAAAHAAAAAAAXAA4AAAAHAAAAAAAWAA8AAAAEAAAAAAAWABAAAAAEAAAAAAAUAA8AAAAFAAAAAAAUABAAAAAFAAAAAAAVABEAAAAHAAAAAAAWABEAAAALAAAAAAAUABEAAAAKAAAAAAASAAwAAAAhAAAAAAATAAwAAAAiAAAAAAAUAAwAAAAhAAAAAAAVAAwAAAAiAAAAAAAWAAwAAAAhAAAAAAAXAAwAAAAiAAAAAAAQAAwAAAAhAAAAAAARAAwAAAAiAAAAAAA=")
+tile_map_data = PackedByteArray("AAAJAA4AAAAEAAAAAAAJAA8AAAAEAAAAAAAJABAAAAAEAAAAAAAJAA0AAAAXAAAAAAAKAA0AAAAJAAAAAAALAA0AAAAJAAAAAAALAA4AAAAGAAAAAAAMAA4AAAAGAAAAAAAMAA0AAAAJAAAAAAANAA4AAAAIAAAAAAANAA0AAAAYAAAAAAAKAA4AAAAGAAAAAAAKAA8AAAAGAAAAAAALAA8AAAAGAAAAAAALABAAAAAGAAAAAAAMABAAAAAGAAAAAAAKABAAAAAGAAAAAAAMAA8AAAAGAAAAAAANABAAAAAFAAAAAAAOAA4AAAAJAAAAAAAPAA4AAAAJAAAAAAAQAA4AAAAJAAAAAAARAA4AAAAJAAAAAAASAA4AAAAJAAAAAAATAA4AAAAJAAAAAAAUAA4AAAAJAAAAAAAWAA4AAAAHAAAAAAAXAA4AAAAHAAAAAAAWAA8AAAAEAAAAAAAWABAAAAAEAAAAAAAUAA8AAAAFAAAAAAAUABAAAAAFAAAAAAAVABEAAAAHAAAAAAAWABEAAAALAAAAAAAUABEAAAAKAAAAAAAYAA4AAAAJAAAAAAAZAA4AAAAJAAAAAAAaAA4AAAAJAAAAAAAbAA4AAAAJAAAAAAAcAA4AAAAJAAAAAAAdAA4AAAAJAAAAAAAeAA4AAAAJAAAAAAAfAA4AAAAJAAAAAAAgAA4AAAAJAAAAAAAhAA4AAAAJAAAAAAAiAA4AAAAJAAAAAAAjAA4AAAAJAAAAAAAkAA4AAAAJAAAAAAAlAA4AAAAJAAAAAAAmAA4AAAAJAAAAAAAnAA4AAAAJAAAAAAA=")
 tile_set = SubResource("TileSet_pcvp3")
 
 [node name="Tile" type="TileMapLayer" parent="."]
 z_index = -1
 tile_map_data = PackedByteArray("AAAJAA0AAAAGAAAAAAAKAA0AAAAGAAAAAAAMAAwAAAAGAAAAAAALAA0AAAAGAAAAAAALAAwAAAAGAAAAAAAMAA0AAAAGAAAAAAANAAwAAAAGAAAAAAAKAAwAAAAGAAAAAAANAA0AAAAGAAAAAAA=")
 tile_set = SubResource("TileSet_4lr23")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(371, 400)
+zoom = Vector2(5, 5)
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_pivow")]
+position = Vector2(371, 400)
+
+[node name="PlayerLight" parent="." instance=ExtResource("4_1upt3")]
+position = Vector2(0, -4)
+
+[node name="ShaderLayer" parent="." instance=ExtResource("5_e063g")]
 
 [node name="Trapdoor" parent="." instance=ExtResource("5_wctkw")]
 position = Vector2(688, 439)
@@ -125,7 +130,7 @@ position = Vector2(497, 432)
 [node name="DoorController" type="Node" parent="."]
 script = ExtResource("6_mn3hr")
 target_path = NodePath("../Trapdoor")
-lever_paths = Array[NodePath]([NodePath("../Lever1")])
+activator_paths = Array[NodePath]([NodePath("../Lever1")])
 
 [node name="Lever2" parent="." instance=ExtResource("4_3m8jk")]
 position = Vector2(520, 432)
@@ -136,7 +141,7 @@ position = Vector2(660, 432)
 [node name="DoorController2" type="Node" parent="."]
 script = ExtResource("6_mn3hr")
 target_path = NodePath("../Door1")
-lever_paths = Array[NodePath]([NodePath("../Lever2")])
+activator_paths = Array[NodePath]([NodePath("../Lever2")])
 
 [node name="Lever3" parent="." instance=ExtResource("4_3m8jk")]
 position = Vector2(559, 432)
@@ -147,4 +152,31 @@ position = Vector2(601, 432)
 [node name="DoorController3" type="Node" parent="."]
 script = ExtResource("6_mn3hr")
 target_path = NodePath("../Stonedoor")
-lever_paths = Array[NodePath]([NodePath("../Lever3")])
+activator_paths = Array[NodePath]([NodePath("../Lever3")])
+
+[node name="Pressureplate" parent="." instance=ExtResource("9_qx6ma")]
+position = Vector2(835, 434)
+
+[node name="WoodenCrate" parent="." instance=ExtResource("10_nsxvv")]
+position = Vector2(786, 438)
+
+[node name="Stonedoor2" parent="." instance=ExtResource("8_6mri8")]
+position = Vector2(927, 433)
+
+[node name="DoorController4" type="Node" parent="."]
+script = ExtResource("6_mn3hr")
+target_path = NodePath("../Stonedoor2")
+activator_paths = Array[NodePath]([NodePath("../Pressureplate")])
+
+[node name="DoorWithKey" parent="." instance=ExtResource("5_qnj1t")]
+position = Vector2(1121, 433)
+required_key_id = "123"
+
+[node name="Key" parent="." instance=ExtResource("11_x3c5n")]
+position = Vector2(1025, 435)
+key_id = "123"
+
+[node name="DoorController5" type="Node" parent="."]
+script = ExtResource("6_mn3hr")
+target_path = NodePath("../DoorWithKey")
+activator_paths = Array[NodePath]([NodePath("../Key")])
