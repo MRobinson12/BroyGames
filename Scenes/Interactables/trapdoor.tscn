@@ -34,7 +34,6 @@ animations = [{
 size = Vector2(32, 7)
 
 [node name="Trapdoor" type="StaticBody2D"]
-collision_layer = 16
 collision_mask = 15
 script = ExtResource("1_c1t8s")
 
