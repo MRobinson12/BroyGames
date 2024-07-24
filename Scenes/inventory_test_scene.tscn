@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
 [ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_mky20"]
 [ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="6_b05e7"]
-[ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/Pickups/test_item.tscn" id="6_iq4cb"]
+[ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/item_pickup.tscn" id="6_iq4cb"]
 [ext_resource type="PackedScene" uid="uid://dwgdycnwfhw10" path="res://Scenes/home_menu.tscn" id="6_ykic4"]
 [ext_resource type="Script" path="res://Scripts/move_inv.gd" id="7_55gxv"]
 [ext_resource type="Resource" uid="uid://cntjkbdakb4ob" path="res://Data/Items/blattashroom.tres" id="7_y21uw"]
@@ -103,6 +103,7 @@ visible = false
 
 [node name="TestPickup" parent="." instance=ExtResource("6_iq4cb")]
 position = Vector2(-55, -7)
+shine = true
 
 [connection signal="pressed" from="UI/ToggleInventory" to="UI" method="_on_toggle_inventory_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
