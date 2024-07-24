@@ -11,6 +11,7 @@ func _play_song(music: AudioStream, volume = 0.0):
 	play()
 		
 func play_song_chosen(song):
+	var nowplaying = AudioStreamPlayer.new()
 	_play_song(song)
 
 func stop_current():

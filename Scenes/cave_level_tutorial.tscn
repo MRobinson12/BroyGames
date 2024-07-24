@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=13 format=4 uid="uid://bo8cm1qv601ii"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_lhoy1"]
+[ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_pchjb"]
 [ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="2_l1jp0"]
 [ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="3_br8qu"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="4_cpf4q"]
@@ -103,6 +104,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_awtpg")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_pchjb")
 
 [node name="ShaderLayer" parent="." instance=ExtResource("7_724ik")]
 

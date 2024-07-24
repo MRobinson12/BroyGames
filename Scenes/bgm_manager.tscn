@@ -4,4 +4,5 @@
 
 [node name="BgmManager" type="AudioStreamPlayer"]
 autoplay = true
+mix_target = 1
 script = ExtResource("1_5oc3x")
