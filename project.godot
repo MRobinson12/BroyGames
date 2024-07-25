@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 GlobalData="*res://Scripts/GlobalData.gd"
 BgmManager="*res://Scenes/bgm_manager.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [input]
 
 ui_left={
