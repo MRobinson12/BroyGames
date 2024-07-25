@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w53vqjv1f5ta"
+path="res://.godot/imported/Action in the Caverns (Battle Cavern).mp3-7a46e2fb8d478a2fae423ef403937044.mp3str"
+
+[deps]
+
+source_file="res://Audio/OST/Action in the Caverns (Battle Cavern).mp3"
+dest_files=["res://.godot/imported/Action in the Caverns (Battle Cavern).mp3-7a46e2fb8d478a2fae423ef403937044.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

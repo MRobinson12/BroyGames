@@ -1,5 +1,7 @@
 extends Node
 
+const bgm = preload("res://Audio/OST/Down the Hatch (Main Theme).mp3")
+
 func _ready():
 	$VBoxContainer/Return.grab_focus()
 
