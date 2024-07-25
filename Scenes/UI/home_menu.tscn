@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwgdycnwfhw10"]
 
-[ext_resource type="Script" path="res://Scripts/home_menu.gd" id="1_twqwg"]
+[ext_resource type="Script" path="res://Scripts/Scene/home_menu.gd" id="1_twqwg"]
 
 [node name="HomeMenu" type="TabContainer"]
 anchors_preset = 8

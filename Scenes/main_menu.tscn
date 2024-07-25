@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://bpuwmmlu0n5vu"]
 
-[ext_resource type="Script" path="res://Scripts/mainmenu.gd" id="1_6q4mq"]
+[ext_resource type="Script" path="res://Scripts/Scene/mainmenu.gd" id="1_6q4mq"]
 [ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="1_jjmeu"]
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="2_4sscr"]
 
