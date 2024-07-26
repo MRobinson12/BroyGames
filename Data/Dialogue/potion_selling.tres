@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://b30kmgqmlxbv0"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_f7ko2"]
+
+[resource]
+script = ExtResource("1_f7ko2")
+starts = {
+"start": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-540, -260),
+"start_id": "start"
+},
+"1_1": {
+"dialogue": "Gimme potion m8",
+"offset": Vector2(-220, -260),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Wizard"
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(166.1, -196),
+"signalValue": "next_customer"
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = ""
