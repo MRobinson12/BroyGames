@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cedyigl2tu2j2" path="res://Assets/puzzle_crate.png" id="2_iqml6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmg5c"]
+size = Vector2(24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vpe6"]
 atlas = ExtResource("2_iqml6")

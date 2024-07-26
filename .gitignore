@@ -2,3 +2,4 @@
 .godot/
 android/
 # Test Comment
+*.import

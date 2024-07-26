@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_fbts3")
-key_id = "123"
+key_id = "01"
 key_colour = Color(0, 0, 0, 1)
 id = "key_item"
 name = "Key"

@@ -121,7 +121,6 @@ position = Vector2(371, 400)
 position = Vector2(0, -4)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("5_e063g")]
-visible = false
 
 [node name="Trapdoor" parent="." instance=ExtResource("5_wctkw")]
 position = Vector2(688, 439)

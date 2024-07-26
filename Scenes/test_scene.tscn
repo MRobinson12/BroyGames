@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://d1jcp6xo13urh"]
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_gk1ap"]
-[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="2_oqfku"]
-[ext_resource type="PackedScene" uid="uid://4lvx8ukrf6cq" path="res://Scenes/shader_layer.tscn" id="5_o02ya"]
+[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="2_oqfku"]
+[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="5_o02ya"]
 [ext_resource type="Texture2D" uid="uid://c5jwpwlkhstmg" path="res://Assets/TestMap.png" id="5_renpk"]
 [ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/Interactables/wooden_crate.tscn" id="8_81d5o"]
 

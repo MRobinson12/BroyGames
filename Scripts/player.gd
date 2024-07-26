@@ -4,12 +4,14 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 const RUN_ROTATION = 0.00
 const ROTATION_SPEED = 10.0
+const CLIMB_SPEED = 75.0
 const LIGHT_MASK_MULTIPLIER = 0.9999
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var selected_object: RigidBody2D = null
 var light_mask_current = 1
+var on_ladder = false
+var is_climbing = false
 
 enum State {
 	IDLE,
@@ -17,7 +19,9 @@ enum State {
 	JUMP,
 	LAND,
 	SLICE,
-	THROW
+	THROW,
+	CLIMB,
+	CLIMB_IDLE
 }
 
 var current_state = State.IDLE
@@ -40,78 +44,112 @@ func pickup_item():
 		if nearest_item != null:
 			GlobalData.player_inventory.add_item(nearest_item.item)
 			nearest_item.queue_free()
-			
-	
+
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
 	if Input.is_action_pressed("ui_leftclick"):
-		_lift_object(mouse_position)	
-	if current_state != State.JUMP:
-		if Input.is_action_pressed("ui_right") and is_on_floor():
-			_handle_run(delta, false)
-			if sign($Marker2D.position.x) == -1:
-				$Marker2D.position.x *= -1
-		elif Input.is_action_pressed("ui_left") and is_on_floor():
-			_handle_run(delta, true)
-			if sign($Marker2D.position.x) == 1:
-				$Marker2D.position.x *= -1
-		else:
-			$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, 0, delta * ROTATION_SPEED)
-			if $AnimatedSprite2D.animation != "idle" and $AnimatedSprite2D.animation != "jump" and $AnimatedSprite2D.animation != "land":
-				$AnimatedSprite2D.play("idle")
-				current_state = State.IDLE
-				_stop_running_sound()
-				
-		if $AnimatedSprite2D.is_playing() == false and is_on_floor():
-			$AnimatedSprite2D.play("idle")
-			current_state = State.IDLE
+		_lift_object(mouse_position)
+
+	if on_ladder:
+		_handle_climbing(delta)
+	else:
+		_handle_normal_movement(delta)
+	
+	move_and_slide()
+	_update_animation_state()
+	
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 		
-		if Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left"):
-			_stop_running()
-		
-	# Add the gravity.
+	if Input.is_action_just_pressed("interact"):
+		pickup_item()
+
+func _handle_climbing(delta):
+	var input_vector = Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	)
+
+	if input_vector != Vector2.ZERO:
+		current_state = State.CLIMB
+		$AnimatedSprite2D.play("climb")
+		velocity = input_vector * CLIMB_SPEED
+		is_climbing = true
+		_play_climbing_sound()
+	else:
+		velocity = Vector2.ZERO
+		current_state = State.CLIMB_IDLE
+		$AnimatedSprite2D.stop()
+		is_climbing = false
+		_stop_climbing_sound()
+
+	if Input.is_action_just_pressed("ui_accept"):
+		_jump()
+
+func _handle_normal_movement(delta):
 	if not is_on_floor():
+		if current_state != State.JUMP and on_ladder == false:
+			$AnimatedSprite2D.play("jump")
+			current_state = State.JUMP
 		velocity.y += gravity * delta
-		
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		$AnimatedSprite2D.play("jump")
-		$JumpSound.play()
 		_stop_running_sound()
-		current_state = State.JUMP
+
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if is_on_floor():
+			_handle_run(delta, direction < 0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_on_floor():
+			_stop_running()
 
-	move_and_slide()
-	
-	# Check if on the floor to reset state
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		_jump()
+
+func _jump():
+	velocity.y = JUMP_VELOCITY
+	$AnimatedSprite2D.play("jump")
+	$JumpSound.play()
+	_stop_running_sound()
+	_stop_climbing_sound()
+	current_state = State.JUMP
+	on_ladder = false
+	is_climbing = false
+
+func _update_animation_state():
 	if is_on_floor():
 		if current_state == State.JUMP:
 			$AnimatedSprite2D.play("land")
 			current_state = State.LAND
 		elif current_state == State.LAND and not $AnimatedSprite2D.is_playing():
 			current_state = State.IDLE
-			
-	if Input.is_action_pressed("ui_cancel"):
-			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-			
-	if Input.is_action_just_pressed("interact"):
-		pickup_item()
+			$AnimatedSprite2D.play("idle")
+
+func _on_ladder_area_entered(_area):
+	on_ladder = true
+	_stop_running_sound()
+
+func _on_ladder_area_exited(_area):
+	on_ladder = false
+	is_climbing = false
+	_stop_climbing_sound()
+	if not is_on_floor():
+		current_state = State.JUMP
+	else:
+		current_state = State.IDLE
 
 func _handle_run(delta, flip_h):
-	$AnimatedSprite2D.play("run")
-	$AnimatedSprite2D.flip_h = flip_h
-	var target_rotation = RUN_ROTATION if not flip_h else -RUN_ROTATION
-	$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, target_rotation, delta * ROTATION_SPEED)
-	current_state = State.RUN
-	_play_running_sound()
+	if not on_ladder:
+		$AnimatedSprite2D.play("run")
+		$AnimatedSprite2D.flip_h = flip_h
+		var target_rotation = RUN_ROTATION if not flip_h else -RUN_ROTATION
+		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, target_rotation, delta * ROTATION_SPEED)
+		current_state = State.RUN
+		_play_running_sound()
 
 func _play_running_sound():
-	if not $RunningSound.is_playing():
+	if not on_ladder and not $RunningSound.playing:
 		$RunningSound.play()
 
 func _stop_running():
@@ -120,12 +158,19 @@ func _stop_running():
 		_stop_running_sound()
 
 func _stop_running_sound():
-	if $RunningSound.is_playing():
+	if $RunningSound.playing:
 		$RunningSound.stop()
-		
+
+func _play_climbing_sound():
+	if not $ClimbingSound.playing:
+		$ClimbingSound.play()
+
+func _stop_climbing_sound():
+	if $ClimbingSound.playing:
+		$ClimbingSound.stop()
+
 func _on_landing_animation_finished():
 	if current_state == State.LAND:
-		$AnimatedSprite2D.disconnect("animation_finished", Callable(self, "_on_landing_animation_finished"))
 		if Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
 			current_state = State.RUN
 		else:
