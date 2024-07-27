@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dwcq0evy26w28"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=3 format=3 uid="uid://y8octg4adejs"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_lcs33"]
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_yggaw"]
+[ext_resource type="Texture2D" uid="uid://s51t4iswgak6" path="res://Assets/Stalwart_potion_frame.png" id="1_nw46n"]
+[ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_eruxr"]
 
 [resource]
-script = ExtResource("1_lcs33")
+script = ExtResource("2_eruxr")
+frame_texture = ExtResource("1_nw46n")
 id = "lesser_protection_potion"
 name = "Lesser Protection Potion"
-icon = ExtResource("1_yggaw")
 description = "Always wear protection"

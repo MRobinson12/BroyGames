@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bfojtpnd24jbi"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://mtxavbowtec4"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_4nbi6"]
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_8w6e5"]
+[ext_resource type="Texture2D" uid="uid://bab581ltwbxbh" path="res://Assets/bouncing_potion_frame.png" id="1_tewha"]
+[ext_resource type="Texture2D" uid="uid://3ixcniyka7sr" path="res://Assets/bouncing_potion_icon.png" id="2_0g4j5"]
+[ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_axv3i"]
 
 [resource]
-script = ExtResource("1_4nbi6")
+script = ExtResource("2_axv3i")
+frame_texture = ExtResource("1_tewha")
 id = "lesser_bouncing_potion"
 name = "Lesser Bouncing Potion"
-icon = ExtResource("1_8w6e5")
+icon = ExtResource("2_0g4j5")
 description = "Boing boing boing"

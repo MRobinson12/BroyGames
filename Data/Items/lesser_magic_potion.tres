@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://pcys2cdx13rf"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=3 format=3 uid="uid://d06yj26axir04"]
 
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_3i5m5"]
-[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_qjado"]
+[ext_resource type="Texture2D" uid="uid://ddw47ovy0sfrw" path="res://Assets/magic_potion_frame.png" id="1_338qg"]
+[ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_gjg0h"]
 
 [resource]
-script = ExtResource("1_qjado")
+script = ExtResource("2_gjg0h")
+frame_texture = ExtResource("1_338qg")
 id = "lesser_magic_potion"
 name = "Lesser Magic Potion"
-icon = ExtResource("1_3i5m5")
 description = "Some magic shit"

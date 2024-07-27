@@ -1,3 +1,236 @@
-[gd_scene format=3 uid="uid://d0oxhy6bqc4tn"]
+[gd_scene load_steps=33 format=3 uid="uid://d0oxhy6bqc4tn"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_cd4gh"]
+[ext_resource type="PackedScene" uid="uid://dwgdycnwfhw10" path="res://Scenes/UI/home_menu.tscn" id="2_ye0aa"]
+[ext_resource type="PackedScene" uid="uid://dh7dece7uaj7c" path="res://Scenes/UI/crafting_menu.tscn" id="3_dryjk"]
+[ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_1xgd4"]
+[ext_resource type="Texture2D" uid="uid://ciage5814qui7" path="res://Assets/wizardidle.png" id="4_q2egp"]
+[ext_resource type="Texture2D" uid="uid://ctwmfa8nnb848" path="res://Assets/wizardjump.png" id="5_3i8d0"]
+[ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_ai3n5"]
+[ext_resource type="Texture2D" uid="uid://dy1yhb73m5mc8" path="res://Assets/wizardrun.png" id="6_k8vap"]
+[ext_resource type="Resource" path="res://Data/Items/greendle.tres" id="6_pid5h"]
+[ext_resource type="Resource" path="res://Data/Items/blattashroom.tres" id="7_7my3p"]
+[ext_resource type="Texture2D" uid="uid://c1k0w110s0wka" path="res://Assets/potion_frame_blank.png" id="7_v1lnr"]
+[ext_resource type="Resource" path="res://Data/Items/anpel.tres" id="8_y45fn"]
+[ext_resource type="Resource" path="res://Data/Items/gloomberry.tres" id="9_i633h"]
+[ext_resource type="Resource" path="res://Data/Items/slate_slime.tres" id="10_vx6oo"]
+[ext_resource type="Resource" path="res://Data/Items/lionsbrane.tres" id="11_1w7xp"]
+[ext_resource type="Resource" path="res://Data/Items/glinting_glassrock.tres" id="12_ht7km"]
+[ext_resource type="Resource" path="res://Data/Items/stal_wart.tres" id="13_iy7va"]
+[ext_resource type="Script" path="res://Scripts/move_inv.gd" id="14_7adyi"]
+[ext_resource type="Texture2D" uid="uid://c4qefpxwt7qgu" path="res://Assets/potion_shop.png" id="15_ttdwj"]
+[ext_resource type="Texture2D" uid="uid://blrjto8qyx6a8" path="res://Assets/cauldron.png" id="16_hxtu8"]
+[ext_resource type="Texture2D" uid="uid://cdt0dogsis5d6" path="res://Assets/shop_counter.png" id="20_sh3ep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugqo4"]
+atlas = ExtResource("16_hxtu8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3cdc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugqo4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0n4l"]
+atlas = ExtResource("4_q2egp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7wpd"]
+atlas = ExtResource("4_q2egp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egsfx"]
+atlas = ExtResource("5_3i8d0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bs12"]
+atlas = ExtResource("5_3i8d0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qsc1"]
+atlas = ExtResource("5_3i8d0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcnq6"]
+atlas = ExtResource("5_3i8d0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixem8"]
+atlas = ExtResource("6_k8vap")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w64j"]
+atlas = ExtResource("6_k8vap")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llch3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0n4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7wpd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egsfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bs12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qsc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcnq6")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcnq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qsc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bs12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egsfx")
+}],
+"loop": false,
+"name": &"land",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixem8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w64j")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_cd4gh")
+
+[node name="HomeMenu" parent="UI" instance=ExtResource("2_ye0aa")]
+unique_name_in_owner = true
+offset_left = -306.0
+offset_top = -43.0
+offset_right = 314.0
+offset_bottom = 341.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CraftingMenu" parent="UI" instance=ExtResource("3_dryjk")]
+unique_name_in_owner = true
+visible = false
+
+[node name="OpenShopButton" type="Button" parent="UI"]
+offset_left = 1172.0
+offset_top = 577.0
+offset_right = 1265.0
+offset_bottom = 608.0
+text = "Open Shop"
+
+[node name="ToggleInventory" type="Button" parent="UI"]
+offset_left = 1031.0
+offset_top = 510.0
+offset_right = 1114.0
+offset_bottom = 541.0
+focus_mode = 0
+text = "Inventory"
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryDisplay" parent="UI" instance=ExtResource("4_1xgd4")]
+unique_name_in_owner = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AddItem" type="Button" parent="UI"]
+offset_left = 1014.0
+offset_top = 172.0
+offset_right = 1129.0
+offset_bottom = 203.0
+focus_mode = 0
+text = "Add Test Item"
+script = ExtResource("5_ai3n5")
+greendle = ExtResource("6_pid5h")
+blattashroom = ExtResource("7_7my3p")
+anpel = ExtResource("8_y45fn")
+gloomberry = ExtResource("9_i633h")
+slate_slime = ExtResource("10_vx6oo")
+lionsbrane = ExtResource("11_1w7xp")
+glinting_glassrock = ExtResource("12_ht7km")
+stal_wart = ExtResource("13_iy7va")
+metadata/_edit_use_anchors_ = true
+
+[node name="MoveInv" type="Button" parent="UI"]
+offset_left = 1005.0
+offset_top = 576.0
+offset_right = 1135.0
+offset_bottom = 607.0
+focus_mode = 0
+text = "Move Inventory"
+script = ExtResource("14_7adyi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tower Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(2.813, 2.813)
+texture = ExtResource("15_ttdwj")
+
+[node name="Cauldron" type="AnimatedSprite2D" parent="."]
+position = Vector2(559, 476)
+scale = Vector2(2.813, 2.813)
+sprite_frames = SubResource("SpriteFrames_t3cdc")
+
+[node name="Character" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(646, 468)
+scale = Vector2(2.813, 2.813)
+sprite_frames = SubResource("SpriteFrames_llch3")
+animation = &"idle"
+frame_progress = 0.533837
+
+[node name="Counter" type="Sprite2D" parent="."]
+position = Vector2(639, 495)
+scale = Vector2(2.813, 2.813)
+texture = ExtResource("20_sh3ep")
+
+[node name="PotionFrame1" type="Sprite2D" parent="."]
+position = Vector2(550, 225)
+scale = Vector2(2.813, 2.813)
+texture = ExtResource("7_v1lnr")
+
+[node name="PotionFrame2" type="Sprite2D" parent="."]
+position = Vector2(640, 225)
+scale = Vector2(2.813, 2.813)
+texture = ExtResource("7_v1lnr")
+
+[node name="PotionFrame3" type="Sprite2D" parent="."]
+position = Vector2(730, 225)
+scale = Vector2(2.813, 2.813)
+texture = ExtResource("7_v1lnr")
+
+[connection signal="pressed" from="UI/OpenShopButton" to="UI" method="_on_open_shop_button_pressed"]
+[connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
+[connection signal="pressed" from="UI/MoveInv" to="UI/MoveInv" method="_on_pressed"]
