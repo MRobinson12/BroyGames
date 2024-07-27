@@ -160,11 +160,8 @@ script = ExtResource("1_cd4gh")
 
 [node name="HomeMenu" parent="UI" instance=ExtResource("2_ye0aa")]
 unique_name_in_owner = true
-offset_left = -306.0
-offset_top = -43.0
-offset_right = 314.0
-offset_bottom = 341.0
-metadata/_edit_use_anchors_ = true
+offset_left = -310.0
+offset_right = 310.0
 
 [node name="CraftingMenu" parent="UI" instance=ExtResource("3_dryjk")]
 unique_name_in_owner = true
@@ -225,6 +222,14 @@ focus_mode = 0
 text = "Move Inventory"
 script = ExtResource("14_7adyi")
 metadata/_edit_use_anchors_ = true
+
+[node name="NoCraft" type="Button" parent="UI"]
+visible = false
+offset_left = 579.0
+offset_top = 578.0
+offset_right = 731.0
+offset_bottom = 609.0
+text = "No crafts available"
 
 [node name="Tower Background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
@@ -293,5 +298,6 @@ position = Vector2(1556, 439)
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
 [connection signal="dialogue_signal" from="UI/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 [connection signal="pressed" from="UI/MoveInv" to="UI/MoveInv" method="_on_pressed"]
+[connection signal="pressed" from="UI/NoCraft" to="." method="_on_no_craft_pressed"]
 [connection signal="body_entered" from="DialogueArea" to="." method="_on_dialogue_area_body_entered"]
 [connection signal="body_entered" from="DespawnArea" to="." method="_on_despawn_area_body_entered"]

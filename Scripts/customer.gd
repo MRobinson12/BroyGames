@@ -3,7 +3,7 @@ class_name Customer
 
 var wanted_potion : Item
 
-const speed = 100.0
+const speed = 200.0
 var direction = 0
 
 

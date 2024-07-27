@@ -36,10 +36,15 @@ func next_customer():
 		
 func potion_crafted(potion : Item):
 	%CraftingMenu.hide()
+	$UI/NoCraft.hide()
 	if potion == current_customer.wanted_potion:
 		dialogue_box.start('correct')
 	else:
 		dialogue_box.start('incorrect')
+		
+func show_craft():
+	crafting_menu.show()
+	$UI/NoCraft.show()
 
 func _on_dialogue_area_body_entered(body: Node2D) -> void:
 	if body is Customer:
@@ -53,4 +58,7 @@ func _on_despawn_area_body_entered(body: Node2D) -> void:
 func _on_dialogue_box_dialogue_signal(value: String) -> void:
 	match(value):
 		'next_customer': next_customer()
-		'craft' : crafting_menu.show()
+		'craft' : show_craft()
+
+func _on_no_craft_pressed() -> void:
+	potion_crafted(null)
