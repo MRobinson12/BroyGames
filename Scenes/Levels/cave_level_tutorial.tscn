@@ -1,22 +1,22 @@
 [gd_scene load_steps=20 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_lhoy1"]
-[ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="2_l1jp0"]
-[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/Interactables/wooden_crate.tscn" id="3_br8qu"]
-[ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="4_cpf4q"]
-[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_esfxn"]
-[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="4_lnk5t"]
-[ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="5_whfb8"]
-[ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="6_c117k"]
-[ext_resource type="PackedScene" uid="uid://2yi53ock65go" path="res://Scenes/Interactables/pressureplate.tscn" id="7_yexgy"]
-[ext_resource type="PackedScene" uid="uid://cm8kn8up46shg" path="res://Scenes/Interactables/door.tscn" id="8_0h8gd"]
-[ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="9_e1tik"]
-[ext_resource type="PackedScene" path="res://Scenes/item_pickup.tscn" id="11_k06x0"]
-[ext_resource type="Resource" uid="uid://bjrixtppiu03h" path="res://Data/Items/key_item.tres" id="12_cf24n"]
-[ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="13_ka0ik"]
+[ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
+[ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
+[ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
+[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
+[ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
+[ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="8_hxi5o"]
+[ext_resource type="PackedScene" uid="uid://2yi53ock65go" path="res://Scenes/Interactables/pressureplate.tscn" id="9_vxldi"]
+[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/Interactables/wooden_crate.tscn" id="10_ofed1"]
+[ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="11_k04to"]
+[ext_resource type="PackedScene" uid="uid://cm8kn8up46shg" path="res://Scenes/Interactables/door.tscn" id="12_gte3w"]
+[ext_resource type="PackedScene" path="res://Scenes/item_pickup.tscn" id="13_r5vo4"]
+[ext_resource type="Resource" uid="uid://bjrixtppiu03h" path="res://Data/Items/key_item.tres" id="14_h5qaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5akr"]
-texture = ExtResource("1_lhoy1")
+texture = ExtResource("1_h0ljc")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -92,7 +92,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ffkql"]
 resource_name = "Ladder"
-scenes/1/scene = ExtResource("13_ka0ik")
+scenes/1/scene = ExtResource("2_bj58i")
 
 [sub_resource type="TileSet" id="TileSet_obw2j"]
 tile_size = Vector2i(32, 32)
@@ -101,7 +101,7 @@ sources/0 = SubResource("TileSetAtlasSource_h5akr")
 sources/2 = SubResource("TileSetScenesCollectionSource_ffkql")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awtpg"]
-texture = ExtResource("2_l1jp0")
+texture = ExtResource("3_rh23y")
 texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 3:0/0 = 0
@@ -134,36 +134,37 @@ zoom = Vector2(5, 5)
 process_callback = 0
 position_smoothing_enabled = true
 
-[node name="PlayerLight" parent="." instance=ExtResource("4_esfxn")]
+[node name="PlayerLight" parent="." instance=ExtResource("4_ko0i4")]
 position = Vector2(0, -4)
 
-[node name="Player" parent="." instance=ExtResource("4_cpf4q")]
+[node name="Player" parent="." instance=ExtResource("5_mea2j")]
 position = Vector2(62, -17)
 
-[node name="ShaderLayer" parent="." instance=ExtResource("4_lnk5t")]
+[node name="ShaderLayer" parent="." instance=ExtResource("6_ykjf5")]
+visible = false
 
-[node name="Cat" parent="." instance=ExtResource("5_whfb8")]
+[node name="Cat" parent="." instance=ExtResource("7_8hkwl")]
 position = Vector2(131, -11)
 
-[node name="Trapdoor" parent="." instance=ExtResource("6_c117k")]
+[node name="Trapdoor" parent="." instance=ExtResource("8_hxi5o")]
 position = Vector2(304, -9)
 
-[node name="Pressureplate" parent="." instance=ExtResource("7_yexgy")]
+[node name="Pressureplate" parent="." instance=ExtResource("9_vxldi")]
 position = Vector2(433, -16)
 
-[node name="WoodenCrate" parent="." instance=ExtResource("3_br8qu")]
+[node name="WoodenCrate" parent="." instance=ExtResource("10_ofed1")]
 position = Vector2(98, -13)
 
 [node name="DoorController1" type="Node" parent="."]
-script = ExtResource("9_e1tik")
+script = ExtResource("11_k04to")
 target_path = NodePath("../Trapdoor")
 activator_paths = Array[NodePath]([NodePath("../Pressureplate")])
 
-[node name="LockedDoor" parent="." instance=ExtResource("8_0h8gd")]
+[node name="LockedDoor" parent="." instance=ExtResource("12_gte3w")]
 position = Vector2(498, -16)
 required_key_id = "01"
 
-[node name="DoorKey" parent="." instance=ExtResource("11_k06x0")]
+[node name="DoorKey" parent="." instance=ExtResource("13_r5vo4")]
 position = Vector2(626, 117)
 scale = Vector2(2.5, 2.5)
-item = ExtResource("12_cf24n")
+item = ExtResource("14_h5qaw")
