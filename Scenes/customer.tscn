@@ -116,4 +116,6 @@ shape = SubResource("RectangleShape2D_j8chf")
 texture_filter = 1
 scale = Vector2(1, 2)
 sprite_frames = SubResource("SpriteFrames_3c0sm")
-animation = &"idle"
+animation = &"run"
+frame = 1
+frame_progress = 0.489141

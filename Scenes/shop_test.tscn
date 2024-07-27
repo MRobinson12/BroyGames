@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cbgdxrplsyfe7"]
+[gd_scene load_steps=21 format=4 uid="uid://cbgdxrplsyfe7"]
 
 [ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_crb3f"]
 [ext_resource type="Script" path="res://Scripts/shop_test.gd" id="1_w0ihx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://b30kmgqmlxbv0" path="res://Data/Dialogue/potion_selling.tres" id="9_uj1ur"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="10_cuduw"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="11_qf24y"]
+[ext_resource type="PackedScene" uid="uid://dh7dece7uaj7c" path="res://Scenes/UI/crafting_menu.tscn" id="13_cdvwi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_itxrb"]
 texture = ExtResource("1_crb3f")
@@ -108,7 +109,7 @@ script = ExtResource("11_qf24y")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pbjlj"]
 size = Vector2(20, 120)
 
-[node name="Node2D" type="Node2D"]
+[node name="Shop" type="Node2D"]
 script = ExtResource("1_w0ihx")
 available_potions = Array[ExtResource("2_ms1n7")]([ExtResource("3_7jywx"), ExtResource("4_iksas"), ExtResource("5_yqheb")])
 
@@ -149,6 +150,15 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DespawnArea"]
 shape = SubResource("RectangleShape2D_pbjlj")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CraftingMenu" parent="UI" instance=ExtResource("13_cdvwi")]
+unique_name_in_owner = true
+offset_left = -930.0
+offset_top = -490.0
+offset_right = -310.0
+offset_bottom = -190.0
 
 [connection signal="body_entered" from="DialogueArea" to="." method="_on_dialogue_area_body_entered"]
 [connection signal="dialogue_signal" from="DialogueBox" to="." method="_on_dialogue_signal"]
