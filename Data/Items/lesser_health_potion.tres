@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dlb0s175146xl"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=3 format=3 uid="uid://bnsn23ptqxr0q"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_d8dpu"]
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_go52q"]
+[ext_resource type="Texture2D" uid="uid://cgd3ocgogw1da" path="res://Assets/health_potion_frame.png" id="1_fbbml"]
+[ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_l2mac"]
 
 [resource]
-script = ExtResource("1_d8dpu")
+script = ExtResource("2_l2mac")
+frame_texture = ExtResource("1_fbbml")
 id = "lesser_health_potion"
 name = "Lesser Health Potion"
-icon = ExtResource("1_go52q")
 description = "Heals you"
