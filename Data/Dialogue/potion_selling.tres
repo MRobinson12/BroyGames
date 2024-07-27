@@ -8,14 +8,24 @@ starts = {
 "correct": &"0_4",
 "incorrect": &"0_5",
 "lesser_bouncing_potion": &"0_3",
+"lesser_endurance_potion": &"0_6",
 "lesser_glow_potion": &"0_1",
-"lesser_magic_potion": &"0_2"
+"lesser_health_potion": &"0_7",
+"lesser_lionsmight_potion": &"0_9",
+"lesser_magic_potion": &"0_2",
+"lesser_nightvision_potion": &"0_8",
+"lesser_protection_potion": &"0_10"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
 "offset": Vector2(-540, -260),
 "start_id": "lesser_glow_potion"
+},
+"0_10": {
+"link": &"1_10",
+"offset": Vector2(-540, 2120),
+"start_id": "lesser_protection_potion"
 },
 "0_2": {
 "link": &"1_2",
@@ -37,6 +47,26 @@ nodes = {
 "offset": Vector2(-540, -600),
 "start_id": "incorrect"
 },
+"0_6": {
+"link": &"1_6",
+"offset": Vector2(-540, 760),
+"start_id": "lesser_endurance_potion"
+},
+"0_7": {
+"link": &"1_7",
+"offset": Vector2(-540, 1100),
+"start_id": "lesser_health_potion"
+},
+"0_8": {
+"link": &"1_8",
+"offset": Vector2(-540, 1440),
+"start_id": "lesser_nightvision_potion"
+},
+"0_9": {
+"link": &"1_9",
+"offset": Vector2(-540, 1780),
+"start_id": "lesser_lionsmight_potion"
+},
 "1_1": {
 "dialogue": "Glow potion please",
 "offset": Vector2(-200, -260),
@@ -44,6 +74,19 @@ nodes = {
 0: {
 "condition": {},
 "link": &"3_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Wizard"
+},
+"1_10": {
+"dialogue": "Protection potion please",
+"offset": Vector2(-200, 2120),
+"options": {
+0: {
+"condition": {},
+"link": &"3_10",
 "text": ""
 }
 },
@@ -102,10 +145,67 @@ nodes = {
 "size": Vector2(300, 240),
 "speaker": "Wizard"
 },
+"1_6": {
+"dialogue": "Endurance potion please",
+"offset": Vector2(-200, 760),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Wizard"
+},
+"1_7": {
+"dialogue": "Health potion please",
+"offset": Vector2(-200, 1100),
+"options": {
+0: {
+"condition": {},
+"link": &"3_7",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Wizard"
+},
+"1_8": {
+"dialogue": "Nightvision potion please",
+"offset": Vector2(-200, 1440),
+"options": {
+0: {
+"condition": {},
+"link": &"3_8",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Wizard"
+},
+"1_9": {
+"dialogue": "Lionsmight potion please",
+"offset": Vector2(-200, 1780),
+"options": {
+0: {
+"condition": {},
+"link": &"3_9",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Wizard"
+},
 "3_1": {
 "link": "END",
 "offset": Vector2(280, -940),
 "signalValue": "next_customer"
+},
+"3_10": {
+"link": "END",
+"offset": Vector2(280, 2120),
+"signalValue": "craft"
 },
 "3_2": {
 "link": "END",
@@ -125,6 +225,26 @@ nodes = {
 "3_5": {
 "link": "END",
 "offset": Vector2(280, 420),
+"signalValue": "craft"
+},
+"3_6": {
+"link": "END",
+"offset": Vector2(280, 760),
+"signalValue": "craft"
+},
+"3_7": {
+"link": "END",
+"offset": Vector2(280, 1100),
+"signalValue": "craft"
+},
+"3_8": {
+"link": "END",
+"offset": Vector2(280, 1440),
+"signalValue": "craft"
+},
+"3_9": {
+"link": "END",
+"offset": Vector2(280, 1780),
 "signalValue": "craft"
 }
 }

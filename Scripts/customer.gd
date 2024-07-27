@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Customer
 
-var wanted_potion : CraftRecipe
+var wanted_potion : Item
 
 const speed = 100.0
 var direction = 0

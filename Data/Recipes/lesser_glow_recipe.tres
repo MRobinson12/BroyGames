@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Inventory/craft_ingredient.gd" id="1_u1b2o"]
 [ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="2_ochfp"]
-[ext_resource type="Resource" uid="uid://bgmn1omhijeu0" path="res://Data/Items/lesser_glow_potion.tres" id="3_0rpop"]
+[ext_resource type="Resource" uid="uid://cg1qt2kjnx1cm" path="res://Data/Items/lesser_glow_potion.tres" id="3_0rpop"]
 [ext_resource type="Script" path="res://Scripts/Inventory/craft_recipe.gd" id="4_bkt6l"]
 
 [sub_resource type="Resource" id="Resource_tyh35"]
