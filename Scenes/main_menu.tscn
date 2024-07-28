@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=4 uid="uid://bpuwmmlu0n5vu"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/mainmenu.gd" id="1_6q4mq"]
-[ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="1_jjmeu"]
-[ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="2_4sscr"]
+[ext_resource type="Texture2D" uid="uid://cd8quadrlk7of" path="res://Assets/caverntilemapbackground.png" id="1_jjmeu"]
+[ext_resource type="Texture2D" uid="uid://c2md38avli2d6" path="res://Assets/caverntileset.png" id="2_4sscr"]
 [ext_resource type="AudioStream" uid="uid://b2kop3cm1f11c" path="res://Audio/OST/Down the Hatch (Main Theme).mp3" id="4_wxg2m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpsg2"]
