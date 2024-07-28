@@ -3,6 +3,7 @@ extends Node2D
 var customer_scene = preload("res://Scenes/customer.tscn")
 @onready var dialogue_box = %DialogueBox
 @onready var crafting_menu = %CraftingMenu
+@onready var home_menu = %HomeMenu
 var crafted_potion : Item
 
 var available_potions  : Array[CraftRecipe]
@@ -19,6 +20,10 @@ func open_shop(recipes : Array[CraftRecipe]):
 	spawn_customers()
 	next_customer()
 
+func close_shop():
+	home_menu.disable_selection()
+	home_menu.show()
+
 func spawn_customers():
 	for i in range(customer_amount):
 		var new_customer : Customer = customer_scene.instantiate()
@@ -33,12 +38,15 @@ func next_customer():
 		current_customer = customers[0]
 		customers.remove_at(0)
 		current_customer.direction = -1
+	else:
+		close_shop()
 		
 func potion_crafted(potion : Item):
 	%CraftingMenu.hide()
 	$UI/NoCraft.hide()
 	if potion == current_customer.wanted_potion:
 		dialogue_box.start('correct')
+		GlobalData.gold += 10
 	else:
 		dialogue_box.start('incorrect')
 		

@@ -231,6 +231,13 @@ offset_right = 731.0
 offset_bottom = 609.0
 text = "No crafts available"
 
+[node name="GoldLabel" type="Label" parent="UI"]
+offset_left = 1195.0
+offset_top = 21.0
+offset_right = 1249.0
+offset_bottom = 44.0
+text = "0"
+
 [node name="Tower Background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 scale = Vector2(2.813, 2.813)
@@ -276,7 +283,7 @@ position = Vector2(925, 550)
 shape = SubResource("RectangleShape2D_bx76x")
 
 [node name="DialogueArea" type="Area2D" parent="."]
-position = Vector2(676, 480)
+position = Vector2(685, 480)
 collision_layer = 32
 collision_mask = 32
 

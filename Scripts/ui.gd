@@ -4,6 +4,7 @@ signal open_shop
 
 @onready var home_menu  = %HomeMenu
 @onready var crafting_menu = %CraftingMenu
+@onready var gold_label = $GoldLabel
 var node_2d: Node2D
 var potion_frames = []
 
@@ -12,6 +13,9 @@ func _ready():
 	var character = node_2d.get_node("Character")
 	character.play("idle")
 	setup_potion_frames()
+	
+func _process(_delta):
+	gold_label.text = str(GlobalData.gold)
 
 func setup_potion_frames():
 	potion_frames = [
@@ -46,9 +50,10 @@ func update_selected_recipes_display():
 			potion_frames[i].texture = texture
 
 func transition_to_shop_state():
-	$HomeMenu.hide()
+	home_menu.hide()
 	$InventoryDisplay.hide()
 	$MoveInv.hide()
 	$AddItem.hide()
 	$OpenShopButton.hide()
-	open_shop.emit(%HomeMenu.selected_recipes)
+	$OpenShopButton.disabled = true
+	open_shop.emit(home_menu.selected_recipes)
