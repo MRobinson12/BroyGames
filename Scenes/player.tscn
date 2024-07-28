@@ -1,11 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://bfl4mpbg12kf7"]
+[gd_scene load_steps=25 format=3 uid="uid://bfl4mpbg12kf7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fngfp"]
-[ext_resource type="Texture2D" uid="uid://ciage5814qui7" path="res://Assets/wizardidle.png" id="2_8ywdc"]
-[ext_resource type="Texture2D" uid="uid://ctwmfa8nnb848" path="res://Assets/wizardjump.png" id="3_36vxw"]
-[ext_resource type="Texture2D" uid="uid://dy1yhb73m5mc8" path="res://Assets/wizardrun.png" id="4_5s0fb"]
+[ext_resource type="Texture2D" uid="uid://c3qj3dccgfs1v" path="res://Assets/wizardidle.png" id="2_8ywdc"]
+[ext_resource type="Texture2D" uid="uid://b81m8f22dvvje" path="res://Assets/wizardjump.png" id="3_36vxw"]
+[ext_resource type="Texture2D" uid="uid://btsmsnwu1hwv5" path="res://Assets/wizard_static_telekinesis.png" id="3_uojbb"]
+[ext_resource type="Texture2D" uid="uid://dbtcxm8voixvo" path="res://Assets/wizardrun.png" id="4_5s0fb"]
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_ykm0p"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_hlbgl"]
+[ext_resource type="Texture2D" uid="uid://dok5vrcuvl40g" path="res://Assets/wizardrun_telekinesis.png" id="6_q5osi"]
+[ext_resource type="AudioStream" uid="uid://cs2l6yv4oxb5r" path="res://Audio/SFX/telekinesisHum.mp3" id="9_cfor4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0n4l"]
 atlas = ExtResource("2_8ywdc")
@@ -13,6 +16,14 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7wpd"]
 atlas = ExtResource("2_8ywdc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgq7o"]
+atlas = ExtResource("3_uojbb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8sx6"]
+atlas = ExtResource("3_uojbb")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egsfx"]
@@ -39,6 +50,14 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("4_5s0fb")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_43ydn"]
+atlas = ExtResource("6_q5osi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47q11"]
+atlas = ExtResource("6_q5osi")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6un3u"]
 animations = [{
 "frames": [],
@@ -55,6 +74,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgq7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8sx6")
+}],
+"loop": true,
+"name": &"idleTele",
 "speed": 5.0
 }, {
 "frames": [{
@@ -101,6 +131,17 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43ydn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47q11")
+}],
+"loop": true,
+"name": &"runTele",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uir67"]
@@ -118,6 +159,7 @@ script = ExtResource("1_fngfp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6un3u")
+animation = &"idleTele"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3)
@@ -126,13 +168,20 @@ shape = SubResource("RectangleShape2D_uir67")
 [node name="RunningSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 4)
 stream = ExtResource("5_ykm0p")
-volume_db = -1.874
+volume_db = 4.685
 pitch_scale = 2.32
+bus = &"SFX"
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_hlbgl")
-volume_db = -27.171
+volume_db = -18.739
 pitch_scale = 1.75
+bus = &"SFX"
+
+[node name="TelekinesisSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_cfor4")
+volume_db = 6.198
+bus = &"SFX"
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("../../Camera2D")
