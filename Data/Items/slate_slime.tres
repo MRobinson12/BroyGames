@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d1b611ejm1prm"]
 
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_jdhbl"]
+[ext_resource type="Texture2D" uid="uid://cyyq4d78t38ic" path="res://Assets/SPRITES/slate_slime_icon.png" id="1_1ecty"]
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_s8ro7"]
 
 [resource]
 script = ExtResource("1_s8ro7")
 id = "slate_slime"
 name = "Slate Slime"
-icon = ExtResource("1_jdhbl")
+icon = ExtResource("1_1ecty")
 description = "Slate slime exclusively grows on granite. It writhes and runs down the sides of chunks of granite, slowly but surely enveloping the top half of the chunk, but never beyond that point.Some believe it has a level of sentience, but most say it tastes way too good to care."

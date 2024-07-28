@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PotionItem" load_steps=3 format=3 uid="uid://ctgvbx31a5ngf"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://ctgvbx31a5ngf"]
 
-[ext_resource type="Texture2D" uid="uid://cor20mupe2b31" path="res://Assets/night_vision_potion_frame.png" id="1_wdlms"]
+[ext_resource type="Texture2D" uid="uid://bgwpesp1navh3" path="res://Assets/night_vision_potion_frame.png" id="1_wdlms"]
+[ext_resource type="Texture2D" uid="uid://drwnw70g1mkf2" path="res://Assets/night_vision_potion_icon.png" id="2_d3mdo"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_eksxw"]
 
 [resource]
@@ -8,4 +9,5 @@ script = ExtResource("2_eksxw")
 frame_texture = ExtResource("1_wdlms")
 id = "lesser_nightvision_potion"
 name = "Lesser Potion of Night Vision"
+icon = ExtResource("2_d3mdo")
 description = "Make dark bright"

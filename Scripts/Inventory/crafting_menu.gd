@@ -6,6 +6,7 @@ var ingredient_entry = preload("res://Scenes/UI/ingredient_entry.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalData.home_inv_updated.connect(refresh_crafting)
+	
 
 func refresh_crafting():
 	for child in find_child("CraftingList").get_children():

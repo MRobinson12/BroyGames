@@ -24,6 +24,10 @@ GlobalData="*res://Scripts/GlobalData.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg")
+
 [input]
 
 ui_left={
@@ -72,6 +76,7 @@ interact={
 2d_physics/layer_3="Objects"
 2d_physics/layer_4="Lifted Objects"
 2d_physics/layer_5="Interactable"
+2d_physics/layer_6="NPC Triggers"
 
 [rendering]
 
