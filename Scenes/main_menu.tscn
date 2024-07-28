@@ -138,7 +138,7 @@ offset_top = 255.0
 offset_right = 810.0
 offset_bottom = 335.0
 theme_override_font_sizes/font_size = 55
-text = "Down The Hatch"
+text = "down The hatch"
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 texture_filter = 1
