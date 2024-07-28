@@ -5,17 +5,17 @@
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="3_g8dtu"]
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
 [ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_mky20"]
-[ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="6_b05e7"]
+[ext_resource type="Resource" path="res://Data/Items/greendle.tres" id="6_b05e7"]
 [ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/item_pickup.tscn" id="6_iq4cb"]
 [ext_resource type="PackedScene" uid="uid://dwgdycnwfhw10" path="res://Scenes/UI/home_menu.tscn" id="6_ykic4"]
 [ext_resource type="Script" path="res://Scripts/move_inv.gd" id="7_55gxv"]
-[ext_resource type="Resource" uid="uid://cntjkbdakb4ob" path="res://Data/Items/blattashroom.tres" id="7_y21uw"]
-[ext_resource type="Resource" uid="uid://djw6qkrpc7flq" path="res://Data/Items/anpel.tres" id="8_36s2h"]
-[ext_resource type="Resource" uid="uid://ce20uu6x0kta3" path="res://Data/Items/gloomberry.tres" id="9_4bult"]
-[ext_resource type="Resource" uid="uid://d1b611ejm1prm" path="res://Data/Items/slate_slime.tres" id="10_jlhgh"]
-[ext_resource type="Resource" uid="uid://cvpjanhw4bkf0" path="res://Data/Items/lionsbrane.tres" id="11_llsjp"]
-[ext_resource type="Resource" uid="uid://bk5tp2igynusk" path="res://Data/Items/glinting_glassrock.tres" id="12_3a2vp"]
-[ext_resource type="Resource" uid="uid://rrjryjm5i44a" path="res://Data/Items/stal_wart.tres" id="13_y06yf"]
+[ext_resource type="Resource" path="res://Data/Items/blattashroom.tres" id="7_y21uw"]
+[ext_resource type="Resource" path="res://Data/Items/anpel.tres" id="8_36s2h"]
+[ext_resource type="Resource" path="res://Data/Items/gloomberry.tres" id="9_4bult"]
+[ext_resource type="Resource" path="res://Data/Items/slate_slime.tres" id="10_jlhgh"]
+[ext_resource type="Resource" path="res://Data/Items/lionsbrane.tres" id="11_llsjp"]
+[ext_resource type="Resource" path="res://Data/Items/glinting_glassrock.tres" id="12_3a2vp"]
+[ext_resource type="Resource" path="res://Data/Items/stal_wart.tres" id="13_y06yf"]
 [ext_resource type="PackedScene" uid="uid://dh7dece7uaj7c" path="res://Scenes/UI/crafting_menu.tscn" id="16_3en4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esmq6"]
@@ -56,9 +56,11 @@ offset_right = 1114.0
 offset_bottom = 541.0
 focus_mode = 0
 text = "Inventory"
+metadata/_edit_use_anchors_ = true
 
 [node name="InventoryDisplay" parent="UI" instance=ExtResource("4_48blj")]
 unique_name_in_owner = true
+metadata/_edit_use_anchors_ = true
 
 [node name="AddItem" type="Button" parent="UI"]
 offset_left = 1014.0
@@ -76,9 +78,11 @@ slate_slime = ExtResource("10_jlhgh")
 lionsbrane = ExtResource("11_llsjp")
 glinting_glassrock = ExtResource("12_3a2vp")
 stal_wart = ExtResource("13_y06yf")
+metadata/_edit_use_anchors_ = true
 
 [node name="HomeMenu" parent="UI" instance=ExtResource("6_ykic4")]
 unique_name_in_owner = true
+metadata/_edit_use_anchors_ = true
 
 [node name="MoveInv" type="Button" parent="UI"]
 offset_left = 1005.0
@@ -88,6 +92,7 @@ offset_bottom = 607.0
 focus_mode = 0
 text = "Move Inventory"
 script = ExtResource("7_55gxv")
+metadata/_edit_use_anchors_ = true
 
 [node name="ToggleCrafting" type="Button" parent="UI"]
 offset_left = 819.0
@@ -96,6 +101,7 @@ offset_right = 934.0
 offset_bottom = 606.0
 focus_mode = 0
 text = "CraftingMenu"
+metadata/_edit_use_anchors_ = true
 
 [node name="CraftingMenu" parent="UI" instance=ExtResource("16_3en4u")]
 unique_name_in_owner = true

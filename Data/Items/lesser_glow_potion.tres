@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bgmn1omhijeu0"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=3 format=3 uid="uid://cg1qt2kjnx1cm"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_7s3xm"]
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_qqrwg"]
+[ext_resource type="Texture2D" uid="uid://ch5nltqjai0q8" path="res://Assets/glow_potion_frame.png" id="1_eu55c"]
+[ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_n70bc"]
 
 [resource]
-script = ExtResource("1_7s3xm")
+script = ExtResource("2_n70bc")
+frame_texture = ExtResource("1_eu55c")
 id = "lesser_glow_potion"
 name = "Lesser Glow Potion"
-icon = ExtResource("1_qqrwg")
 description = "Makes you glow"
