@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Inventory/craft_recipe.gd" id="2_o773q"]
 [ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="2_rjiso"]
 [ext_resource type="Resource" uid="uid://cvpjanhw4bkf0" path="res://Data/Items/lionsbrane.tres" id="3_21ka6"]
-[ext_resource type="Resource" uid="uid://le7w1rwdct3q" path="res://Data/Items/lesser_lionsmight_potion.tres" id="4_a0ao4"]
+[ext_resource type="Resource" uid="uid://tphs23onta5g" path="res://Data/Items/lesser_lionsmight_potion.tres" id="4_a0ao4"]
 
 [sub_resource type="Resource" id="Resource_ll68n"]
 script = ExtResource("1_5ysfm")

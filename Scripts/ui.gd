@@ -1,8 +1,10 @@
 extends CanvasLayer
 
-@onready var inventory_display : InventoryDisplay = %InventoryDisplay
+signal open_shop
+
 @onready var home_menu  = %HomeMenu
 @onready var crafting_menu = %CraftingMenu
+@onready var gold_label = $GoldLabel
 var node_2d: Node2D
 var potion_frames = []
 
@@ -11,6 +13,9 @@ func _ready():
 	var character = node_2d.get_node("Character")
 	character.play("idle")
 	setup_potion_frames()
+	
+func _process(_delta):
+	gold_label.text = str(GlobalData.gold)
 
 func setup_potion_frames():
 	potion_frames = [
@@ -21,22 +26,6 @@ func setup_potion_frames():
 	# Initialize frames as blank
 	for frame in potion_frames:
 		frame.texture = null
-
-func _on_toggle_inventory_pressed() -> void:
-	if inventory_display.is_visible_in_tree():
-		inventory_display.close()
-	else:
-		inventory_display.open()
-
-
-func _on_toggle_crafting_pressed() -> void:
-	if home_menu.is_visible_in_tree():
-		home_menu.hide()
-		crafting_menu.show()
-		crafting_menu.populate_crafting(home_menu.selected_recipes)
-	else:
-		home_menu.show()
-		crafting_menu.hide()
 
 func _on_open_shop_button_pressed():
 	if check_enabled_recipes():
@@ -61,6 +50,10 @@ func update_selected_recipes_display():
 			potion_frames[i].texture = texture
 
 func transition_to_shop_state():
-	#blah blah blah fade to black or something
-	$HomeMenu.visible = false
-	pass
+	home_menu.hide()
+	$InventoryDisplay.hide()
+	$MoveInv.hide()
+	$AddItem.hide()
+	$OpenShopButton.hide()
+	$OpenShopButton.disabled = true
+	open_shop.emit(home_menu.selected_recipes)

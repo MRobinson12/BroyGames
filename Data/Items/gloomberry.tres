@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ce20uu6x0kta3"]
 
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_l02s5"]
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_opblm"]
+[ext_resource type="Texture2D" uid="uid://d25rgiyb3gi0l" path="res://Assets/SPRITES/gloomberries_icon.png" id="1_pmywd"]
 
 [resource]
 script = ExtResource("1_opblm")
 id = "gloomberry"
 name = "Gloomberry"
-icon = ExtResource("1_l02s5")
+icon = ExtResource("1_pmywd")
 description = "Small clustering berries of vibrant blue colors. In small doses, they are said to embolden a wizard’s magic capabilities. In large doses, they are said to cause extreme hallucinations. Do with this information what you will."

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PotionItem" load_steps=3 format=3 uid="uid://08qmdeexebmf"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://08qmdeexebmf"]
 
-[ext_resource type="Texture2D" uid="uid://cpj8t5aqibn5c" path="res://Assets/endurance_potion_frame.png" id="1_jmjtf"]
+[ext_resource type="Texture2D" uid="uid://bksynh250cj68" path="res://Assets/endurance_potion_frame.png" id="1_jmjtf"]
+[ext_resource type="Texture2D" uid="uid://snnibyxnjj2e" path="res://Assets/endurance_potion_icon.png" id="2_dceg1"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_rxgx1"]
 
 [resource]
@@ -8,4 +9,5 @@ script = ExtResource("2_rxgx1")
 frame_texture = ExtResource("1_jmjtf")
 id = "lesser_endurance_potion"
 name = "Lesser Endurance Potion"
+icon = ExtResource("2_dceg1")
 description = "Makes you last longer ;)"

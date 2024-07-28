@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://djw6qkrpc7flq"]
 
+[ext_resource type="Texture2D" uid="uid://dyky67tt1q4o4" path="res://Assets/SPRITES/Anpel_icon.png" id="1_04j8h"]
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_36fr3"]
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_43klg"]
 
 [resource]
 script = ExtResource("1_36fr3")
 id = "anpel"
 name = "Anpel"
-icon = ExtResource("1_43klg")
+icon = ExtResource("1_04j8h")
 description = "A strange orange and red fruit that bears a striking resemblance to that of an “Apple”. Its taste however, is much closer to that of an “Orange”.Cave dwellers often say; “An anpel a day keeps the shadows away.”"

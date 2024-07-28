@@ -14,5 +14,4 @@ func _on_craft_button_pressed() -> void:
 	for input in recipe.inputs:
 		for i in range(input.quant):
 			GlobalData.home_inventory.remove_item(input.item)
-	for j in range(recipe.output.quant):
-		GlobalData.home_inventory.add_item(recipe.output.item)
+	GlobalData.potion_crafted.emit(recipe.output.item)
