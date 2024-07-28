@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://d0oxhy6bqc4tn"]
+[gd_scene load_steps=47 format=3 uid="uid://d0oxhy6bqc4tn"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_cd4gh"]
 [ext_resource type="Script" path="res://Scripts/home.gd" id="1_xy1ba"]
@@ -27,6 +27,8 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="16_wyvvm"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="17_ltftl"]
 [ext_resource type="Texture2D" uid="uid://ckimdfkem1rr1" path="res://Assets/shop_counter.png" id="20_sh3ep"]
+[ext_resource type="AudioStream" uid="uid://bmlk0k7yrwq7m" path="res://Audio/Ambience/ambienceShop.mp3" id="28_wc7we"]
+[ext_resource type="AudioStream" uid="uid://dhd788dh7tetf" path="res://Audio/OST/The Silliest Potion Shop.mp3" id="29_4l7pv"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_ubakh"]
 script = ExtResource("15_f6vks")
@@ -160,6 +162,7 @@ script = ExtResource("1_cd4gh")
 
 [node name="HomeMenu" parent="UI" instance=ExtResource("2_ye0aa")]
 unique_name_in_owner = true
+texture_filter = 1
 offset_left = -310.0
 offset_right = 310.0
 
@@ -239,11 +242,13 @@ offset_bottom = 44.0
 text = "0"
 
 [node name="Tower Background" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(640, 360)
 scale = Vector2(2.813, 2.813)
 texture = ExtResource("15_ttdwj")
 
 [node name="Cauldron" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(559, 476)
 scale = Vector2(2.813, 2.813)
 sprite_frames = SubResource("SpriteFrames_t3cdc")
@@ -257,21 +262,25 @@ animation = &"idle"
 frame_progress = 0.533837
 
 [node name="Counter" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(639, 495)
 scale = Vector2(2.813, 2.813)
 texture = ExtResource("20_sh3ep")
 
 [node name="PotionFrame1" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(550, 225)
 scale = Vector2(2.813, 2.813)
 texture = ExtResource("7_v1lnr")
 
 [node name="PotionFrame2" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(640, 225)
 scale = Vector2(2.813, 2.813)
 texture = ExtResource("7_v1lnr")
 
 [node name="PotionFrame3" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(730, 225)
 scale = Vector2(2.813, 2.813)
 texture = ExtResource("7_v1lnr")
@@ -300,6 +309,18 @@ shape = SubResource("RectangleShape2D_w0jtw")
 
 [node name="CustomerSpawn" type="Node2D" parent="."]
 position = Vector2(1556, 439)
+
+[node name="ShopAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_wc7we")
+volume_db = -2.811
+autoplay = true
+bus = &"SFX"
+
+[node name="ShopMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_4l7pv")
+volume_db = -2.811
+autoplay = true
+bus = &"BGM"
 
 [connection signal="pressed" from="UI/OpenShopButton" to="UI" method="_on_open_shop_button_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]

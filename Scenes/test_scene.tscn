@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_gk1ap"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="2_oqfku"]
-[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="5_o02ya"]
+[ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="5_o02ya"]
 [ext_resource type="Texture2D" uid="uid://cewqqrdy2kspd" path="res://Assets/TestMap.png" id="5_renpk"]
 [ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
 

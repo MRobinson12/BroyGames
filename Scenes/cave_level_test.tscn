@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="6_mn3hr"]
 [ext_resource type="PackedScene" uid="uid://ced5axb0h75g1" path="res://Scenes/Interactables/stonedoor.tscn" id="8_6mri8"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="9_trw7p"]
-[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="10_npd8e"]
+[ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="10_npd8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sci0"]
 texture = ExtResource("1_ydsuc")

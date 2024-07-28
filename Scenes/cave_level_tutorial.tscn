@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=16 format=4 uid="uid://bo8cm1qv601ii"]
 
 [ext_resource type="Texture2D" uid="uid://cxk7w3nykoaen" path="res://Assets/caverntileset.png" id="1_lhoy1"]
 [ext_resource type="Script" path="res://Scripts/Scene/tutorial.gd" id="1_pchjb"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="4_cpf4q"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="5_whfb8"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="6_widss"]
-[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="7_724ik"]
+[ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="7_724ik"]
 [ext_resource type="AudioStream" uid="uid://csnocllrik85a" path="res://Audio/OST/Secrets Behind the Caverns (Calm Cavern).mp3" id="9_66j6u"]
 [ext_resource type="PackedScene" uid="uid://c6i1fbhfvl7t2" path="res://Scenes/UI/pause_menu.tscn" id="10_uq48y"]
+[ext_resource type="AudioStream" uid="uid://wks0bk8x2m4v" path="res://Audio/Ambience/ambienceCavern.mp3" id="11_vknwa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5akr"]
 texture = ExtResource("1_lhoy1")
@@ -125,7 +126,6 @@ offset_bottom = -75.0
 scale = Vector2(0.5, 0.5)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("7_724ik")]
-visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_cpf4q")]
 position = Vector2(51, -19)
@@ -155,3 +155,9 @@ stream = ExtResource("9_66j6u")
 autoplay = true
 mix_target = 1
 bus = &"BGM"
+
+[node name="CaveAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vknwa")
+volume_db = -3.748
+autoplay = true
+bus = &"SFX"

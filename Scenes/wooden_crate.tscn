@@ -26,7 +26,7 @@ texture = ExtResource("1_sy0i5")
 
 [node name="CollisionSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_tjiwu")
-volume_db = -17.801
+volume_db = -8.432
 pitch_scale = 1.03
 bus = &"SFX"
 script = ExtResource("4_n5dfd")

@@ -168,19 +168,19 @@ shape = SubResource("RectangleShape2D_uir67")
 [node name="RunningSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 4)
 stream = ExtResource("5_ykm0p")
-volume_db = 4.685
+volume_db = 13.118
 pitch_scale = 2.32
 bus = &"SFX"
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_hlbgl")
-volume_db = -18.739
+volume_db = -7.496
 pitch_scale = 1.75
 bus = &"SFX"
 
 [node name="TelekinesisSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_cfor4")
-volume_db = 6.198
+volume_db = 8.072
 bus = &"SFX"
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
