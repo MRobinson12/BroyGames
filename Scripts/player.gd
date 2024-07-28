@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
-const RUN_ROTATION = 0.00
-const ROTATION_SPEED = 10.0
 const LIGHT_MASK_MULTIPLIER = 0.9999
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
 var selected_object: RigidBody2D = null
 var light_mask_current = 1
+var current_run_anim = null
+var current_idle_anim = null
 
 enum State {
 	IDLE,
@@ -44,8 +44,30 @@ func pickup_item():
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
+
+	# Assign correct animations dependant on whether there is a currently focused object for telekinesis
+	if selected_object:
+		current_idle_anim = "idleTele"
+		current_run_anim = "runTele"
+	else:
+		_stop_telekinesis_sound()
+		current_idle_anim = "idle"
+		current_run_anim = "run"
+
 	if Input.is_action_pressed("ui_leftclick"):
-		_lift_object(mouse_position)	
+		_lift_object(mouse_position)
+	if Input.is_action_just_pressed("ui_leftclick"):
+		$AnimatedSprite2D.play("idleTele")
+
+	if Input.is_action_just_released("ui_leftclick"):
+		if selected_object:
+			selected_object.set_collision_mask_value(2, true)
+			selected_object.set_collision_mask_value(3, true)
+			selected_object.set_collision_layer_value(3, true)
+			selected_object.set_linear_damp(0)
+			selected_object = null
+		$AnimatedSprite2D.play("idle")
+
 	if current_state != State.JUMP:
 		if Input.is_action_pressed("ui_right") and is_on_floor():
 			_handle_run(delta, false)
@@ -56,14 +78,13 @@ func _physics_process(delta):
 			if sign($Marker2D.position.x) == 1:
 				$Marker2D.position.x *= -1
 		else:
-			$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, 0, delta * ROTATION_SPEED)
-			if $AnimatedSprite2D.animation != "idle" and $AnimatedSprite2D.animation != "jump" and $AnimatedSprite2D.animation != "land":
-				$AnimatedSprite2D.play("idle")
+			if $AnimatedSprite2D.animation != "idle" and $AnimatedSprite2D.animation != "jump" and $AnimatedSprite2D.animation != "land" and $AnimatedSprite2D.animation != "idleTele":
+				$AnimatedSprite2D.play(current_idle_anim)
 				current_state = State.IDLE
 				_stop_running_sound()
 				
 		if $AnimatedSprite2D.is_playing() == false and is_on_floor():
-			$AnimatedSprite2D.play("idle")
+			$AnimatedSprite2D.play(current_idle_anim)
 			current_state = State.IDLE
 		
 		if Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left"):
@@ -75,6 +96,13 @@ func _physics_process(delta):
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		if selected_object:
+			Input.action_release("ui_leftclick")
+			selected_object.set_collision_mask_value(2, true)
+			selected_object.set_collision_mask_value(3, true)
+			selected_object.set_collision_layer_value(3, true)
+			selected_object.set_linear_damp(0)
+			selected_object = null
 		velocity.y = JUMP_VELOCITY
 		$AnimatedSprite2D.play("jump")
 		$JumpSound.play()
@@ -100,10 +128,8 @@ func _physics_process(delta):
 		pickup_item()
 
 func _handle_run(delta, flip_h):
-	$AnimatedSprite2D.play("run")
+	$AnimatedSprite2D.play(current_run_anim)
 	$AnimatedSprite2D.flip_h = flip_h
-	var target_rotation = RUN_ROTATION if not flip_h else -RUN_ROTATION
-	$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, target_rotation, delta * ROTATION_SPEED)
 	current_state = State.RUN
 	_play_running_sound()
 
@@ -112,13 +138,21 @@ func _play_running_sound():
 		$RunningSound.play()
 
 func _stop_running():
-	if $AnimatedSprite2D.animation == "run":
-		$AnimatedSprite2D.play("idle")
+	if $AnimatedSprite2D.animation == current_run_anim:
+		$AnimatedSprite2D.play(current_idle_anim)
 		_stop_running_sound()
 
 func _stop_running_sound():
 	if $RunningSound.is_playing():
 		$RunningSound.stop()
+		
+func _play_telekinesis_sound():
+	if not $TelekinesisSound.is_playing():
+		$TelekinesisSound.play()
+
+func _stop_telekinesis_sound():
+	if $TelekinesisSound.is_playing():
+		$TelekinesisSound.stop()
 		
 func _on_landing_animation_finished():
 	if current_state == State.LAND:
@@ -150,6 +184,7 @@ func _lift_object(mouse_position: Vector2):
 		selected_object.set_collision_mask_value(3, false)
 		selected_object.set_collision_layer_value(3, false)
 		_move_object(mouse_position, selected_object)
+		_play_telekinesis_sound()
 
 func _move_object(mouse_position: Vector2, selected_object: RigidBody2D):
 	var object_position = selected_object.position
@@ -163,12 +198,3 @@ func _move_object(mouse_position: Vector2, selected_object: RigidBody2D):
 	var linear_damping_level = max(0, 4 * (distance / decrease_distance))
 	selected_object.set_linear_damp(linear_damping_level)
 	selected_object.apply_force(direction * force_magnitude)
-
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-		if selected_object:
-			selected_object.set_collision_mask_value(2, true)
-			selected_object.set_collision_mask_value(3, true)
-			selected_object.set_collision_layer_value(3, true)
-			selected_object.set_linear_damp(0)
-		selected_object = null
