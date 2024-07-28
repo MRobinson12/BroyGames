@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://kf8jt4biavhj"]
+[gd_scene load_steps=7 format=3 uid="uid://kf8jt4biavhj"]
 
-[ext_resource type="Texture2D" uid="uid://dcl5krps7fpo3" path="res://Assets/Icons/test_item2.png" id="1_fr3h4"]
 [ext_resource type="Script" path="res://Scripts/Inventory/crafting_list_entry.gd" id="1_y24bx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a4gky"]
@@ -25,7 +24,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_a4gky")
 [node name="IconTexture" type="TextureRect" parent="Icon"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("1_fr3h4")
 expand_mode = 1
 stretch_mode = 5
 

@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://rrjryjm5i44a"]
 
+[ext_resource type="Texture2D" uid="uid://r66se1axu8lq" path="res://Assets/SPRITES/stalwart_icon.png" id="1_0jmep"]
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_a7b0w"]
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_wgvdj"]
 
 [resource]
 script = ExtResource("1_a7b0w")
 id = "stal_wart"
 name = "Stal Wart"
-icon = ExtResource("1_wgvdj")
+icon = ExtResource("1_0jmep")
 description = "Hearty red clusters of tiny fungus, immensely tough and capable of growing nearly anywhere. They often grow in rings around much rarer plants, and herbalists theorize this may be this fungus attempting to protect other plants it deems special."

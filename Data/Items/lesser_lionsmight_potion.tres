@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PotionItem" load_steps=3 format=3 uid="uid://tphs23onta5g"]
+[gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://tphs23onta5g"]
 
-[ext_resource type="Texture2D" uid="uid://eend3npk1pde" path="res://Assets/Lions_Might_Potion_frame.png" id="1_ybccp"]
+[ext_resource type="Texture2D" uid="uid://d3awjixirgkha" path="res://Assets/Lions_Might_Potion_frame.png" id="1_ybccp"]
+[ext_resource type="Texture2D" uid="uid://2m4uls8b15ax" path="res://Assets/Lions_Might_Potion_icon.png" id="2_32htp"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_rynfv"]
 
 [resource]
@@ -8,4 +9,5 @@ script = ExtResource("2_rynfv")
 frame_texture = ExtResource("1_ybccp")
 id = "lesser_lionsmight_potion"
 name = "Lesser Potion of Lions Might"
+icon = ExtResource("2_32htp")
 description = "Lion go rawr"

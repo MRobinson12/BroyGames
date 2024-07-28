@@ -1,6 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ebpxaybcupbf"]
-
-[ext_resource type="Texture2D" uid="uid://dcl5krps7fpo3" path="res://Assets/Icons/test_item2.png" id="1_mxjxt"]
+[gd_scene load_steps=6 format=3 uid="uid://ebpxaybcupbf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a4gky"]
 
@@ -23,7 +21,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_a4gky")
 [node name="IconTexture" type="TextureRect" parent="ItemIcon"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("1_mxjxt")
 expand_mode = 1
 stretch_mode = 5
 
