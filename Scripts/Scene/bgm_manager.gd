@@ -1,10 +1,8 @@
 extends AudioStreamPlayer
 
-#const bgm = preload("res://Audio/OST/Down the Hatch (Main Theme).mp3")
+var volume = -80
 
-var volume = -6.0
-
-func _play_song(music: AudioStream, volume):
+func _play_song(music: AudioStream, volume: float):
 	if stream == music:
 		return
 		

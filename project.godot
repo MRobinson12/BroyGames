@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*res://Scripts/GlobalData.gd"
-BgmManager="*res://Scenes/bgm_manager.tscn"
 
 [display]
 
