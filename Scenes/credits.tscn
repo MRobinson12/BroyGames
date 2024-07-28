@@ -9,78 +9,73 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 316.0
-offset_top = 106.0
+offset_top = 127.0
 offset_right = 316.0
-offset_bottom = 106.0
+offset_bottom = 127.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tfl5p")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -316.0
+offset_top = -128.0
+offset_right = 965.0
+offset_bottom = 593.0
+color = Color(0.226707, 0.226707, 0.226707, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+texture_filter = 6
+layout_direction = 1
+layout_mode = 0
+offset_left = -16.0
+offset_top = 9.0
+offset_right = 667.0
+offset_bottom = 354.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Broy Games is:"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Ben: Game Developer + Sound"
+
+[node name="Label5" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Josh: Lead Developer"
+
+[node name="Label4" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Kyle: Level Designer and Developer"
+
+[node name="Label2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Morgan:  Project Manager + Developer"
+
+[node name="Label3" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Rob: Lead Artist"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 235.0
-offset_top = 473.0
-offset_right = 305.0
-offset_bottom = 574.0
+offset_left = 325.0
+offset_top = 543.0
+offset_right = 395.0
+offset_bottom = 588.0
 
 [node name="Return" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Back"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 136.0
-offset_top = -23.0
-offset_right = 383.0
-offset_bottom = 27.0
-theme_override_font_sizes/font_size = 36
-text = "Developed By:"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = -192.0
-offset_top = 248.0
-offset_right = 134.0
-offset_bottom = 298.0
-theme_override_font_sizes/font_size = 36
-text = "Morgan - PM + Dev"
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = -188.0
-offset_top = 306.0
-offset_right = 59.0
-offset_bottom = 356.0
-theme_override_font_sizes/font_size = 36
-text = "Rob - Artist"
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = -191.0
-offset_top = 192.0
-offset_right = 56.0
-offset_bottom = 242.0
-theme_override_font_sizes/font_size = 36
-text = "Kyle - Dev"
-
-[node name="Label5" type="Label" parent="."]
-layout_mode = 0
-offset_left = -188.0
-offset_top = 132.0
-offset_right = 59.0
-offset_bottom = 182.0
-theme_override_font_sizes/font_size = 36
-text = "Josh - Dev"
-
-[node name="Label6" type="Label" parent="."]
-layout_mode = 0
-offset_left = -191.0
-offset_top = 80.0
-offset_right = 122.0
-offset_bottom = 130.0
-theme_override_font_sizes/font_size = 36
-text = "Ben - Dev + Sound"
 
 [node name="RollForCredits(creditsTheme)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vq1bc")

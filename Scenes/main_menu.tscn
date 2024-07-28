@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://bpuwmmlu0n5vu"]
+[gd_scene load_steps=11 format=4 uid="uid://bpuwmmlu0n5vu"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/mainmenu.gd" id="1_6q4mq"]
 [ext_resource type="Texture2D" uid="uid://cd8quadrlk7of" path="res://Assets/caverntilemapbackground.png" id="1_jjmeu"]
 [ext_resource type="Texture2D" uid="uid://c2md38avli2d6" path="res://Assets/caverntileset.png" id="2_4sscr"]
+[ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="2_mf0j4"]
 [ext_resource type="AudioStream" uid="uid://b2kop3cm1f11c" path="res://Audio/OST/Down the Hatch (Main Theme).mp3" id="4_wxg2m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edao2"]
+shader = ExtResource("2_mf0j4")
+shader_parameter/amount = 1.725
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpsg2"]
 texture = ExtResource("2_4sscr")
@@ -95,24 +100,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6q4mq")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_edao2")
+layout_mode = 2
+offset_left = 382.0
+offset_top = 365.0
+offset_right = 777.0
+offset_bottom = 504.0
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 354.0
-offset_right = 1024.0
-offset_bottom = 642.0
+offset_left = 381.0
+offset_top = 364.0
+offset_right = 779.0
+offset_bottom = 507.0
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Play"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Credits"
-
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Options"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -144,6 +157,6 @@ mix_target = 1
 bus = &"BGM"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
