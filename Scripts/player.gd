@@ -124,7 +124,6 @@ func _physics_process(delta):
 		elif current_state == State.LAND and not $AnimatedSprite2D.is_playing():
 			current_state = State.IDLE
 			
-
 	if Input.is_action_just_pressed("interact"):
 		pickup_item()
 
