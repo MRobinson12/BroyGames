@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs776o4pxw0ou"]
+[gd_scene load_steps=3 format=3 uid="uid://cs776o4pxw0ou"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/credits.gd" id="1_tfl5p"]
+[ext_resource type="AudioStream" uid="uid://ds24bknbmlys2" path="res://Audio/OST/Roll For Credits (Credits theme).mp3" id="2_vq1bc"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -80,6 +81,12 @@ offset_right = 122.0
 offset_bottom = 130.0
 theme_override_font_sizes/font_size = 36
 text = "Ben - Dev + Sound"
+
+[node name="RollForCredits(creditsTheme)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vq1bc")
+autoplay = true
+mix_target = 1
+bus = &"BGM"
 
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_play_pressed"]

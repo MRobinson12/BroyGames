@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://l7nk2ohpwhaw"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_5wjjm"]
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_rrn20"]
+[ext_resource type="Texture2D" uid="uid://p0d45p8jo0iq" path="res://Assets/SPRITES/greendle_icon.png" id="1_y6qf3"]
 
 [resource]
 script = ExtResource("1_5wjjm")
 id = "greendle"
 name = "Greendle"
-icon = ExtResource("1_rrn20")
+icon = ExtResource("1_y6qf3")
 description = "A simple plant of green stems that glow an innocent white at the tip. They are said to often “look” at things around them.In the dark caverns, a glowing light in the distance is rarely a good sign, unless of course, it's a greendle."

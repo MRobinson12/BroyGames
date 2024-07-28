@@ -3,6 +3,7 @@ extends Node
 
 signal player_inv_updated
 signal home_inv_updated
+signal potion_crafted(Item)
 
 var player_inventory : PlayerInventory = PlayerInventory.new()
 var home_inventory : HomeInventory = HomeInventory.new()
