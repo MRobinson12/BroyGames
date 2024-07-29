@@ -1,16 +1,25 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://ip0pely187va"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://ip0pely187va"]
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_ot0ka"]
+resource_name = "Compressor"
+ratio = 48.0
+gain = 1.0
+attack_us = 100.0
+release_ms = 500.0
 
 [resource]
-bus/0/volume_db = -20.3684
+bus/0/volume_db = -15.795
+bus/0/effect/0/effect = SubResource("AudioEffectCompressor_ot0ka")
+bus/0/effect/0/enabled = true
 bus/1/name = &"BGM"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.662756
+bus/1/volume_db = -5.93075
 bus/1/send = &"Master"
 bus/2/name = &"SFX"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = 0.0
+bus/2/volume_db = -5.93425
 bus/2/send = &"Master"
