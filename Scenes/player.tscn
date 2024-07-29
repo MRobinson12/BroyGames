@@ -133,10 +133,10 @@ size = Vector2(15, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rydqf"]
 size = Vector2(28, 28)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(0, -4)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 37
 script = ExtResource("1_fngfp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

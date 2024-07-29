@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://65u0gclxhccd"]
+
+[ext_resource type="Script" path="res://Scripts/Interactables/spikes.gd" id="1_qy5wa"]
+[ext_resource type="Texture2D" uid="uid://su7iyjoplulh" path="res://Assets/stalagmite.png" id="1_y5hn3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vlel"]
+atlas = ExtResource("1_y5hn3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56lc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vlel")
+}],
+"loop": true,
+"name": &"spikes",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aalg"]
+size = Vector2(32, 25)
+
+[node name="Spikes" type="Area2D" groups=["hazards"]]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_qy5wa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_56lc4")
+animation = &"spikes"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_0aalg")

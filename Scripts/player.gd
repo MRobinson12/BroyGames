@@ -21,14 +21,40 @@ enum State {
 	SLICE,
 	THROW,
 	CLIMB,
-	CLIMB_IDLE
+	CLIMB_IDLE,
+	DEATH
 }
 
 var current_state = State.IDLE
+var spawn_point: SpawnPoint
+
+signal player_died
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
+	add_to_group("player")
+	
+func die():
+	if current_state != State.DEATH:
+		current_state = State.DEATH
+		#$AnimatedSprite2D.play("death") 
+		emit_signal("player_died")
+		set_physics_process(false)
+		set_process_input(false)
+
+func respawn():
+	if spawn_point:
+		global_position = spawn_point.get_node("SpawnMarker").global_position
+		current_state = State.IDLE
+		$AnimatedSprite2D.play("idle")
+		set_physics_process(true)
+		set_process_input(true)
+	else:
+		push_error("Spawn point not set!")
+
+func set_spawn_point(new_spawn_point: SpawnPoint):
+	spawn_point = new_spawn_point
 
 func pickup_item():
 	var items_in_range = $PickupArea.get_overlapping_areas()
@@ -175,6 +201,8 @@ func _on_landing_animation_finished():
 			current_state = State.RUN
 		else:
 			current_state = State.IDLE
+	elif current_state == State.DEATH:
+		respawn()
 
 func _lift_object(mouse_position: Vector2):
 	var space_state = get_world_2d().direct_space_state

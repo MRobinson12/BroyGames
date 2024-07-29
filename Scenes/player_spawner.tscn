@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqmtf5tfhq7gt"]
+
+[ext_resource type="Script" path="res://Scripts/player_spawner.gd" id="1_haqvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d27w"]
+
+[node name="SpawnPoint" type="Node2D"]
+script = ExtResource("1_haqvu")
+
+[node name="SpawnMarker" type="Marker2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0d27w")

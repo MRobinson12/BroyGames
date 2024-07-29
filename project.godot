@@ -19,11 +19,18 @@ config/icon="res://icon.svg"
 
 GlobalData="*res://Scripts/GlobalData.gd"
 BgmManager="*res://Scenes/bgm_manager.tscn"
+GlobalDoorState="res://Scripts/Levels/GlobalDoorState.gd"
+GlobalLevelHandler="res://Scripts/Levels/LevelHandler.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[global_group]
+
+hazards=""
+player=""
 
 [input]
 
@@ -73,6 +80,7 @@ interact={
 2d_physics/layer_3="Objects"
 2d_physics/layer_4="Lifted Objects"
 2d_physics/layer_5="Interactable"
+2d_physics/layer_6="Level Transition"
 
 [rendering]
 

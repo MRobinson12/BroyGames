@@ -1,6 +1,9 @@
 extends DoorBase
 class_name Door
 
+signal door_opened(door_id)
+
+@export var door_id: String  # Unique identifier for each door
 @export var required_key_id: String
 
 var player_in_range: bool = false
@@ -22,7 +25,6 @@ func _on_body_entered(_body):
 func _on_body_exited(_body):
 	player_in_range = false
 
-# Check the player's inventory for a key with the ID 
 func check_player_inventory():
 	for i in range(GlobalData.player_inventory.contents.size()):
 		var item = GlobalData.player_inventory.contents[i]
@@ -30,5 +32,6 @@ func check_player_inventory():
 			open()
 			GlobalData.player_inventory.remove_item(i)
 			# Add door open sound here
+			emit_signal("door_opened", door_id)  # Emit signal when door is opened
 			return
 	# Add door rattle sound here
