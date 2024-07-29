@@ -232,3 +232,6 @@ volume_db = -6.559
 [node name="PickupPrompt" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("12_4eykg")
+
+[node name="DropPosition" type="Node2D" parent="."]
+position = Vector2(24, 4)
