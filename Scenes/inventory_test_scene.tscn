@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc7hx6tru28vq"]
+[gd_scene load_steps=20 format=3 uid="uid://cc7hx6tru28vq"]
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_rsk4x"]
 [ext_resource type="Texture2D" uid="uid://crnvcoqekpe6i" path="res://Assets/TestMap.png" id="2_dxwup"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://bk5tp2igynusk" path="res://Data/Items/glinting_glassrock.tres" id="12_3a2vp"]
 [ext_resource type="Resource" uid="uid://rrjryjm5i44a" path="res://Data/Items/stal_wart.tres" id="13_y06yf"]
 [ext_resource type="PackedScene" uid="uid://dh7dece7uaj7c" path="res://Scenes/UI/crafting_menu.tscn" id="16_3en4u"]
+[ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/item_pickup.tscn" id="17_6r00p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esmq6"]
 size = Vector2(1907, 59)
@@ -119,6 +120,11 @@ metadata/_edit_use_anchors_ = true
 [node name="CraftingMenu" parent="UI" instance=ExtResource("16_3en4u")]
 unique_name_in_owner = true
 visible = false
+
+[node name="TestPickup" parent="." instance=ExtResource("17_6r00p")]
+position = Vector2(42, -3)
+item = ExtResource("6_b05e7")
+shine = true
 
 [connection signal="pressed" from="UI/ToggleInventory" to="UI" method="_on_toggle_inventory_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]

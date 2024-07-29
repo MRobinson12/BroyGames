@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var pickup_prompt = $PickupPrompt
+
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 const LIGHT_MASK_MULTIPLIER = 0.9999
@@ -29,21 +31,6 @@ func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
 
-func pickup_item():
-	var items_in_range = $PickupArea.get_overlapping_areas()
-	if not items_in_range.is_empty():
-		var nearest_item = null
-		var shortest_distance = INF
-		for item in items_in_range:
-			if item is Pickup:
-				var distance = position.distance_squared_to(item.position)
-				if distance < shortest_distance:
-					nearest_item = item
-					shortest_distance = distance
-		if nearest_item != null:
-			GlobalData.player_inventory.add_item(nearest_item.item)
-			nearest_item.queue_free()
-			
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
@@ -133,8 +120,28 @@ func _physics_process(delta):
 		elif current_state == State.LAND and not $AnimatedSprite2D.is_playing():
 			current_state = State.IDLE
 			
+	#get nearest item
+	var items_in_range = $PickupArea.get_overlapping_areas()
+	var nearest_item = null
+	if not items_in_range.is_empty():
+		var shortest_distance = INF
+		for item in items_in_range:
+			if item is Pickup:
+				var distance = position.distance_squared_to(item.position)
+				if distance < shortest_distance:
+					nearest_item = item
+					shortest_distance = distance
+	if nearest_item != null:
+		pickup_prompt.global_position = Vector2(nearest_item.global_position.x - 10, nearest_item.global_position.y - 10)
+		pickup_prompt.show()
+	else:
+		pickup_prompt.hide()
+	
+	#pickup item
 	if Input.is_action_just_pressed("interact"):
-		pickup_item()
+		if nearest_item != null:
+			GlobalData.player_inventory.add_item(nearest_item.item)
+			nearest_item.queue_free()
 
 func _handle_run(delta, flip_h):
 	$AnimatedSprite2D.play(current_run_anim)
