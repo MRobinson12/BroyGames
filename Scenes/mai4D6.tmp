@@ -21,8 +21,8 @@ script = ExtResource("1_6q4mq")
 [node name="DownthehatchMainmenuPixelated" type="Sprite2D" parent="."]
 z_index = -31
 z_as_relative = false
-position = Vector2(639.75, 359)
-scale = Vector2(3.75, 3.75)
+position = Vector2(638.75, 359)
+scale = Vector2(3.7434, 3.75)
 texture = ExtResource("2_2cl0x")
 
 [node name="ColorRect" type="ColorRect" parent="."]
