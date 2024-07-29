@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=24 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="Texture2D" uid="uid://c2md38avli2d6" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://cd8quadrlk7of" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
-[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
+[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
+[ext_resource type="PackedScene" uid="uid://lbbh7occk8nv" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
@@ -21,17 +22,36 @@ script/source = "extends Node2D
 class_name BaseLevel
 
 @export var level_name: String
+@onready var pause_menu = $Camera2D/PauseMenu
+var paused = false
 
 func _ready() -> void:
 	for child in get_children():
 		if child is Area2D and child.is_in_group(\"level_transition\"):
 			child.connect(\"body_entered\", _on_level_transition_body_entered.bind(child))
+	paused = false
+	pass
 
 func _on_level_transition_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"player\"):
 		var target_level = $Area2D.get_meta(\"target_level\")
 		var target_entry = $Area2D.get_meta(\"target_entry\", \"SpawnPoint\")
 		get_tree().get_root().get_node(\"LevelHandler\").change_level(target_level, target_entry)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"ui_pause\"):
+		pauseMenu()
+
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	
+	paused = !paused
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5akr"]
@@ -160,6 +180,13 @@ position = Vector2(663, 103)
 zoom = Vector2(5, 5)
 process_callback = 0
 position_smoothing_enabled = true
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("5_l5f1m")]
+layer = 5
+visible = false
+offset = Vector2(400, 100)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 400, 100)
 
 [node name="PlayerLight" parent="." instance=ExtResource("4_ko0i4")]
 position = Vector2(0, -4)
