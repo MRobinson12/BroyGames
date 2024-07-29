@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://g83d0iqmn2en"]
 
-[ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_gcm0u"]
-[ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="2_s8pq6"]
+[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_gcm0u"]
+[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="2_s8pq6"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="3_dtanj"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="4_ju7i2"]
-[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="5_sovjn"]
+[ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="5_sovjn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvn0p"]
 texture = ExtResource("1_gcm0u")

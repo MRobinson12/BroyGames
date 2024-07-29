@@ -18,8 +18,6 @@ enum State {
 	RUN,
 	JUMP,
 	LAND,
-	SLICE,
-	THROW,
 	CLIMB,
 	CLIMB_IDLE,
 	DEATH
