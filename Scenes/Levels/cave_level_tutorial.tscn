@@ -1,14 +1,14 @@
-[gd_scene load_steps=29 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=30 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="Texture2D" uid="uid://dbwjfa8qplk5n" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://b5xyaadxlcend" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
-[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://hjfv883bs4cs" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
+[ext_resource type="Texture2D" uid="uid://c6sr0plqqxrc" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
+[ext_resource type="PackedScene" uid="uid://lbbh7occk8nv" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
-[ext_resource type="Texture2D" uid="uid://h0k0qlwjhb7d" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
+[ext_resource type="Texture2D" uid="uid://cdbxqolfrckf4" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="8_hxi5o"]
@@ -48,10 +48,8 @@ func _process(delta: float) -> void:
 func pauseMenu():
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale = 1
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
 	
 	paused = !paused
 "
@@ -189,6 +187,9 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_awtpg")
 sources/1 = SubResource("TileSetAtlasSource_8hg70")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnqmr"]
+size = Vector2(189, 143)
+
 [node name="Tutorial" type="Node2D"]
 script = SubResource("GDScript_755xa")
 level_name = "tutorial"
@@ -243,6 +244,7 @@ position = Vector2(304, -9)
 position = Vector2(433, -16)
 
 [node name="WoodenCrate" parent="." instance=ExtResource("16_6kgx5")]
+z_index = 20
 position = Vector2(98, -13)
 
 [node name="DoorController1" type="Node" parent="."]
@@ -258,3 +260,15 @@ required_key_id = "01"
 texture_filter = 1
 position = Vector2(626, 117)
 item = ExtResource("14_h5qaw")
+
+[node name="Cat2" parent="." instance=ExtResource("7_8hkwl")]
+position = Vector2(305, 245)
+
+[node name="Cat3" parent="." instance=ExtResource("7_8hkwl")]
+position = Vector2(628, -11)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(740.5, -47.5)
+shape = SubResource("RectangleShape2D_tnqmr")

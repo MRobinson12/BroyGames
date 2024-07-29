@@ -6,7 +6,8 @@
 script = ExtResource("1_bio7r")
 starts = {
 "CI1": &"0_1",
-"CI2": &"0_2"
+"CI2": &"0_2",
+"CI3": &"0_3"
 }
 nodes = {
 "0_1": {
@@ -19,6 +20,11 @@ nodes = {
 "offset": Vector2(-560, 20),
 "start_id": "CI2"
 },
+"0_3": {
+"link": &"1_7",
+"offset": Vector2(-560, 360),
+"start_id": "CI3"
+},
 "1_1": {
 "dialogue": "Hello. 
 I am your cat. 
@@ -28,6 +34,19 @@ Welcome to the mines.",
 0: {
 "condition": {},
 "link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_10": {
+"dialogue": "Remember, the ladder is your main way back to the shop, simply climb up it.",
+"offset": Vector2(440, 360),
+"options": {
+0: {
+"condition": {},
+"link": "END",
 "text": ""
 }
 },
@@ -62,7 +81,7 @@ Also, don't forget about your Telekinesis. You can use it on objects like the wo
 "speaker": 2
 },
 "1_4": {
-"dialogue": "Nice work getting that trapdoor open. Now that you are down here, lets get foraging. See all these plants? Take them. The government can't stop you. You can just take them home for free.",
+"dialogue": "Nice work getting that trapdoor open. Now that you are down here, lets get foraging. See all these plants? Take them. The shadow government can't stop you. You can just take them home for free.",
 "offset": Vector2(-280, 20),
 "options": {
 0: {
@@ -77,6 +96,58 @@ Also, don't forget about your Telekinesis. You can use it on objects like the wo
 "1_5": {
 "dialogue": "You can forage them by walking over them and pressing what the modern folk call... the \"E\" key.",
 "offset": Vector2(80, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_6": {
+"dialogue": "Now remember, you can only fit so much in your cloak. And also remember, Greendles are the basis of all potions, and are stored in clumps of three per slot, so plan accordingly!",
+"offset": Vector2(440, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 300),
+"speaker": 2
+},
+"1_7": {
+"dialogue": "Nice job getting back up here. It looks real dark down there, and you can only dispel darkness for so long.",
+"offset": Vector2(-280, 360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_8": {
+"dialogue": "I say lets get back up to the shop for now. You can use that key on the door to left by using what the modern folk call... the \"E\" key.",
+"offset": Vector2(80, 360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_9": {
+"dialogue": "Anyway, once you're done here, try and find us a way back up!",
+"offset": Vector2(800, 20),
 "options": {
 0: {
 "condition": {},

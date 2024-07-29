@@ -33,6 +33,7 @@ func check_player_inventory():
 		var item = GlobalData.player_inventory.contents[i]
 		if item is KeyItem and item.key_id == required_key_id:
 			GlobalData.player_inventory.remove_item(i)
+			$DoorOpen.play()
 			open()
 			return
 	# Add door rattle sound here

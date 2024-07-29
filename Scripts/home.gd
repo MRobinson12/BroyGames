@@ -15,6 +15,8 @@ func _ready() -> void:
 	GlobalData.potion_crafted.connect(potion_crafted)
 	$UI.open_shop.connect(open_shop)
 	dialogue_box.custom_effects[0].char_displayed.connect(_on_char_displayed)
+	if GlobalData.day == 1:
+		dialogue_box.start('CI1')
 
 func open_shop(recipes : Array[CraftRecipe]):
 	if GlobalData.day > 1:
@@ -59,6 +61,20 @@ func show_craft():
 	crafting_menu.show()
 	$UI/NoCraft.show()
 
+func stop_music():
+	$ShopMusic.stop()
+
+func start_music():
+	$ShopMusic.play()
+
+func show_buttons():
+	$UI/LeaveButton.show()
+	$UI/OpenShopButton.show()
+
+func hide_buttons():
+	$UI/LeaveButton.hide()
+	$UI/OpenShopButton.hide()
+
 func _on_dialogue_area_body_entered(body: Node2D) -> void:
 	if body is Customer:
 		body.direction = 0
@@ -72,6 +88,10 @@ func _on_dialogue_box_dialogue_signal(value: String) -> void:
 	match(value):
 		'next_customer': next_customer()
 		'craft' : show_craft()
+		'stop_music' : stop_music()
+		'start_music' : start_music()
+		'show_buttons' : show_buttons()
+		'hide_buttons' : hide_buttons()
 
 func _on_no_craft_pressed() -> void:
 	potion_crafted(null)

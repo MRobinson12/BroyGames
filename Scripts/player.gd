@@ -149,6 +149,7 @@ func _physics_process(delta):
 			elif nearest_item is not Foragable:
 				GlobalData.player_inventory.add_item(nearest_item.item)
 				nearest_item.queue_free()
+			$ItemPickupSound.play()
 
 func _handle_run(delta, flip_h):
 	$AnimatedSprite2D.play(current_run_anim)

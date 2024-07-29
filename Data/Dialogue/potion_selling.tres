@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_f7ko2")
 starts = {
+"CI1": &"0_12",
 "correct": &"0_4",
 "day2": &"0_11",
 "incorrect": &"0_5",
@@ -32,6 +33,11 @@ nodes = {
 "link": &"4_2",
 "offset": Vector2(-540, -1240),
 "start_id": "day2"
+},
+"0_12": {
+"link": &"3_14",
+"offset": Vector2(-820, -1720),
+"start_id": "CI1"
 },
 "0_2": {
 "link": &"1_2",
@@ -463,6 +469,47 @@ nodes = {
 "size": Vector2(300, 240),
 "speaker": 1
 },
+"1_37": {
+"dialogue": "Welcome to the shop. This is where we can make money to go deeper into the caverns, which will let us find more ingredients, which will let us earn MORE MONEY. Money can also be used to buy upgrades.",
+"offset": Vector2(-260, -1720),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_38": {
+"dialogue": "Now LISTEN CLOSELY. I will only explain this to you [color=red]once.[/color]
+[br] The main shop menu is made up of three main tabs;
+",
+"offset": Vector2(60, -1740),
+"options": {
+0: {
+"condition": {},
+"link": &"1_42",
+"text": ""
+}
+},
+"size": Vector2(300, 440),
+"speaker": 2
+},
+"1_39": {
+"dialogue": "Now from here, lets pick out some potions to sell for the day. Potions can be selected by ticking the box to the right of their entry as I said before. [br]You can put up to three potion types for sale each day, but choose wisely.",
+"offset": Vector2(780, -1740),
+"options": {
+0: {
+"condition": {},
+"link": &"1_45",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
 "1_4": {
 "dialogue": "Thank you!",
 "offset": Vector2(-200, -940),
@@ -475,6 +522,97 @@ nodes = {
 },
 "size": Vector2(300, 240),
 "speaker": 0
+},
+"1_40": {
+"dialogue": "Other than that, you're all ready to start selling. One more important note, if a customer ever asks you about it.",
+"offset": Vector2(1880, -1740),
+"options": {
+0: {
+"condition": {},
+"link": &"3_12",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_41": {
+"dialogue": "[wait speed=3][color=red][shake]I am just a normal cat.[/shake][/color][/wait]",
+"offset": Vector2(2520, -1740),
+"options": {
+0: {
+"condition": {},
+"link": &"3_13",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_42": {
+"dialogue": "Inventory shows you the ingredients you have collected down in the caverns.",
+"offset": Vector2(400, -1740),
+"options": {
+0: {
+"condition": {},
+"link": &"1_43",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_43": {
+"dialogue": "Potion Select shows you a list of potions. If a potion is able to be crafted, you can click to the right of its entry to tick it. This can be done with up to three potions, in preparation for opening shop.",
+"offset": Vector2(400, -1460),
+"options": {
+0: {
+"condition": {},
+"link": &"1_44",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_44": {
+"dialogue": "Upgrades are upgrades. Money allows you to purchase these and improve your capabilities.",
+"offset": Vector2(400, -1180),
+"options": {
+0: {
+"condition": {},
+"link": &"1_39",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_45": {
+"dialogue": "While you may have ingredients to make some of a REALLY FANCY potion, you could run out of those ingredients during the day! And then customers might come in asking for that potion and you have to turn them away!",
+"offset": Vector2(1140, -1740),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_46": {
+"dialogue": "Be smart, and start simple; We found a lot of Greendles down there, so I'd recommend the Glow Potion as today's only stock. Once you have selected them, you can press the \"open shop\" button, which will be visible in the corner of the screen.",
+"offset": Vector2(1500, -1740),
+"options": {
+0: {
+"condition": {},
+"link": &"1_40",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
 },
 "1_5": {
 "dialogue": "No, this isn't the right potion!",
@@ -562,6 +700,26 @@ nodes = {
 "offset": Vector2(3160, 300),
 "signalValue": "next_customer"
 },
+"3_12": {
+"link": &"1_41",
+"offset": Vector2(2240, -1740),
+"signalValue": "stop_music"
+},
+"3_13": {
+"link": &"3_15",
+"offset": Vector2(2900, -1740),
+"signalValue": "start_music"
+},
+"3_14": {
+"link": &"1_37",
+"offset": Vector2(-560, -1720),
+"signalValue": "hide_buttons"
+},
+"3_15": {
+"link": "END",
+"offset": Vector2(3200, -1740),
+"signalValue": "show_buttons"
+},
 "3_2": {
 "link": "END",
 "offset": Vector2(140, -600),
@@ -611,7 +769,7 @@ nodes = {
 },
 "4_2": {
 "link": "END",
-"offset": Vector2(-200, -1240),
+"offset": Vector2(-260, -1240),
 "type": 0,
 "value": "true",
 "variable": "DAY2"
