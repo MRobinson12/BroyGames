@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=4 uid="uid://binlv7hhkovgx"]
 
-[ext_resource type="Texture2D" uid="uid://cxk7w3nykoaen" path="res://Assets/caverntileset.png" id="1_ydsuc"]
+[ext_resource type="Texture2D" uid="uid://c2md38avli2d6" path="res://Assets/caverntileset.png" id="1_ydsuc"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="2_pivow"]
-[ext_resource type="Texture2D" uid="uid://dfleonmlypnlb" path="res://Assets/caverntilemapbackground.png" id="3_m83fx"]
+[ext_resource type="Texture2D" uid="uid://cd8quadrlk7of" path="res://Assets/caverntilemapbackground.png" id="3_m83fx"]
 [ext_resource type="PackedScene" uid="uid://dcmaq7wlqd4hq" path="res://Scenes/Interactables/lever.tscn" id="4_3m8jk"]
 [ext_resource type="PackedScene" uid="uid://cm8kn8up46shg" path="res://Scenes/Interactables/door.tscn" id="5_qnj1t"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="5_wctkw"]
 [ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="6_mn3hr"]
 [ext_resource type="PackedScene" uid="uid://ced5axb0h75g1" path="res://Scenes/Interactables/stonedoor.tscn" id="8_6mri8"]
-[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="9_trw7p"]
+[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="9_trw7p"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="10_npd8e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sci0"]
@@ -124,8 +124,6 @@ position = Vector2(497, 432)
 
 [node name="DoorController" type="Node" parent="."]
 script = ExtResource("6_mn3hr")
-target_path = NodePath("../Trapdoor")
-lever_paths = Array[NodePath]([NodePath("../Lever1")])
 
 [node name="Lever2" parent="." instance=ExtResource("4_3m8jk")]
 position = Vector2(520, 432)
@@ -135,8 +133,6 @@ position = Vector2(660, 432)
 
 [node name="DoorController2" type="Node" parent="."]
 script = ExtResource("6_mn3hr")
-target_path = NodePath("../Door1")
-lever_paths = Array[NodePath]([NodePath("../Lever2")])
 
 [node name="Lever3" parent="." instance=ExtResource("4_3m8jk")]
 position = Vector2(559, 432)
@@ -146,5 +142,3 @@ position = Vector2(601, 432)
 
 [node name="DoorController3" type="Node" parent="."]
 script = ExtResource("6_mn3hr")
-target_path = NodePath("../Stonedoor")
-lever_paths = Array[NodePath]([NodePath("../Lever3")])

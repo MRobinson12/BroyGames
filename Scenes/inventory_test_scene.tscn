@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://cc7hx6tru28vq"]
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_rsk4x"]
-[ext_resource type="Texture2D" uid="uid://crnvcoqekpe6i" path="res://Assets/TestMap.png" id="2_dxwup"]
+[ext_resource type="Texture2D" uid="uid://ckmyidthndjk0" path="res://Assets/TestMap.png" id="2_dxwup"]
 [ext_resource type="Script" path="res://Scripts/Inventory/drop_panel.gd" id="4_3vtp1"]
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_48blj"]
 [ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_mky20"]
