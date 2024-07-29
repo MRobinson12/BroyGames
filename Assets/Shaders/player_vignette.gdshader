@@ -5,7 +5,7 @@ uniform float camera_zoom = 1;
 uniform vec2 lights[2];
 
 const float ASPECT_RATIO = 0.5625;
-const float SCALE = 0.05; //0.15
+const float SCALE = 0.15; //0.15
 const float SOFTNESS = 0.6;
 
 
@@ -28,7 +28,7 @@ float other_vignette(vec2 screen, vec2 light_position, float scale){
 void fragment(){
 	float lightest_val = player_vignette(UV);
 	for (int i = 0; i < lights.length(); i++){
-		float light_val = other_vignette(UV, lights[i], SCALE);
+		float light_val = other_vignette(UV, lights[i], 0.05);
 		if (light_val < lightest_val)
 			lightest_val = light_val;
 	}

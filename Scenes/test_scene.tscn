@@ -93,4 +93,4 @@ position = Vector2(-38, -86)
 position = Vector2(82, -26)
 
 [node name="WallTorch2" parent="." instance=ExtResource("6_b3k3j")]
-position = Vector2(-205, -31)
+position = Vector2(-218, -28)
