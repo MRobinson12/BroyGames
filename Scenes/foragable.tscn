@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://doqcmflhgidbx"]
+
+[ext_resource type="Script" path="res://Scripts/foragable.gd" id="1_whr4b"]
+[ext_resource type="Shader" path="res://Assets/Shaders/pickup_spawn.gdshader" id="2_7ui3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a7et"]
+size = Vector2(16, 21.3333)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wii7"]
+shader = ExtResource("2_7ui3d")
+shader_parameter/shine_color = Color(1, 1, 1, 0.75)
+shader_parameter/shine_speed = 1.0
+shader_parameter/shine_size = 0.01
+shader_parameter/shine_frequency = 1.0
+shader_parameter/enabled = 1.0
+
+[node name="Foragable" type="Area2D"]
+script = ExtResource("1_whr4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_6a7et")
+
+[node name="Unpicked" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1wii7")
+
+[node name="Picked" type="Sprite2D" parent="."]
+visible = false

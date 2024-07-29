@@ -132,7 +132,10 @@ func _physics_process(delta):
 					nearest_item = item
 					shortest_distance = distance
 	if nearest_item != null:
-		pickup_prompt.global_position = Vector2(nearest_item.global_position.x - 10, nearest_item.global_position.y - 10)
+		if nearest_item is Foragable:
+			pickup_prompt.global_position = Vector2(nearest_item.global_position.x - 10, nearest_item.global_position.y)
+		else:
+			pickup_prompt.global_position = Vector2(nearest_item.global_position.x - 10, nearest_item.global_position.y - 10)
 		pickup_prompt.show()
 	else:
 		pickup_prompt.hide()
@@ -140,8 +143,12 @@ func _physics_process(delta):
 	#pickup item
 	if Input.is_action_just_pressed("interact"):
 		if nearest_item != null:
-			GlobalData.player_inventory.add_item(nearest_item.item)
-			nearest_item.queue_free()
+			if nearest_item is Foragable and not nearest_item.picked:
+				GlobalData.player_inventory.add_item(nearest_item.item)
+				nearest_item.pick()
+			elif nearest_item is not Foragable:
+				GlobalData.player_inventory.add_item(nearest_item.item)
+				nearest_item.queue_free()
 
 func _handle_run(delta, flip_h):
 	$AnimatedSprite2D.play(current_run_anim)

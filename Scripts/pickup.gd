@@ -2,7 +2,7 @@ extends Area2D
 class_name Pickup
 
 @export var item : Item
-@export var shine : bool
+@export var shine : bool = true
 
 func _ready() -> void:
 	$Sprite2D.texture = item.icon
