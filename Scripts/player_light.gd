@@ -23,9 +23,10 @@ func _process(delta: float):
 	shadow_shader.material.set_shader_parameter("player_position",player_position)
 	shadow_shader.material.set_shader_parameter("camera_zoom",camera.zoom.x)
 	
-	for i in range(lights.size()):
-		light_positions[i] = lights[i].get_global_transform_with_canvas().get_origin() / Vector2(get_viewport().size)
-	shadow_shader.material.set_shader_parameter("lights", light_positions)
+	if not lights.is_empty():
+		for i in range(lights.size()):
+			light_positions[i] = lights[i].get_global_transform_with_canvas().get_origin() / Vector2(get_viewport().size)
+		shadow_shader.material.set_shader_parameter("lights", light_positions)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
