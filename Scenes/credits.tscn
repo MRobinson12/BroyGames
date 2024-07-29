@@ -25,6 +25,7 @@ script = ExtResource("1_tfl5p")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_62dcw")
+layout_mode = 0
 offset_left = -213.0
 offset_top = 6.0
 offset_right = 852.0
@@ -89,5 +90,5 @@ position = Vector2(665, 212)
 scale = Vector2(4, 4)
 texture = ExtResource("5_6hv2b")
 
-[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

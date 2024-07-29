@@ -210,6 +210,7 @@ position = Vector2(98, -13)
 
 [node name="DoorController1" type="Node" parent="."]
 script = ExtResource("11_k04to")
+target_paths = Array[NodePath]([NodePath("../Trapdoor")])
 activator_paths = Array[NodePath]([NodePath("../Pressureplate")])
 
 [node name="LockedDoor" parent="." instance=ExtResource("12_gte3w")]
