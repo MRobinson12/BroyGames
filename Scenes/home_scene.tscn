@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d0oxhy6bqc4tn"]
+[gd_scene load_steps=49 format=3 uid="uid://d0oxhy6bqc4tn"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_cd4gh"]
 [ext_resource type="Script" path="res://Scripts/home.gd" id="1_xy1ba"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://ckimdfkem1rr1" path="res://Assets/shop_counter.png" id="20_sh3ep"]
 [ext_resource type="AudioStream" uid="uid://bmlk0k7yrwq7m" path="res://Audio/Ambience/ambienceShop.mp3" id="28_wc7we"]
 [ext_resource type="AudioStream" uid="uid://dhd788dh7tetf" path="res://Audio/OST/The Silliest Potion Shop.mp3" id="29_4l7pv"]
+[ext_resource type="AudioStream" uid="uid://dg85c0716m670" path="res://Audio/SFX/potionWrong.mp3" id="30_oo6vk"]
+[ext_resource type="AudioStream" uid="uid://bq6a84mbj1ji8" path="res://Audio/SFX/potionCorrect.mp3" id="31_lcicl"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_ubakh"]
 script = ExtResource("15_f6vks")
@@ -241,6 +243,14 @@ offset_right = 1249.0
 offset_bottom = 44.0
 text = "0"
 
+[node name="Button" type="Button" parent="UI"]
+z_index = 2
+offset_left = 69.0
+offset_top = 498.0
+offset_right = 227.0
+offset_bottom = 529.0
+text = "Go Down the Hatch"
+
 [node name="Tower Background" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(640, 360)
@@ -258,8 +268,7 @@ texture_filter = 1
 position = Vector2(646, 468)
 scale = Vector2(2.813, 2.813)
 sprite_frames = SubResource("SpriteFrames_llch3")
-animation = &"idle"
-frame_progress = 0.533837
+animation = &"run"
 
 [node name="Counter" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -321,6 +330,12 @@ stream = ExtResource("29_4l7pv")
 volume_db = -2.811
 autoplay = true
 bus = &"BGM"
+
+[node name="ShopIncorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_oo6vk")
+
+[node name="ShopCorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_lcicl")
 
 [connection signal="pressed" from="UI/OpenShopButton" to="UI" method="_on_open_shop_button_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
