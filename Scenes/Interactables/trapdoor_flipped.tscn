@@ -34,7 +34,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igs5k"]
 size = Vector2(32, 7)
 
-[node name="Trapdoor" type="StaticBody2D"]
+[node name="Trapdoor2" type="StaticBody2D"]
 collision_mask = 15
 script = ExtResource("1_da0xr")
 
