@@ -7,8 +7,8 @@ func _ready():
 	$VBoxContainer/Play.grab_focus()
 
 func _on_play_pressed() -> void:
-	##BgmManager.stop_current()
-	get_tree().change_scene_to_file("res://Scenes/cave_level_tutorial.tscn")
+	BgmManager.stop_current()
+	get_tree().change_scene_to_file("res://Scenes/Levels/cave_level_tutorial.tscn")
 	
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/options.tscn")	

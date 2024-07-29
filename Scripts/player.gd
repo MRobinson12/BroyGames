@@ -3,21 +3,24 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 const LIGHT_MASK_MULTIPLIER = 0.9999
+const CLIMB_SPEED = 75.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")	
 var selected_object: RigidBody2D = null
 var light_mask_current = 1
 var current_run_anim = null
 var current_idle_anim = null
+var on_ladder = false
+var is_climbing = false
 
 enum State {
 	IDLE,
 	RUN,
 	JUMP,
 	LAND,
-	SLICE,
-	THROW
+	CLIMB,
+	CLIMB_IDLE,
+	DEATH
 }
 
 var current_state = State.IDLE
@@ -67,28 +70,31 @@ func _physics_process(delta):
 			selected_object.set_linear_damp(0)
 			selected_object = null
 		$AnimatedSprite2D.play("idle")
-
-	if current_state != State.JUMP:
-		if Input.is_action_pressed("ui_right") and is_on_floor():
-			_handle_run(delta, false)
-			if sign($Marker2D.position.x) == -1:
-				$Marker2D.position.x *= -1
-		elif Input.is_action_pressed("ui_left") and is_on_floor():
-			_handle_run(delta, true)
-			if sign($Marker2D.position.x) == 1:
-				$Marker2D.position.x *= -1
-		else:
-			if $AnimatedSprite2D.animation != "idle" and $AnimatedSprite2D.animation != "jump" and $AnimatedSprite2D.animation != "land" and $AnimatedSprite2D.animation != "idleTele":
+		
+	if on_ladder:
+		_handle_climbing(delta)
+	else:
+		if current_state != State.JUMP:
+			if Input.is_action_pressed("ui_right") and is_on_floor():
+				_handle_run(delta, false)
+				if sign($Marker2D.position.x) == -1:
+					$Marker2D.position.x *= -1
+			elif Input.is_action_pressed("ui_left") and is_on_floor():
+				_handle_run(delta, true)
+				if sign($Marker2D.position.x) == 1:
+					$Marker2D.position.x *= -1
+			else:
+				if $AnimatedSprite2D.animation != "idle" and $AnimatedSprite2D.animation != "jump" and $AnimatedSprite2D.animation != "land" and $AnimatedSprite2D.animation != "idleTele":
+					$AnimatedSprite2D.play(current_idle_anim)
+					current_state = State.IDLE
+					_stop_running_sound()
+				
+			if $AnimatedSprite2D.is_playing() == false and is_on_floor():
 				$AnimatedSprite2D.play(current_idle_anim)
 				current_state = State.IDLE
-				_stop_running_sound()
-				
-		if $AnimatedSprite2D.is_playing() == false and is_on_floor():
-			$AnimatedSprite2D.play(current_idle_anim)
-			current_state = State.IDLE
 		
-		if Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left"):
-			_stop_running()
+			if Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left"):
+				_stop_running()
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -107,7 +113,10 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("jump")
 		$JumpSound.play()
 		_stop_running_sound()
+		_stop_climbing_sound()
 		current_state = State.JUMP
+		on_ladder = false
+		is_climbing = false
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -133,6 +142,37 @@ func _handle_run(delta, flip_h):
 	current_state = State.RUN
 	_play_running_sound()
 
+func _handle_climbing(delta):
+	var input_vector = Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	)
+	if input_vector != Vector2.ZERO:
+		current_state = State.CLIMB
+		$AnimatedSprite2D.play("climb")
+		velocity = input_vector * CLIMB_SPEED
+		is_climbing = true
+		_play_climbing_sound()
+	else:
+		velocity = Vector2.ZERO
+		current_state = State.CLIMB_IDLE
+		$AnimatedSprite2D.stop()
+		is_climbing = false
+		_stop_climbing_sound()
+
+func _on_ladder_area_entered(_area):
+	on_ladder = true
+	_stop_running_sound()
+
+func _on_ladder_area_exited(_area):
+	on_ladder = false
+	is_climbing = false
+	_stop_climbing_sound()
+	if not is_on_floor():
+		current_state = State.JUMP
+	else:
+		current_state = State.IDLE
+
 func _play_running_sound():
 	if not $RunningSound.is_playing():
 		$RunningSound.play()
@@ -153,6 +193,14 @@ func _play_telekinesis_sound():
 func _stop_telekinesis_sound():
 	if $TelekinesisSound.is_playing():
 		$TelekinesisSound.stop()
+		
+func _play_climbing_sound():
+	if not $ClimbingSound.playing:
+		$ClimbingSound.play()
+
+func _stop_climbing_sound():
+	if $ClimbingSound.playing:
+		$ClimbingSound.stop()
 		
 func _on_landing_animation_finished():
 	if current_state == State.LAND:

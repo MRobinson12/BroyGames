@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu3jw5u4rdx6n"]
+
+[ext_resource type="Script" path="res://Scripts/Interactables/ladder.gd" id="1_45cpr"]
+[ext_resource type="Texture2D" uid="uid://d1vpsnerd813" path="res://Assets/ladder.png" id="1_vxlg1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_372ut"]
+atlas = ExtResource("1_vxlg1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbtdu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_372ut")
+}],
+"loop": true,
+"name": &"ladder",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpj7r"]
+size = Vector2(32, 36)
+
+[node name="Ladder" type="Area2D"]
+collision_mask = 15
+script = ExtResource("1_45cpr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_mbtdu")
+animation = &"ladder"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_qpj7r")

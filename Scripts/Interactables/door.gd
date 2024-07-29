@@ -1,28 +1,35 @@
-extends StaticBody2D
+extends DoorBase
+class_name Door
 
-signal state_changed(is_open)
+signal door_opened(door_id)
 
-@export var is_open = false
-@onready var sprite = $DoorSprite
-@onready var collision_shape = $CollisionShape2D
+@export var door_id: String  # Unique identifier for each door
+@export var required_key_id: String
+
+var player_in_range: bool = false
 
 func _ready():
-	update_state()
+	sprite = $DoorSprite
+	collision_shape = $CollisionShape2D
+	super._ready()
 
-func open():
-	is_open = true
-	update_state()
+func _process(_delta):
+	if Input.is_action_just_pressed("interact") and player_in_range:
+		check_player_inventory()
 
-func close():
-	is_open = false
-	update_state()
+func _on_body_entered(_body):
+	player_in_range = true
 
-func update_state():
-	if is_open:
-		sprite.play("door_open")
-		collision_shape.set_deferred("disabled", true)
-	else:
-		sprite.play("door_closed")
-		collision_shape.set_deferred("disabled", false)
-	
-	emit_signal("state_changed", is_open)
+func _on_body_exited(_body):
+	player_in_range = false
+
+func check_player_inventory():
+	for i in range(GlobalData.player_inventory.contents.size()):
+		var item = GlobalData.player_inventory.contents[i]
+		if item is KeyItem and item.key_id == required_key_id:
+			open()
+			GlobalData.player_inventory.remove_item(i)
+			# Add door open sound here
+			emit_signal("door_opened", door_id)  # Emit signal when door is opened
+			return
+	# Add door rattle sound here
