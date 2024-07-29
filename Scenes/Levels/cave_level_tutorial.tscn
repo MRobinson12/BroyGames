@@ -159,7 +159,6 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_awtpg")
 
 [node name="Tutorial" type="Node2D"]
-position = Vector2(-368, -22)
 script = SubResource("GDScript_755xa")
 level_name = "tutorial"
 
