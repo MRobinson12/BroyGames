@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://duhchkpfr0cw4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/options.gd" id="1_kaji4"]
-[ext_resource type="Texture2D" uid="uid://caas8nf76c2mp" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="2_atnsi"]
+[ext_resource type="Texture2D" uid="uid://o7gxmed0f7v2" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="2_atnsi"]
 [ext_resource type="PackedScene" uid="uid://dm6te08dk6173" path="res://Scenes/UI/volume_slider.tscn" id="2_u5o7d"]
-[ext_resource type="AudioStream" uid="uid://b2kop3cm1f11c" path="res://Audio/OST/Down the Hatch (Main Theme).mp3" id="3_hmu2q"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="3_l7b0c"]
+[ext_resource type="AudioStream" uid="uid://cbmmk46gpdv5u" path="res://Audio/OST/In the Options.mp3" id="5_wdrnu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6lqkl"]
 shader = ExtResource("3_l7b0c")
@@ -27,6 +27,7 @@ texture = ExtResource("2_atnsi")
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -2
 material = SubResource("ShaderMaterial_6lqkl")
+layout_mode = 0
 offset_left = 61.0
 offset_top = 133.0
 offset_right = 642.0
@@ -84,7 +85,7 @@ theme_override_font_sizes/font_size = 30
 text = "Back"
 
 [node name="DownTheHatch(mainTheme)" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_hmu2q")
+stream = ExtResource("5_wdrnu")
 autoplay = true
 mix_target = 1
 bus = &"BGM"
