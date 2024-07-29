@@ -13,7 +13,6 @@ func _ready():
 func open():
 	is_open = true
 	update_state()
-	#emit_signal("door_opened")
 
 func close():
 	is_open = false

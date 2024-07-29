@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cm8kn8up46shg"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/door.gd" id="1_pu0cp"]
-[ext_resource type="Texture2D" uid="uid://dvrcx6k20ub2s" path="res://Assets/door.png" id="2_fhig4"]
+[ext_resource type="Texture2D" uid="uid://cxugwekdm1msw" path="res://Assets/door.png" id="2_fhig4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1nrp"]
 atlas = ExtResource("2_fhig4")
@@ -55,14 +55,16 @@ collision_mask = 15
 script = ExtResource("1_pu0cp")
 
 [node name="DoorSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u6704")
-animation = &"door_open"
+animation = &"door_closed"
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qvjyw")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_5q5ba")

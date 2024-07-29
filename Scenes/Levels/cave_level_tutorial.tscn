@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://dbwjfa8qplk5n" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://c6sr0plqqxrc" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
@@ -139,6 +139,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_awtpg")
 
 [node name="Tutorial" type="Node2D"]
+position = Vector2(-368, -22)
 script = SubResource("GDScript_755xa")
 level_name = "tutorial"
 
