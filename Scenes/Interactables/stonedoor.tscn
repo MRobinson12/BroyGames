@@ -1,19 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://ced5axb0h75g1"]
+[gd_scene load_steps=9 format=3 uid="uid://ced5axb0h75g1"]
 
-[ext_resource type="Texture2D" uid="uid://djoslm7eeraxv" path="res://Assets/stonepuzzledoor.png" id="1_73u3w"]
+[ext_resource type="Texture2D" uid="uid://cv34klthtxv0h" path="res://Assets/stonepuzzledoor.png" id="1_73u3w"]
 [ext_resource type="Script" path="res://Scripts/Interactables/stonedoor.gd" id="1_rhh0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfduv"]
+atlas = ExtResource("1_73u3w")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j06on"]
 atlas = ExtResource("1_73u3w")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pjaqw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_33o1k"]
 atlas = ExtResource("1_73u3w")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_607dv"]
+atlas = ExtResource("1_73u3w")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rveg0"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfduv")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j06on")
 }],
@@ -23,7 +34,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pjaqw")
+"texture": SubResource("AtlasTexture_33o1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_607dv")
 }],
 "loop": false,
 "name": &"door_open",
@@ -37,8 +51,9 @@ size = Vector2(8, 32)
 script = ExtResource("1_rhh0n")
 
 [node name="StonedoorSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rveg0")
-animation = &"door_closed"
+animation = &"door_open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_y02na")

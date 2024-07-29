@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1jcp6xo13urh"]
+[gd_scene load_steps=12 format=3 uid="uid://d1jcp6xo13urh"]
 
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="1_gk1ap"]
-[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="2_oqfku"]
+[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="2_oqfku"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="5_o02ya"]
-[ext_resource type="Texture2D" uid="uid://cewqqrdy2kspd" path="res://Assets/TestMap.png" id="5_renpk"]
+[ext_resource type="Texture2D" uid="uid://crnvcoqekpe6i" path="res://Assets/TestMap.png" id="5_renpk"]
+[ext_resource type="PackedScene" uid="uid://bnt0vsolhehbf" path="res://Scenes/wall_torch.tscn" id="6_b3k3j"]
 [ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="8_81d5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq70s"]
@@ -35,7 +36,8 @@ position_smoothing_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_gk1ap")]
 collision_mask = 21
 
-[node name="PlayerLight" parent="." instance=ExtResource("2_oqfku")]
+[node name="PlayerLight" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("2_oqfku")]
+lights = [NodePath("../WallTorch"), NodePath("../WallTorch2")]
 
 [node name="Temporary Ground" type="Sprite2D" parent="."]
 z_index = -2
@@ -86,3 +88,9 @@ position = Vector2(-70, -93)
 
 [node name="WoodenCrate7" parent="." instance=ExtResource("8_81d5o")]
 position = Vector2(-38, -86)
+
+[node name="WallTorch" parent="." instance=ExtResource("6_b3k3j")]
+position = Vector2(82, -26)
+
+[node name="WallTorch2" parent="." instance=ExtResource("6_b3k3j")]
+position = Vector2(-218, -28)

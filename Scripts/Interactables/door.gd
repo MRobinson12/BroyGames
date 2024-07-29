@@ -1,28 +1,38 @@
-extends StaticBody2D
+extends DoorBase
+class_name Door
 
-signal state_changed(is_open)
+signal door_opened(door_id)
 
-@export var is_open = false
-@onready var sprite = $DoorSprite
-@onready var collision_shape = $CollisionShape2D
+@export var required_key_id: String
+
+var player_in_range = false
+
 
 func _ready():
-	update_state()
+	sprite = $DoorSprite
+	collision_shape = $CollisionShape2D
+	$InteractionArea.connect("body_entered", Callable(self, "_on_body_entered"))
+	$InteractionArea.connect("body_exited", Callable(self, "_on_body_exited"))
+	super._ready()
 
-func open():
-	is_open = true
-	update_state()
+func _process(_delta):
+	if player_in_range == true:
+		if Input.is_action_just_pressed("interact"):
+			check_player_inventory()
+		
+func _on_body_entered(body):
+	if body is CharacterBody2D:
+		player_in_range = true
 
-func close():
-	is_open = false
-	update_state()
+func _on_body_exited(body):
+	if body is CharacterBody2D:
+		player_in_range = false
 
-func update_state():
-	if is_open:
-		sprite.play("door_open")
-		collision_shape.set_deferred("disabled", true)
-	else:
-		sprite.play("door_closed")
-		collision_shape.set_deferred("disabled", false)
-	
-	emit_signal("state_changed", is_open)
+func check_player_inventory():
+	for i in range(GlobalData.player_inventory.contents.size()):
+		var item = GlobalData.player_inventory.contents[i]
+		if item is KeyItem and item.key_id == required_key_id:
+			GlobalData.player_inventory.remove_item(i)
+			open()
+			return
+	# Add door rattle sound here

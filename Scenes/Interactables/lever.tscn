@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcmaq7wlqd4hq"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/lever.gd" id="1_g0txb"]
-[ext_resource type="Texture2D" uid="uid://cl3ydcmeg23h1" path="res://Assets/lever.png" id="2_5mgqx"]
+[ext_resource type="Texture2D" uid="uid://w4xgxeog8m34" path="res://Assets/lever.png" id="2_5mgqx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3g1xk"]
 atlas = ExtResource("2_5mgqx")
@@ -39,6 +39,7 @@ collision_mask = 2
 script = ExtResource("1_g0txb")
 
 [node name="LeverSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4muls")
 animation = &"lever_on"
 

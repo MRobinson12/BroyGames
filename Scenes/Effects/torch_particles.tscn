@@ -14,13 +14,11 @@ spread = 120.0
 initial_velocity_min = 50.0
 initial_velocity_max = 50.0
 gravity = Vector3(0, 98, 0)
-scale_min = 5.0
-scale_max = 8.0
+scale_min = 0.2
 scale_curve = SubResource("CurveTexture_kqdm7")
 color = Color(0.9339, 0.444487, 0.128527, 1)
 
 [node name="TorchParticles" type="GPUParticles2D"]
-position = Vector2(614, 290)
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_sowe0")
 lifetime = 5.0
