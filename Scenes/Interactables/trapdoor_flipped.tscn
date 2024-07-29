@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://do72ml5j1dfws"]
+[gd_scene load_steps=8 format=3 uid="uid://8joncykm2rn7"]
 
-[ext_resource type="Script" path="res://Scripts/Interactables/trapdoor.gd" id="1_c1t8s"]
-[ext_resource type="Texture2D" uid="uid://v2lklrhtufeg" path="res://Assets/trapdoor.png" id="1_rqb0i"]
+[ext_resource type="Script" path="res://Scripts/Interactables/trapdoor.gd" id="1_da0xr"]
+[ext_resource type="Texture2D" uid="uid://v2lklrhtufeg" path="res://Assets/trapdoor.png" id="2_cxlq2"]
+[ext_resource type="Texture2D" uid="uid://d2wm6djpf6g5f" path="res://Assets/trapdoor_otherside.png" id="3_mbes4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8jkw"]
-atlas = ExtResource("1_rqb0i")
+atlas = ExtResource("2_cxlq2")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ulofn"]
-atlas = ExtResource("1_rqb0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_okwtn"]
+atlas = ExtResource("3_mbes4")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2gx4d"]
@@ -23,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ulofn")
+"texture": SubResource("AtlasTexture_okwtn")
 }],
 "loop": true,
 "name": &"door_open",
@@ -35,7 +36,7 @@ size = Vector2(32, 7)
 
 [node name="Trapdoor" type="StaticBody2D"]
 collision_mask = 15
-script = ExtResource("1_c1t8s")
+script = ExtResource("1_da0xr")
 
 [node name="TrapdoorSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
