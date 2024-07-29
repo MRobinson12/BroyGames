@@ -14,8 +14,11 @@ var current_customer : Customer
 func _ready() -> void:
 	GlobalData.potion_crafted.connect(potion_crafted)
 	$UI.open_shop.connect(open_shop)
+	dialogue_box.custom_effects[0].char_displayed.connect(_on_char_displayed)
 
 func open_shop(recipes : Array[CraftRecipe]):
+	if GlobalData.day > 1:
+		dialogue_box.start('day2')
 	available_potions = recipes
 	spawn_customers()
 	next_customer()
@@ -72,3 +75,14 @@ func _on_dialogue_box_dialogue_signal(value: String) -> void:
 
 func _on_no_craft_pressed() -> void:
 	potion_crafted(null)
+
+
+func _on_leave_button_button_down() -> void:
+	GlobalData.day += 1
+	get_tree().change_scene_to_file("res://Scenes/Levels/cave_level_tutorial.tscn")
+
+func _on_char_displayed(idx):
+	# you can use the idx parameter to check the index of the character displayed
+	
+	# we'll just play an AudioStreamPlayer for this example
+	$DialogueBlip.play()

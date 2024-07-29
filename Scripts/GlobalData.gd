@@ -10,6 +10,7 @@ var home_inventory : HomeInventory = HomeInventory.new()
 var inventory_size = 12
 var max_potion_slots : int = 3
 var gold : int = 0
+var day : int = 1
 
 func move_inventory():
 	for item in player_inventory.contents:

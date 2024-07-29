@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://2yi53ock65go"]
+[gd_scene load_steps=8 format=3 uid="uid://2yi53ock65go"]
 
-[ext_resource type="Texture2D" uid="uid://vytheabluyn3" path="res://Assets/pressure_plate.png" id="1_lm2yx"]
+[ext_resource type="Texture2D" uid="uid://d3scg0mt830vj" path="res://Assets/pressure_plate.png" id="1_lm2yx"]
 [ext_resource type="Script" path="res://Scripts/Interactables/pressureplate.gd" id="1_ro81y"]
+[ext_resource type="AudioStream" uid="uid://smxejkhgpxkv" path="res://Audio/SFX/stonePressurePlate.mp3" id="3_pbshe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpv80"]
 atlas = ExtResource("1_lm2yx")
@@ -46,3 +47,12 @@ animation = &"plate_idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_lu85c")
+
+[node name="PressurePlatePressed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pbshe")
+bus = &"SFX"
+
+[node name="PressurePlateReleased" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pbshe")
+pitch_scale = 0.86
+bus = &"SFX"

@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://cxk7w3nykoaen" path="res://Assets/caverntileset.png" id="1_lhoy1"]
+[ext_resource type="Texture2D" uid="uid://dbwjfa8qplk5n" path="res://Assets/caverntileset.png" id="1_lhoy1"]
 [ext_resource type="Script" path="res://Scripts/Scene/tutorial.gd" id="1_pchjb"]
-[ext_resource type="Texture2D" uid="uid://dfleonmlypnlb" path="res://Assets/caverntilemapbackground.png" id="2_l1jp0"]
+[ext_resource type="Texture2D" uid="uid://c6sr0plqqxrc" path="res://Assets/caverntilemapbackground.png" id="2_l1jp0"]
 [ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="3_br8qu"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="4_cpf4q"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="5_whfb8"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="6_widss"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="7_724ik"]
 [ext_resource type="AudioStream" uid="uid://csnocllrik85a" path="res://Audio/OST/Secrets Behind the Caverns (Calm Cavern).mp3" id="9_66j6u"]
-[ext_resource type="PackedScene" uid="uid://c6i1fbhfvl7t2" path="res://Scenes/UI/pause_menu.tscn" id="10_uq48y"]
+[ext_resource type="PackedScene" uid="uid://lbbh7occk8nv" path="res://Scenes/UI/pause_menu.tscn" id="10_uq48y"]
 [ext_resource type="AudioStream" uid="uid://wks0bk8x2m4v" path="res://Audio/Ambience/ambienceCavern.mp3" id="11_vknwa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5akr"]
@@ -111,24 +111,16 @@ script = ExtResource("1_pchjb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(51, -19)
+position = Vector2(426, -20)
 zoom = Vector2(4, 4)
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("10_uq48y")]
 visible = false
-light_mask = 512
-visibility_layer = 512
-z_index = 11
-offset_left = -75.0
-offset_top = -75.0
-offset_right = -75.0
-offset_bottom = -75.0
-scale = Vector2(0.5, 0.5)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("7_724ik")]
 
 [node name="Player" parent="." instance=ExtResource("4_cpf4q")]
-position = Vector2(51, -19)
+position = Vector2(426, -20)
 collision_mask = 21
 
 [node name="PlayerLight" parent="." instance=ExtResource("6_widss")]

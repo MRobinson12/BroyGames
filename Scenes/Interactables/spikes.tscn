@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://65u0gclxhccd"]
+[gd_scene load_steps=7 format=3 uid="uid://65u0gclxhccd"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/spikes.gd" id="1_qy5wa"]
 [ext_resource type="Texture2D" uid="uid://ft8hadve11mi" path="res://Assets/stalagmite.png" id="1_y5hn3"]
+[ext_resource type="AudioStream" uid="uid://dltc5opx8m40e" path="res://Audio/SFX/deathSound.mp3" id="3_i5gyk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vlel"]
 atlas = ExtResource("1_y5hn3")
@@ -34,3 +35,8 @@ animation = &"spikes"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_0aalg")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i5gyk")
+volume_db = 8.432
+bus = &"SFX"

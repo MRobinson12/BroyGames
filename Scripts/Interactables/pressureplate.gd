@@ -12,10 +12,12 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("WoodenCrate") and not is_on:
+		$PressurePlatePressed.play()
 		toggle()
 
 func _on_body_exited(body):
 	if body.is_in_group("WoodenCrate") and is_on:
+		$PressurePlateReleased.play()
 		toggle()
 
 func toggle():

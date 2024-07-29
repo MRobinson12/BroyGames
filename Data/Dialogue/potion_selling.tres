@@ -6,6 +6,7 @@
 script = ExtResource("1_f7ko2")
 starts = {
 "correct": &"0_4",
+"day2": &"0_11",
 "incorrect": &"0_5",
 "lesser_bouncing_potion": &"0_3",
 "lesser_endurance_potion": &"0_6",
@@ -26,6 +27,11 @@ nodes = {
 "link": &"1_10",
 "offset": Vector2(-540, 2120),
 "start_id": "lesser_protection_potion"
+},
+"0_11": {
+"link": &"4_2",
+"offset": Vector2(-540, -1240),
+"start_id": "day2"
 },
 "0_2": {
 "link": &"1_2",
@@ -68,7 +74,7 @@ nodes = {
 "start_id": "lesser_lionsmight_potion"
 },
 "1_1": {
-"dialogue": "Glow potion please",
+"dialogue": "I need a potion that will make me glow.",
 "offset": Vector2(-200, -260),
 "options": {
 0: {
@@ -78,10 +84,10 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
 },
 "1_10": {
-"dialogue": "Protection potion please",
+"dialogue": "I need a potion that will protect me from physical harm.",
 "offset": Vector2(-200, 2120),
 "options": {
 0: {
@@ -91,10 +97,127 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
+},
+"1_11": {
+"dialogue": "The people in the town are saying there's a shadow creature on the loose! Apparently its got glowing yellow eyes and terrifying jagged teeth.",
+"offset": Vector2(1340, -1000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_12": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(1720, -1000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_13": {
+"dialogue": "You know it's been a while since we've had an alchemist in town, nice place you got here as well.",
+"offset": Vector2(1340, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_14": {
+"dialogue": "Yeah, I think it's nonsense too. Anyway, see ya!",
+"offset": Vector2(2460, -1000),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_15": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(2100, -1000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_16": {
+"dialogue": "The Lightguard came round the other day asking about anything suspicious in the area. I love those guys, they're always looking out for us.",
+"offset": Vector2(1340, 320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_25",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_17": {
+"dialogue": "When some folk in town told me there was an alchemy shop in this old tower, I could hardly believe it! The last alchemist, she didn't last very long. Word has it she was practicing dark magic in her cellar!",
+"offset": Vector2(1340, -400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_18": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(1720, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_19": {
+"dialogue": "Ah, the quiet type are you? No worries, I'll just take my potion and go.",
+"offset": Vector2(2100, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
 },
 "1_2": {
-"dialogue": "Magic potion please",
+"dialogue": "I need a potion to improve my magic ability.",
 "offset": Vector2(-200, 80),
 "options": {
 0: {
@@ -104,10 +227,140 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
+},
+"1_20": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(2460, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_21": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(1720, -400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_22",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_22": {
+"dialogue": "Say uh... You wouldn't be practicing dark magic... right?",
+"offset": Vector2(2100, -400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_23": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(2460, -400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_24": {
+"dialogue": "Pardon my manners, of course you're not! Have a great day alchemist!",
+"offset": Vector2(2820, -400),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_25": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(1720, 320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_26": {
+"dialogue": "They say the Lightguard are led by a great and powerful wizard. Imagine if he came to our village some day? It would be wonderful!",
+"offset": Vector2(2100, 320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_27",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_27": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(2460, 320),
+"options": {
+0: {
+"condition": {},
+"link": &"3_11",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_28": {
+"dialogue": "Say, where do you get all the ingredients for these?",
+"offset": Vector2(1340, 660),
+"options": {
+0: {
+"condition": {},
+"link": &"1_29",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_29": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(1720, 660),
+"options": {
+0: {
+"condition": {},
+"link": &"1_30",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
 },
 "1_3": {
-"dialogue": "Bouncing potion please",
+"dialogue": "I need a potion that makes me... Bouncy. Don't ask why.",
 "offset": Vector2(-200, 420),
 "options": {
 0: {
@@ -117,23 +370,114 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
 },
-"1_4": {
-"dialogue": "Thank you",
-"offset": Vector2(-200, -940),
+"1_30": {
+"dialogue": "Some locals said the caverns are full of ingredients, but they're WAY too dangerous for anyone to ever go down in to. Some locals say they hear strange russling and magic whirring coming from them during the night.",
+"offset": Vector2(2100, 660),
 "options": {
 0: {
 "condition": {},
-"link": &"3_1",
+"link": &"1_31",
 "text": ""
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
+},
+"1_31": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(2460, 660),
+"options": {
+0: {
+"condition": {},
+"link": &"1_32",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_32": {
+"dialogue": "Just a warning for you little guy, be careful if you are ever going down there!",
+"offset": Vector2(2820, 660),
+"options": {
+0: {
+"condition": {},
+"link": &"3_11",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_33": {
+"dialogue": "Have you heard of the high elves?",
+"offset": Vector2(1340, 1000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_34",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_34": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(1720, 1000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_35",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_35": {
+"dialogue": "Me neither, the folks in town keep mentioning them, who knows why?",
+"offset": Vector2(2100, 1000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_36",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
+},
+"1_36": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(2460, 1000),
+"options": {
+0: {
+"condition": {},
+"link": &"3_11",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_4": {
+"dialogue": "Thank you!",
+"offset": Vector2(-200, -940),
+"options": {
+0: {
+"condition": {},
+"link": &"4_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 0
 },
 "1_5": {
-"dialogue": "Thats not what i wanted!",
+"dialogue": "No, this isn't the right potion!",
 "offset": Vector2(-200, -600),
 "options": {
 0: {
@@ -143,10 +487,10 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
 },
 "1_6": {
-"dialogue": "Endurance potion please",
+"dialogue": "I need a potion that improves my endurance.",
 "offset": Vector2(-200, 760),
 "options": {
 0: {
@@ -156,10 +500,10 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
 },
 "1_7": {
-"dialogue": "Health potion please",
+"dialogue": "I need a healing potion.",
 "offset": Vector2(-200, 1100),
 "options": {
 0: {
@@ -169,10 +513,10 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
 },
 "1_8": {
-"dialogue": "Nightvision potion please",
+"dialogue": "I need a potion that will give me nightvision.",
 "offset": Vector2(-200, 1440),
 "options": {
 0: {
@@ -182,10 +526,10 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
 },
 "1_9": {
-"dialogue": "Lionsmight potion please",
+"dialogue": "I need a potion that will make me as strong as a lion!",
 "offset": Vector2(-200, 1780),
 "options": {
 0: {
@@ -195,11 +539,17 @@ nodes = {
 }
 },
 "size": Vector2(300, 240),
-"speaker": "Wizard"
+"speaker": 0
+},
+"2_1": {
+"comment": "DAY 2 DIALOGUE OPTIONS
+",
+"offset": Vector2(900, 180),
+"size": Vector2(260, 100)
 },
 "3_1": {
 "link": "END",
-"offset": Vector2(280, -940),
+"offset": Vector2(3020, -1000),
 "signalValue": "next_customer"
 },
 "3_10": {
@@ -207,19 +557,24 @@ nodes = {
 "offset": Vector2(280, 2120),
 "signalValue": "craft"
 },
+"3_11": {
+"link": "END",
+"offset": Vector2(3160, 300),
+"signalValue": "next_customer"
+},
 "3_2": {
 "link": "END",
-"offset": Vector2(280, -600),
+"offset": Vector2(140, -600),
 "signalValue": "next_customer"
 },
 "3_3": {
 "link": "END",
-"offset": Vector2(280, -260),
+"offset": Vector2(120, -220),
 "signalValue": "craft"
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(280, 80),
+"offset": Vector2(120, 80),
 "signalValue": "craft"
 },
 "3_5": {
@@ -246,8 +601,87 @@ nodes = {
 "link": "END",
 "offset": Vector2(280, 1780),
 "signalValue": "craft"
+},
+"4_1": {
+"link": &"5_4",
+"offset": Vector2(140, -760),
+"type": 1,
+"value": "1",
+"variable": "LORE"
+},
+"4_2": {
+"link": "END",
+"offset": Vector2(-200, -1240),
+"type": 0,
+"value": "true",
+"variable": "DAY2"
+},
+"5_1": {
+"false": &"5_2",
+"offset": Vector2(900, -1000),
+"operator": 0,
+"true": &"1_11",
+"value1": "{{LORE}}",
+"value2": "1"
+},
+"5_2": {
+"false": &"5_5",
+"offset": Vector2(900, -700),
+"operator": 0,
+"true": &"1_13",
+"value1": "{{LORE}}",
+"value2": "2"
+},
+"5_3": {
+"false": &"5_6",
+"offset": Vector2(880, 320),
+"operator": 0,
+"true": &"1_16",
+"value1": "{{LORE}}",
+"value2": "1"
+},
+"5_4": {
+"false": &"5_3",
+"offset": Vector2(500, -800),
+"operator": 0,
+"true": &"5_1",
+"value1": "{{DAY2}}",
+"value2": "false"
+},
+"5_5": {
+"false": &"3_1",
+"offset": Vector2(900, -400),
+"operator": 0,
+"true": &"1_17",
+"value1": "{{LORE}}",
+"value2": "3"
+},
+"5_6": {
+"false": &"5_7",
+"offset": Vector2(880, 660),
+"operator": 0,
+"true": &"1_28",
+"value1": "{{LORE}}",
+"value2": "2"
+},
+"5_7": {
+"false": &"3_11",
+"offset": Vector2(880, 1000),
+"operator": 0,
+"true": &"1_33",
+"value1": "{{LORE}}",
+"value2": "3"
 }
 }
-variables = {}
-strays = Array[String]([])
-characters = ""
+variables = {
+"DAY2": {
+"type": 1,
+"value": false
+},
+"LORE": {
+"type": 2,
+"value": 1
+}
+}
+strays = Array[String](["2_1"])
+characters = "res://Data/Dialogue/Characters.tres"

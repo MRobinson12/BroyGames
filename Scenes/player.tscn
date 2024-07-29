@@ -1,17 +1,17 @@
 [gd_scene load_steps=30 format=3 uid="uid://bfl4mpbg12kf7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fngfp"]
-[ext_resource type="Texture2D" uid="uid://djdhsq7vaod6x" path="res://Assets/wizardidle.png" id="2_8ywdc"]
-[ext_resource type="Texture2D" uid="uid://b64rmokgsjldn" path="res://Assets/wizard_climb.png" id="2_mwet1"]
-[ext_resource type="Texture2D" uid="uid://bphsu2qx8ekqx" path="res://Assets/wizardjump.png" id="3_36vxw"]
-[ext_resource type="Texture2D" uid="uid://dkay2ddylyjem" path="res://Assets/wizardrun.png" id="4_5s0fb"]
-[ext_resource type="Texture2D" uid="uid://df6f82nn6e56g" path="res://Assets/wizard_static_telekinesis.png" id="4_ycm81"]
+[ext_resource type="Texture2D" uid="uid://b2y28ukfcx47n" path="res://Assets/wizardidle.png" id="2_8ywdc"]
+[ext_resource type="Texture2D" uid="uid://deg3ykmiewdym" path="res://Assets/wizard_climb.png" id="2_mwet1"]
+[ext_resource type="Texture2D" uid="uid://cfvcglvdd31dn" path="res://Assets/wizardjump.png" id="3_36vxw"]
+[ext_resource type="Texture2D" uid="uid://l54kh0lwnvid" path="res://Assets/wizardrun.png" id="4_5s0fb"]
+[ext_resource type="Texture2D" uid="uid://btsmsnwu1hwv5" path="res://Assets/wizard_static_telekinesis.png" id="4_ycm81"]
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_ykm0p"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_hlbgl"]
-[ext_resource type="Texture2D" uid="uid://c8kwu6p65b6ml" path="res://Assets/wizardrun_telekinesis.png" id="7_kd7lj"]
-[ext_resource type="AudioStream" uid="uid://cwxq2n78vxone" path="res://Audio/ladder_climb.mp3" id="8_4vf45"]
-[ext_resource type="AudioStream" uid="uid://c67apjknpyrpl" path="res://Audio/SFX/telekinesisHum.mp3" id="11_q2vx6"]
-[ext_resource type="Texture2D" uid="uid://cac80jc5bpb1y" path="res://Assets/Icons/keyboard_e.png" id="12_4eykg"]
+[ext_resource type="Texture2D" uid="uid://dok5vrcuvl40g" path="res://Assets/wizardrun_telekinesis.png" id="7_kd7lj"]
+[ext_resource type="AudioStream" uid="uid://dw6bcd0xm88gr" path="res://Audio/ladder_climb.mp3" id="8_4vf45"]
+[ext_resource type="AudioStream" uid="uid://cs2l6yv4oxb5r" path="res://Audio/SFX/telekinesisHum.mp3" id="11_q2vx6"]
+[ext_resource type="AudioStream" uid="uid://cv34ty1mnb2kb" path="res://Audio/SFX/itemPickup.mp3" id="12_o54br"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyjbw"]
 atlas = ExtResource("2_mwet1")
@@ -224,7 +224,6 @@ position = Vector2(0, -22)
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_rydqf")
 
-[node name="PickupPrompt" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("12_4eykg")
+[node name="ItemPickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_o54br")
+volume_db = -6.559

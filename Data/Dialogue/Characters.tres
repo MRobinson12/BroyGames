@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterList" load_steps=9 format=3 uid="uid://dvbk60ai0r3li"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_y1bbh"]
+[ext_resource type="Texture2D" uid="uid://b8ygbwewnwuh" path="res://Assets/CUSTOMER/seq_customer_dialogueprofile.png" id="2_f5nhe"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="3_52hub"]
+[ext_resource type="Texture2D" uid="uid://jngkjato4r3b" path="res://Assets/shadowwizardprofile.png" id="3_xq2lh"]
+[ext_resource type="Texture2D" uid="uid://bm8yeysmbtr4x" path="res://Assets/cat_dialogue_profile.png" id="4_wo26g"]
+
+[sub_resource type="Resource" id="Resource_f30u3"]
+script = ExtResource("1_y1bbh")
+name = "Wizard"
+image = ExtResource("2_f5nhe")
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_f540i"]
+script = ExtResource("1_y1bbh")
+name = "Alchemist"
+image = ExtResource("3_xq2lh")
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_gl5ni"]
+script = ExtResource("1_y1bbh")
+name = "Cat"
+image = ExtResource("4_wo26g")
+color = Color(1, 1, 1, 1)
+
+[resource]
+script = ExtResource("3_52hub")
+characters = Array[ExtResource("1_y1bbh")]([SubResource("Resource_f30u3"), SubResource("Resource_f540i"), SubResource("Resource_gl5ni")])

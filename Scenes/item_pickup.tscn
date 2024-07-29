@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/pickup.gd" id="1_330uh"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pickup_spawn.gdshader" id="3_46hec"]
-[ext_resource type="Texture2D" uid="uid://p0d45p8jo0iq" path="res://Assets/SPRITES/greendle_icon.png" id="3_m733d"]
+[ext_resource type="Texture2D" uid="uid://pgqrf6ljaeng" path="res://Assets/SPRITES/greendle_icon.png" id="3_m733d"]
 
 [sub_resource type="Resource" id="Resource_5b0f1"]
 metadata/__load_path__ = "res://Data/Items/test_item.tres"

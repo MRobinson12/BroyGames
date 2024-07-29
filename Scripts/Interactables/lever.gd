@@ -25,6 +25,7 @@ func _on_body_exited(body):
 func toggle():
 	is_on = !is_on
 	emit_signal("toggled", is_on)
+	$LeverSound.play()
 	update_appearance()
 
 func update_appearance():

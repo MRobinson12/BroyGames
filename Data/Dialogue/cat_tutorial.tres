@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://baek1cffn0ti7"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_bio7r"]
+
+[resource]
+script = ExtResource("1_bio7r")
+starts = {
+"CI1": &"0_1",
+"CI2": &"0_2"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-560, -380),
+"start_id": "CI1"
+},
+"0_2": {
+"link": &"1_4",
+"offset": Vector2(-560, 20),
+"start_id": "CI2"
+},
+"1_1": {
+"dialogue": "Hello. 
+I am your cat. 
+Welcome to the mines.",
+"offset": Vector2(-280, -380),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_2": {
+"dialogue": "The mines is where you will find all of your ingredients, which you will use to make your potions up in the shop. It's right up that ladder, but don't go up there yet or we'll have nothing to sell!",
+"offset": Vector2(80, -380),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_3": {
+"dialogue": "First things first, there's a trapdoor over there, and we have to get it open. 
+Also, don't forget about your Telekinesis. You can use it on objects like the wooden crate beside us to manipulate them with what the modern folk call... a \"mouse cursor\"",
+"offset": Vector2(440, -380),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 320),
+"speaker": 2
+},
+"1_4": {
+"dialogue": "Nice work getting that trapdoor open. Now that you are down here, lets get foraging. See all these plants? Take them. The government can't stop you. You can just take them home for free.",
+"offset": Vector2(-280, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_5": {
+"dialogue": "You can forage them by walking over them and pressing what the modern folk call... the \"E\" key.",
+"offset": Vector2(80, 20),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = "res://Data/Dialogue/Characters.tres"

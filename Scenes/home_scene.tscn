@@ -1,17 +1,18 @@
-[gd_scene load_steps=49 format=3 uid="uid://d0oxhy6bqc4tn"]
+[gd_scene load_steps=51 format=3 uid="uid://d0oxhy6bqc4tn"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_cd4gh"]
 [ext_resource type="Script" path="res://Scripts/home.gd" id="1_xy1ba"]
+[ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="2_t2m5v"]
 [ext_resource type="PackedScene" uid="uid://dwgdycnwfhw10" path="res://Scenes/UI/home_menu.tscn" id="2_ye0aa"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/crafting_menu.tscn" id="3_dryjk"]
+[ext_resource type="PackedScene" uid="uid://dh7dece7uaj7c" path="res://Scenes/UI/crafting_menu.tscn" id="3_dryjk"]
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_1xgd4"]
-[ext_resource type="Texture2D" uid="uid://djdhsq7vaod6x" path="res://Assets/wizardidle.png" id="4_q2egp"]
-[ext_resource type="Texture2D" uid="uid://bphsu2qx8ekqx" path="res://Assets/wizardjump.png" id="5_3i8d0"]
+[ext_resource type="Texture2D" uid="uid://b2y28ukfcx47n" path="res://Assets/wizardidle.png" id="4_q2egp"]
+[ext_resource type="Texture2D" uid="uid://cfvcglvdd31dn" path="res://Assets/wizardjump.png" id="5_3i8d0"]
 [ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_ai3n5"]
-[ext_resource type="Texture2D" uid="uid://dkay2ddylyjem" path="res://Assets/wizardrun.png" id="6_k8vap"]
+[ext_resource type="Texture2D" uid="uid://l54kh0lwnvid" path="res://Assets/wizardrun.png" id="6_k8vap"]
 [ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="6_pid5h"]
 [ext_resource type="Resource" uid="uid://cntjkbdakb4ob" path="res://Data/Items/blattashroom.tres" id="7_7my3p"]
-[ext_resource type="Texture2D" uid="uid://bs2sr5ugp0kp5" path="res://Assets/potion_frame_blank.png" id="7_v1lnr"]
+[ext_resource type="Texture2D" uid="uid://byarkvy2dm13q" path="res://Assets/potion_frame_blank.png" id="7_v1lnr"]
 [ext_resource type="Resource" uid="uid://djw6qkrpc7flq" path="res://Data/Items/anpel.tres" id="8_y45fn"]
 [ext_resource type="Resource" uid="uid://ce20uu6x0kta3" path="res://Data/Items/gloomberry.tres" id="9_i633h"]
 [ext_resource type="Resource" uid="uid://d1b611ejm1prm" path="res://Data/Items/slate_slime.tres" id="10_vx6oo"]
@@ -21,16 +22,17 @@
 [ext_resource type="Script" path="res://Scripts/move_inv.gd" id="14_7adyi"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="14_n4vx7"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="15_f6vks"]
-[ext_resource type="Texture2D" uid="uid://bpninbg0sjlw0" path="res://Assets/potion_shop.png" id="15_ttdwj"]
+[ext_resource type="Texture2D" uid="uid://bne1ybjjmig8u" path="res://Assets/potion_shop.png" id="15_ttdwj"]
 [ext_resource type="Resource" uid="uid://b30kmgqmlxbv0" path="res://Data/Dialogue/potion_selling.tres" id="15_ublkc"]
-[ext_resource type="Texture2D" uid="uid://bykygdqdhkxbh" path="res://Assets/cauldron.png" id="16_hxtu8"]
+[ext_resource type="Texture2D" uid="uid://bvpc7ujqyovbi" path="res://Assets/cauldron.png" id="16_hxtu8"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="16_wyvvm"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="17_ltftl"]
-[ext_resource type="Texture2D" uid="uid://xd7tr5jrcmee" path="res://Assets/shop_counter.png" id="20_sh3ep"]
-[ext_resource type="AudioStream" uid="uid://ddqolybr57yaj" path="res://Audio/Ambience/ambienceShop.mp3" id="28_wc7we"]
+[ext_resource type="Texture2D" uid="uid://ce7y12ohjiihb" path="res://Assets/shop_counter.png" id="20_sh3ep"]
+[ext_resource type="AudioStream" uid="uid://bmlk0k7yrwq7m" path="res://Audio/Ambience/ambienceShop.mp3" id="28_wc7we"]
 [ext_resource type="AudioStream" uid="uid://dhd788dh7tetf" path="res://Audio/OST/The Silliest Potion Shop.mp3" id="29_4l7pv"]
-[ext_resource type="AudioStream" uid="uid://d3bbv8gdjdgup" path="res://Audio/SFX/potionWrong.mp3" id="30_oo6vk"]
-[ext_resource type="AudioStream" uid="uid://d36cka73d3noa" path="res://Audio/SFX/potionCorrect.mp3" id="31_lcicl"]
+[ext_resource type="AudioStream" uid="uid://dg85c0716m670" path="res://Audio/SFX/potionWrong.mp3" id="30_oo6vk"]
+[ext_resource type="AudioStream" uid="uid://bq6a84mbj1ji8" path="res://Audio/SFX/potionCorrect.mp3" id="31_lcicl"]
+[ext_resource type="AudioStream" uid="uid://bin1ei6yesmjv" path="res://examples/voice.ogg" id="32_w6ey1"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_ubakh"]
 script = ExtResource("15_f6vks")
@@ -159,6 +161,11 @@ size = Vector2(20, 120)
 [node name="Home" type="Node2D"]
 script = ExtResource("1_xy1ba")
 
+[node name="Trapdoor" parent="." instance=ExtResource("2_t2m5v")]
+z_index = 2
+position = Vector2(100, 512)
+scale = Vector2(2.813, 2.813)
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("1_cd4gh")
 
@@ -166,7 +173,9 @@ script = ExtResource("1_cd4gh")
 unique_name_in_owner = true
 texture_filter = 1
 offset_left = -310.0
+offset_top = -334.0
 offset_right = 310.0
+offset_bottom = 50.0
 
 [node name="CraftingMenu" parent="UI" instance=ExtResource("3_dryjk")]
 unique_name_in_owner = true
@@ -205,10 +214,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -414.0
-offset_top = -113.0
-offset_right = 414.0
-offset_bottom = 87.0
+offset_left = -378.0
+offset_top = 192.0
+offset_right = 378.0
+offset_bottom = 352.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -243,12 +252,12 @@ offset_right = 1249.0
 offset_bottom = 44.0
 text = "0"
 
-[node name="Button" type="Button" parent="UI"]
+[node name="LeaveButton" type="Button" parent="UI"]
 z_index = 2
-offset_left = 69.0
-offset_top = 498.0
-offset_right = 227.0
-offset_bottom = 529.0
+offset_left = 153.0
+offset_top = 577.0
+offset_right = 311.0
+offset_bottom = 608.0
 text = "Go Down the Hatch"
 
 [node name="Tower Background" type="Sprite2D" parent="."]
@@ -337,10 +346,14 @@ stream = ExtResource("30_oo6vk")
 [node name="ShopCorrect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_lcicl")
 
+[node name="DialogueBlip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_w6ey1")
+
 [connection signal="pressed" from="UI/OpenShopButton" to="UI" method="_on_open_shop_button_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
 [connection signal="dialogue_signal" from="UI/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 [connection signal="pressed" from="UI/MoveInv" to="UI/MoveInv" method="_on_pressed"]
 [connection signal="pressed" from="UI/NoCraft" to="." method="_on_no_craft_pressed"]
+[connection signal="button_down" from="UI/LeaveButton" to="." method="_on_leave_button_button_down"]
 [connection signal="body_entered" from="DialogueArea" to="." method="_on_dialogue_area_body_entered"]
 [connection signal="body_entered" from="DespawnArea" to="." method="_on_despawn_area_body_entered"]
