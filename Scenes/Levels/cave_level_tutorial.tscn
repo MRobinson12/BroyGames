@@ -1,11 +1,11 @@
 [gd_scene load_steps=24 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://c2md38avli2d6" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://cd8quadrlk7of" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
-[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
-[ext_resource type="PackedScene" uid="uid://lbbh7occk8nv" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
+[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
@@ -176,7 +176,7 @@ tile_set = SubResource("TileSet_xjii5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(663, 103)
+position = Vector2(59, -18)
 zoom = Vector2(5, 5)
 process_callback = 0
 position_smoothing_enabled = true
@@ -192,7 +192,7 @@ transform = Transform2D(2, 0, 0, 2, 400, 100)
 position = Vector2(0, -4)
 
 [node name="Player" parent="." instance=ExtResource("5_mea2j")]
-position = Vector2(663, 103)
+position = Vector2(59, -18)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("6_ykjf5")]
 visible = false
@@ -211,7 +211,6 @@ position = Vector2(98, -13)
 
 [node name="DoorController1" type="Node" parent="."]
 script = ExtResource("11_k04to")
-target_path = NodePath("../Trapdoor")
 activator_paths = Array[NodePath]([NodePath("../Pressureplate")])
 
 [node name="LockedDoor" parent="." instance=ExtResource("12_gte3w")]
