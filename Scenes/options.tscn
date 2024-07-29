@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://duhchkpfr0cw4"]
+[gd_scene load_steps=4 format=3 uid="uid://duhchkpfr0cw4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/options.gd" id="1_kaji4"]
+[ext_resource type="PackedScene" uid="uid://dm6te08dk6173" path="res://Scenes/UI/volume_slider.tscn" id="2_u5o7d"]
+[ext_resource type="AudioStream" uid="uid://b2kop3cm1f11c" path="res://Audio/OST/Down the Hatch (Main Theme).mp3" id="3_hmu2q"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -13,28 +15,45 @@ script = ExtResource("1_kaji4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 348.0
-offset_top = 58.0
-offset_right = 920.0
-offset_bottom = 469.0
+offset_left = 359.0
+offset_top = 122.0
+offset_right = 931.0
+offset_bottom = 533.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Options"
+text = "Options
+
+"
 horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Master"
+
+[node name="volume_slider3" parent="VBoxContainer" instance=ExtResource("2_u5o7d")]
+layout_mode = 2
+bus_name = "Master"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Music"
 
-[node name="MusicVol" type="HSlider" parent="VBoxContainer"]
+[node name="volume_slider" parent="VBoxContainer" instance=ExtResource("2_u5o7d")]
 layout_mode = 2
-min_value = -100.0
-max_value = 10.0
-step = 2.0
-value = -6.0
+bus_name = "BGM"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Sound Effects"
+
+[node name="volume_slider2" parent="VBoxContainer" instance=ExtResource("2_u5o7d")]
+layout_mode = 2
+bus_name = "SFX"
 
 [node name="Return" type="Button" parent="."]
 layout_mode = 0
@@ -45,6 +64,10 @@ offset_bottom = 687.0
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
-[connection signal="drag_ended" from="VBoxContainer/MusicVol" to="." method="_on_music_vol_drag_ended"]
-[connection signal="value_changed" from="VBoxContainer/MusicVol" to="." method="_on_music_vol_value_changed"]
+[node name="DownTheHatch(mainTheme)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hmu2q")
+autoplay = true
+mix_target = 1
+bus = &"BGM"
+
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

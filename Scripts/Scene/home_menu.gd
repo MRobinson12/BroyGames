@@ -36,7 +36,7 @@ func potion_selected(_value):
 		if child.find_child("CheckBox").button_pressed == true:
 			selected_recipes.append(child.recipe)
 	if selected_recipes.size() >= GlobalData.max_potion_slots:
-		disable_selection()
+		max_selected()
 	else:
 		enable_selection()
 		refresh_potions()
@@ -45,10 +45,14 @@ func enable_selection():
 	for child in find_child("PotionList").get_children():
 		child.find_child("CheckBox").disabled = false
 
-func disable_selection():
+func max_selected():
 	for child in find_child("PotionList").get_children():
 		if child.find_child("CheckBox").button_pressed == false:
 			child.find_child("CheckBox").disabled = true
+	
+func disable_selection():
+	for child in find_child("PotionList").get_children():
+		child.find_child("CheckBox").disabled = true
 
 func populate_potions():
 	for child in find_child("PotionList").get_children():

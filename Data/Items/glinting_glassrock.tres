@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bk5tp2igynusk"]
 
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_2qaw6"]
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_3ujak"]
+[ext_resource type="Texture2D" uid="uid://sthfxj8h8k5r" path="res://Assets/SPRITES/glinting_glassrock_icon.png" id="1_nqafi"]
 
 [resource]
 script = ExtResource("1_3ujak")
 id = "glinting_glassrock"
 name = "Glinting Glassrock"
-icon = ExtResource("1_2qaw6")
+icon = ExtResource("1_nqafi")
 description = "This strange glass-like material catches even the faintest light and reflects it right back. Clusters of these rocks are said to illuminate caverns like the night sky, or at least what the cave dwellers thought the night sky looked like."

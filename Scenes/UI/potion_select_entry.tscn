@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://baub6qvkpfjab"]
+[gd_scene load_steps=7 format=3 uid="uid://baub6qvkpfjab"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_select_entry.gd" id="1_5c5gy"]
-[ext_resource type="Texture2D" uid="uid://dcl5krps7fpo3" path="res://Assets/Icons/test_item2.png" id="2_earwh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a4gky"]
 
@@ -25,7 +24,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_a4gky")
 [node name="IconTexture" type="TextureRect" parent="Icon"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_earwh")
 expand_mode = 1
 stretch_mode = 5
 

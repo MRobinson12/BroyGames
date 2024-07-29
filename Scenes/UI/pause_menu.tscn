@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6i1fbhfvl7t2"]
+
+[ext_resource type="PackedScene" uid="uid://dm6te08dk6173" path="res://Scenes/UI/volume_slider.tscn" id="1_iun4t"]
+[ext_resource type="Script" path="res://Scenes/UI/pause_menu.gd" id="1_jysgl"]
+[ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="2_ar2co"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twaur"]
+shader = ExtResource("2_ar2co")
+shader_parameter/amount = 5.0
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -945.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jysgl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_twaur")
+layout_mode = 0
+offset_right = 335.0
+offset_bottom = 272.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 337.0
+offset_bottom = 261.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Paused:"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Audio Settings"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="volume_slider" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_iun4t")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="volume_slider2" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_iun4t")]
+layout_mode = 2
+bus_name = "BGM"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="volume_slider3" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_iun4t")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

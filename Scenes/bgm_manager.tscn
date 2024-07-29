@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7rbqjpxia7l"]
-
-[ext_resource type="Script" path="res://Scripts/Scene/bgm_manager.gd" id="1_5oc3x"]
-
-[node name="BgmManager" type="AudioStreamPlayer"]
-autoplay = true
-mix_target = 1
-script = ExtResource("1_5oc3x")

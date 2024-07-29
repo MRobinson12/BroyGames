@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://4lvx8ukrf6cq"]
+[gd_scene load_steps=3 format=3 uid="uid://bh5x4yqwy836l"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/player_vignette.gdshader" id="1_lo4v3"]
 
@@ -17,4 +17,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
