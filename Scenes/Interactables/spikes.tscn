@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://65u0gclxhccd"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/spikes.gd" id="1_qy5wa"]
-[ext_resource type="Texture2D" uid="uid://su7iyjoplulh" path="res://Assets/stalagmite.png" id="1_y5hn3"]
+[ext_resource type="Texture2D" uid="uid://ft8hadve11mi" path="res://Assets/stalagmite.png" id="1_y5hn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vlel"]
 atlas = ExtResource("1_y5hn3")
@@ -27,6 +27,7 @@ collision_mask = 2
 script = ExtResource("1_qy5wa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_56lc4")
 animation = &"spikes"
 

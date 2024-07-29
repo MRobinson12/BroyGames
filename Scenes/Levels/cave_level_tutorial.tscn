@@ -1,23 +1,38 @@
-[gd_scene load_steps=25 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=23 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://buhwjltmrbhig" path="res://Assets/caverntileset.png" id="1_h0ljc"]
-[ext_resource type="Script" path="res://Scripts/Levels/BaseLevel.gd" id="1_i7fqv"]
+[ext_resource type="Texture2D" uid="uid://dbwjfa8qplk5n" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://6dt3aejhuyc8" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://c6sr0plqqxrc" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
-[ext_resource type="PackedScene" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
+[ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="8_hxi5o"]
 [ext_resource type="PackedScene" uid="uid://2yi53ock65go" path="res://Scenes/Interactables/pressureplate.tscn" id="9_vxldi"]
-[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/Interactables/wooden_crate.tscn" id="10_ofed1"]
 [ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="11_k04to"]
 [ext_resource type="PackedScene" uid="uid://cm8kn8up46shg" path="res://Scenes/Interactables/door.tscn" id="12_gte3w"]
-[ext_resource type="PackedScene" path="res://Scenes/item_pickup.tscn" id="13_r5vo4"]
+[ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/item_pickup.tscn" id="13_r5vo4"]
 [ext_resource type="Resource" uid="uid://bjrixtppiu03h" path="res://Data/Items/key_item.tres" id="14_h5qaw"]
-[ext_resource type="PackedScene" uid="uid://cqmtf5tfhq7gt" path="res://Scenes/player_spawner.tscn" id="15_oobx3"]
-[ext_resource type="PackedScene" uid="uid://bmq2kmtolcdjh" path="res://Scenes/player_level_transition.tscn" id="16_fqxit"]
+[ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="16_6kgx5"]
+
+[sub_resource type="GDScript" id="GDScript_755xa"]
+script/source = "extends Node2D
+class_name BaseLevel
+
+@export var level_name: String
+
+func _ready() -> void:
+	for child in get_children():
+		if child is Area2D and child.is_in_group(\"level_transition\"):
+			child.connect(\"body_entered\", _on_level_transition_body_entered.bind(child))
+
+func _on_level_transition_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		var target_level = $Area2D.get_meta(\"target_level\")
+		var target_entry = $Area2D.get_meta(\"target_entry\", \"SpawnPoint\")
+		get_tree().get_root().get_node(\"LevelHandler\").change_level(target_level, target_entry)
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5akr"]
 texture = ExtResource("1_h0ljc")
@@ -124,7 +139,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_awtpg")
 
 [node name="Tutorial" type="Node2D"]
-script = ExtResource("1_i7fqv")
+script = SubResource("GDScript_755xa")
 level_name = "tutorial"
 
 [node name="TileMap" type="TileMapLayer" parent="."]
@@ -140,7 +155,7 @@ tile_set = SubResource("TileSet_xjii5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(62, -17)
+position = Vector2(663, 103)
 zoom = Vector2(5, 5)
 process_callback = 0
 position_smoothing_enabled = true
@@ -149,7 +164,7 @@ position_smoothing_enabled = true
 position = Vector2(0, -4)
 
 [node name="Player" parent="." instance=ExtResource("5_mea2j")]
-position = Vector2(62, -17)
+position = Vector2(663, 103)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("6_ykjf5")]
 visible = false
@@ -163,7 +178,7 @@ position = Vector2(304, -9)
 [node name="Pressureplate" parent="." instance=ExtResource("9_vxldi")]
 position = Vector2(433, -16)
 
-[node name="WoodenCrate" parent="." instance=ExtResource("10_ofed1")]
+[node name="WoodenCrate" parent="." instance=ExtResource("16_6kgx5")]
 position = Vector2(98, -13)
 
 [node name="DoorController1" type="Node" parent="."]
@@ -176,14 +191,6 @@ position = Vector2(498, -16)
 required_key_id = "01"
 
 [node name="DoorKey" parent="." instance=ExtResource("13_r5vo4")]
+texture_filter = 1
 position = Vector2(626, 117)
-scale = Vector2(2.5, 2.5)
 item = ExtResource("14_h5qaw")
-
-[node name="SpawnPoint" parent="." instance=ExtResource("15_oobx3")]
-position = Vector2(48, -13)
-player_scene = ExtResource("5_mea2j")
-
-[node name="PlayerLevelTransition" parent="." instance=ExtResource("16_fqxit")]
-position = Vector2(824, -45)
-target_level = "cave_1a"

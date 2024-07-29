@@ -12,8 +12,6 @@ func _ready():
 	sprite = $DoorSprite
 	collision_shape = $CollisionShape2D
 	super._ready()
-	$InteractionArea.connect("body_entered", _on_body_entered)
-	$InteractionArea.connect("body_exited", _on_body_exited)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and player_in_range:
