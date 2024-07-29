@@ -1,6 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgsd7wbtfdic7"]
-
-[ext_resource type="Texture2D" uid="uid://dct3awbtp2n20" path="res://Assets/Icons/test_item.png" id="1_kn662"]
+[gd_scene load_steps=4 format=3 uid="uid://dgsd7wbtfdic7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktbag"]
 
@@ -18,7 +16,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ktbag")
 
 [node name="IconTexture" type="TextureRect" parent="Icon"]
 layout_mode = 2
-texture = ExtResource("1_kn662")
 expand_mode = 1
 
 [node name="Name" type="PanelContainer" parent="."]

@@ -1,13 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 android/
-# Test Comment
 *.import
-/addons
-.githooks/commit-msg
-/.githooks
-CHANGELOG.rst
-CODE_OF_CONDUCT.md
-CONTRIBUTING.md
-/demo
-/images
