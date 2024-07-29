@@ -45,9 +45,11 @@ func potion_crafted(potion : Item):
 	%CraftingMenu.hide()
 	$UI/NoCraft.hide()
 	if potion == current_customer.wanted_potion:
+		$ShopCorrect.play()
 		dialogue_box.start('correct')
 		GlobalData.gold += 10
 	else:
+		$ShopIncorrect.play()
 		dialogue_box.start('incorrect')
 		
 func show_craft():
