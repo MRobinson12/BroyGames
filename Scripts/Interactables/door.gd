@@ -31,7 +31,7 @@ func _on_body_exited(body):
 func check_player_inventory():
 	for i in range(GlobalData.player_inventory.contents.size()):
 		var item = GlobalData.player_inventory.contents[i]
-		if item is KeyItem and item.key_id == required_key_id:
+		if item.name == required_key_id:
 			GlobalData.player_inventory.remove_item(i)
 			$DoorOpen.play()
 			open()

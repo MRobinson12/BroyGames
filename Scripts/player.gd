@@ -127,7 +127,7 @@ func _physics_process(delta):
 	if not items_in_range.is_empty():
 		var shortest_distance = INF
 		for item in items_in_range:
-			if item is Pickup:
+			if item is Pickup or item is KeyPickup:
 				var distance = position.distance_squared_to(item.position)
 				if distance < shortest_distance:
 					nearest_item = item
@@ -147,6 +147,14 @@ func _physics_process(delta):
 			if nearest_item is Foragable and not nearest_item.picked:
 				GlobalData.player_inventory.add_item(nearest_item.item)
 				nearest_item.pick()
+			elif nearest_item is KeyPickup:
+				var new_key = Item.new()
+				new_key.icon = nearest_item.get_node("Sprite2D").texture
+				new_key.id = "null_item"
+				new_key.name = nearest_item.id
+				new_key.description = "N/A"
+				GlobalData.player_inventory.add_item(new_key)
+				nearest_item.queue_free()
 			elif nearest_item is not Foragable:
 				GlobalData.player_inventory.add_item(nearest_item.item)
 				nearest_item.queue_free()
