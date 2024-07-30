@@ -102,7 +102,4 @@ func _on_leave_button_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Levels/cave_level_tutorial.tscn")
 
 func _on_char_displayed(idx):
-	# you can use the idx parameter to check the index of the character displayed
-	
-	# we'll just play an AudioStreamPlayer for this example
 	$DialogueBlip.play()

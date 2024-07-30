@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://duhchkpfr0cw4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/options.gd" id="1_kaji4"]
-[ext_resource type="Theme" uid="uid://dw7x1c47wnwhn" path="res://Scenes/UI/buttontheme.tres" id="1_nfqrl"]
-[ext_resource type="Texture2D" uid="uid://caas8nf76c2mp" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="2_atnsi"]
+[ext_resource type="Theme" uid="uid://be1covwh814fe" path="res://Scenes/UI/buttontheme.tres" id="1_nfqrl"]
+[ext_resource type="Texture2D" uid="uid://o7gxmed0f7v2" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="2_atnsi"]
 [ext_resource type="PackedScene" uid="uid://dm6te08dk6173" path="res://Scenes/UI/volume_slider.tscn" id="2_u5o7d"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="3_l7b0c"]
-[ext_resource type="AudioStream" uid="uid://htakbm4m876r" path="res://Audio/OST/In the Options.mp3" id="5_wdrnu"]
+[ext_resource type="AudioStream" uid="uid://cbmmk46gpdv5u" path="res://Audio/OST/In the Options.mp3" id="5_wdrnu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6lqkl"]
 shader = ExtResource("3_l7b0c")

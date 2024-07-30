@@ -21,8 +21,8 @@ nodes = {
 "start_id": "CI2"
 },
 "0_3": {
-"link": &"1_7",
-"offset": Vector2(-560, 360),
+"link": &"3_1",
+"offset": Vector2(-700, 360),
 "start_id": "CI3"
 },
 "1_1": {
@@ -157,6 +157,11 @@ Also, don't forget about your Telekinesis. You can use it on objects like the wo
 },
 "size": Vector2(300, 240),
 "speaker": 2
+},
+"3_1": {
+"link": &"1_7",
+"offset": Vector2(-500, 360),
+"signalValue": "hide_the_cats"
 }
 }
 variables = {}

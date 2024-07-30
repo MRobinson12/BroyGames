@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://d0oxhy6bqc4tn"]
+[gd_scene load_steps=53 format=3 uid="uid://d0oxhy6bqc4tn"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_cd4gh"]
 [ext_resource type="Script" path="res://Scripts/home.gd" id="1_xy1ba"]
@@ -21,16 +21,13 @@
 [ext_resource type="Resource" uid="uid://rrjryjm5i44a" path="res://Data/Items/stal_wart.tres" id="13_iy7va"]
 [ext_resource type="Script" path="res://Scripts/move_inv.gd" id="14_7adyi"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="14_n4vx7"]
+[ext_resource type="Theme" uid="uid://bu0af5niw4fbw" path="res://Scenes/UI/dialogueboxtheme.tres" id="15_8117k"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="15_f6vks"]
-[ext_resource type="FontFile" uid="uid://dv4rnn0ml62q3" path="res://addons/dialogue_nodes/themes/Poppins-Bold.ttf" id="15_hi6mu"]
 [ext_resource type="Texture2D" uid="uid://bne1ybjjmig8u" path="res://Assets/potion_shop.png" id="15_ttdwj"]
 [ext_resource type="Resource" uid="uid://b30kmgqmlxbv0" path="res://Data/Dialogue/potion_selling.tres" id="15_ublkc"]
 [ext_resource type="Texture2D" uid="uid://bvpc7ujqyovbi" path="res://Assets/cauldron.png" id="16_hxtu8"]
-[ext_resource type="FontFile" uid="uid://bhtf12vvs2yjq" path="res://addons/dialogue_nodes/themes/Poppins-BoldItalic.ttf" id="16_ld0fo"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="16_wyvvm"]
-[ext_resource type="FontFile" uid="uid://bcg26eik2m2o8" path="res://addons/dialogue_nodes/themes/Poppins-Italic.ttf" id="17_b38jo"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="17_ltftl"]
-[ext_resource type="FontFile" uid="uid://b1bq3eoec0j1b" path="res://addons/dialogue_nodes/themes/Poppins-Regular.ttf" id="18_hlp8f"]
 [ext_resource type="Texture2D" uid="uid://ce7y12ohjiihb" path="res://Assets/shop_counter.png" id="20_sh3ep"]
 [ext_resource type="AudioStream" uid="uid://bmlk0k7yrwq7m" path="res://Audio/Ambience/ambienceShop.mp3" id="28_wc7we"]
 [ext_resource type="AudioStream" uid="uid://dhd788dh7tetf" path="res://Audio/OST/The Silliest Potion Shop.mp3" id="29_4l7pv"]
@@ -38,219 +35,6 @@
 [ext_resource type="AudioStream" uid="uid://bq6a84mbj1ji8" path="res://Audio/SFX/potionCorrect.mp3" id="31_lcicl"]
 [ext_resource type="AudioStream" uid="uid://bin1ei6yesmjv" path="res://examples/voice.ogg" id="32_w6ey1"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="34_n0vev"]
-
-[sub_resource type="StyleBoxFlat" id="2"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(0.0475577, 0.0475576, 0.0475576, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.126, 0.154, 0.175, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-
-[sub_resource type="StyleBoxFlat" id="3"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 1)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="4"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(0.262745, 0.262745, 0.309804, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 8
-border_color = Color(1, 0.894118, 0.470588, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="5"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(0.152941, 0.152941, 0.211765, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="6"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(0.152941, 0.152941, 0.211765, 1)
-border_color = Color(1, 0.894118, 0.470588, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 4.0
-expand_margin_top = 2.0
-expand_margin_right = 4.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxEmpty" id="7"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14dh5"]
-content_margin_left = 6.0
-content_margin_top = 4.0
-content_margin_right = 6.0
-content_margin_bottom = 4.0
-bg_color = Color(0.152941, 0.152941, 0.211765, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 8
-border_color = Color(0.262745, 0.262745, 0.309804, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq6gj"]
-bg_color = Color(0.152344, 0.152344, 0.210938, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.261719, 0.261719, 0.308594, 1)
-
-[sub_resource type="StyleBoxEmpty" id="9"]
-
-[sub_resource type="StyleBoxFlat" id="10"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-draw_center = false
-border_color = Color(0.09, 0.11, 0.125, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rb30f"]
-bg_color = Color(1, 1, 0.921569, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljlf"]
-bg_color = Color(1, 1, 0.921569, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk2kj"]
-bg_color = Color(1, 1, 0.921569, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lowl"]
-content_margin_left = 8.0
-content_margin_right = 8.0
-bg_color = Color(0.196078, 0.160784, 0.278431, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="Theme" id="Theme_yyxqp"]
-default_font = ExtResource("18_hlp8f")
-BoxContainer/constants/separation = 0
-Button/colors/font_color = Color(1, 1, 0.921569, 1)
-Button/colors/font_color_disabled = Color(1, 1, 0.921569, 0.301961)
-Button/colors/font_color_focus = Color(1, 1, 0.921569, 1)
-Button/colors/font_color_hover = Color(1, 1, 0.921569, 1)
-Button/colors/font_color_pressed = Color(1, 0.894118, 0.470588, 1)
-Button/colors/icon_color_hover = Color(1, 1, 0.921569, 1)
-Button/colors/icon_color_pressed = Color(1, 0.894118, 0.470588, 1)
-Button/styles/disabled = SubResource("2")
-Button/styles/focus = SubResource("3")
-Button/styles/hover = SubResource("4")
-Button/styles/normal = SubResource("5")
-Button/styles/pressed = SubResource("6")
-HBoxContainer/constants/separation = 16
-Label/colors/font_color_shadow = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/styles/normal = SubResource("7")
-MarginContainer/constants/margin_bottom = 12
-MarginContainer/constants/margin_left = 8
-MarginContainer/constants/margin_right = 8
-MarginContainer/constants/margin_top = 8
-Panel/styles/panel = SubResource("StyleBoxFlat_14dh5")
-PopupMenu/styles/panel = SubResource("StyleBoxFlat_bq6gj")
-RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
-RichTextLabel/colors/font_color_shadow = Color(0, 0, 0, 0)
-RichTextLabel/constants/shadow_as_outline = 0
-RichTextLabel/constants/shadow_offset_x = 1
-RichTextLabel/constants/shadow_offset_y = 1
-RichTextLabel/fonts/bold_font = ExtResource("15_hi6mu")
-RichTextLabel/fonts/bold_italics_font = ExtResource("16_ld0fo")
-RichTextLabel/fonts/italics_font = ExtResource("17_b38jo")
-RichTextLabel/styles/focus = SubResource("9")
-RichTextLabel/styles/normal = SubResource("10")
-VBoxContainer/constants/separation = 0
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_rb30f")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wljlf")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_fk2kj")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_1lowl")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_ubakh"]
 script = ExtResource("15_f6vks")
@@ -426,6 +210,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DialogueBox" type="Panel" parent="UI"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -438,7 +223,7 @@ offset_bottom = 352.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme = SubResource("Theme_yyxqp")
+theme = ExtResource("15_8117k")
 script = ExtResource("14_n4vx7")
 data = ExtResource("15_ublkc")
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_ubakh"), SubResource("RichTextEffect_5gfgb"), SubResource("RichTextEffect_qwab8")])
