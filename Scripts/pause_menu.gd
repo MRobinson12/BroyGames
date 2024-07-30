@@ -3,7 +3,7 @@ extends CanvasLayer
 var main
 
 func _ready():
-	main = get_tree().root
+	main = get_tree().root.get_child(1)
 
 func _on_resume_pressed() -> void:
 	main.pauseMenu()
