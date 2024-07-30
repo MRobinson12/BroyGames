@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwgdycnwfhw10"]
+[gd_scene load_steps=4 format=3 uid="uid://dwgdycnwfhw10"]
 
 [ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="1_mgc8e"]
 [ext_resource type="Script" path="res://Scripts/Scene/home_menu.gd" id="1_twqwg"]
+[ext_resource type="Script" path="res://Scripts/Inventory/upgrade_inventory.gd" id="3_kovh2"]
 
 [node name="HomeMenu" type="TabContainer"]
 anchors_preset = 8
@@ -16,7 +17,7 @@ offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_mgc8e")
-current_tab = 1
+current_tab = 2
 tab_focus_mode = 0
 script = ExtResource("1_twqwg")
 
@@ -38,6 +39,7 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
 [node name="Potion Select" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
@@ -72,6 +74,24 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="Upgrades" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="UpgradeList" type="VBoxContainer" parent="Upgrades"]
+layout_mode = 2
+
+[node name="InventorySize" type="HBoxContainer" parent="Upgrades/UpgradeList"]
+layout_mode = 2
+script = ExtResource("3_kovh2")
+
+[node name="Label" type="Label" parent="Upgrades/UpgradeList/InventorySize"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+text = "Upgrade inventory size to 15 slots."
+autowrap_mode = 2
+
+[node name="UpgradeInventory" type="Button" parent="Upgrades/UpgradeList/InventorySize"]
+layout_mode = 2
+text = "Purchase"
+
+[connection signal="pressed" from="Upgrades/UpgradeList/InventorySize/UpgradeInventory" to="Upgrades/UpgradeList/InventorySize" method="_on_upgrade_inventory_pressed"]

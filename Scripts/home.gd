@@ -56,6 +56,7 @@ func potion_crafted(potion : Item):
 		$ShopCorrect.play()
 		dialogue_box.start('correct')
 		GlobalData.gold += 10
+		GlobalData.gold_updated.emit()
 	else:
 		$ShopIncorrect.play()
 		dialogue_box.start('incorrect')
