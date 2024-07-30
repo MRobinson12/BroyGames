@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://bnsn23ptqxr0q"]
 
-[ext_resource type="Texture2D" uid="uid://0xe237wphblu" path="res://Assets/health_potion_frame.png" id="1_fbbml"]
-[ext_resource type="Texture2D" uid="uid://kjo6kqinlv8y" path="res://Assets/health_potion_icon.png" id="2_46cdr"]
+[ext_resource type="Texture2D" uid="uid://dp2c6p2e7wqnq" path="res://Assets/health_potion_frame.png" id="1_fbbml"]
+[ext_resource type="Texture2D" uid="uid://cy1mi8b6tsthy" path="res://Assets/health_potion_icon.png" id="2_46cdr"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_l2mac"]
 
 [resource]
@@ -10,4 +10,4 @@ frame_texture = ExtResource("1_fbbml")
 id = "lesser_health_potion"
 name = "Lesser Health Potion"
 icon = ExtResource("2_46cdr")
-description = "Heals you"
+description = "The tried and true, a red beacon of recovery and regeneration. While this won’t heal all wounds instantly, you will feel very healthy while bleeding out. It tastes like… Alcohol..?"

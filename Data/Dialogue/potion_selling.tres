@@ -479,7 +479,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 240),
+"size": Vector2(300, 380),
 "speaker": 2
 },
 "1_38": {
@@ -524,7 +524,7 @@ nodes = {
 "speaker": 0
 },
 "1_40": {
-"dialogue": "Other than that, you're all ready to start selling. One more important note, if a customer ever asks you about it.",
+"dialogue": "Other than that, you're all ready to start selling. One more important note, if a customer ever asks you about it;",
 "offset": Vector2(1880, -1740),
 "options": {
 0: {
@@ -537,7 +537,7 @@ nodes = {
 "speaker": 2
 },
 "1_41": {
-"dialogue": "[wait speed=3][color=red][shake]I am just a normal cat.[/shake][/color][/wait]",
+"dialogue": "[wait speed=4][color=red][shake]I am just a normal cat.[/shake][/color][/wait]",
 "offset": Vector2(2520, -1740),
 "options": {
 0: {
@@ -550,7 +550,7 @@ nodes = {
 "speaker": 2
 },
 "1_42": {
-"dialogue": "Inventory shows you the ingredients you have collected down in the caverns.",
+"dialogue": "\"Inventory\" shows you the ingredients you have collected down in the caverns.",
 "offset": Vector2(400, -1740),
 "options": {
 0: {
@@ -563,7 +563,7 @@ nodes = {
 "speaker": 2
 },
 "1_43": {
-"dialogue": "Potion Select shows you a list of potions. If a potion is able to be crafted, you can click to the right of its entry to tick it. This can be done with up to three potions, in preparation for opening shop.",
+"dialogue": "\"Potion Select\" shows you a list of potions. If a potion is able to be crafted, you can click to the right of its entry to tick it. This can be done with up to three potions, in preparation for opening shop.",
 "offset": Vector2(400, -1460),
 "options": {
 0: {
@@ -576,7 +576,7 @@ nodes = {
 "speaker": 2
 },
 "1_44": {
-"dialogue": "Upgrades are upgrades. Money allows you to purchase these and improve your capabilities.",
+"dialogue": "\"Upgrades\" are upgrades. Money allows you to purchase these and improve your capabilities.",
 "offset": Vector2(400, -1180),
 "options": {
 0: {
@@ -589,7 +589,7 @@ nodes = {
 "speaker": 2
 },
 "1_45": {
-"dialogue": "While you may have ingredients to make some of a REALLY FANCY potion, you could run out of those ingredients during the day! And then customers might come in asking for that potion and you have to turn them away!",
+"dialogue": "While you may have ingredients to make some REALLY FANCY potions, you could run out of those ingredients during the day! And then customers might come in asking for that potion, meaning we have to turn them away!",
 "offset": Vector2(1140, -1740),
 "options": {
 0: {

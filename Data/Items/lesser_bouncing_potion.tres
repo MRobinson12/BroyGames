@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://mtxavbowtec4"]
 
-[ext_resource type="Texture2D" uid="uid://bab581ltwbxbh" path="res://Assets/bouncing_potion_frame.png" id="1_tewha"]
-[ext_resource type="Texture2D" uid="uid://3ixcniyka7sr" path="res://Assets/bouncing_potion_icon.png" id="2_0g4j5"]
+[ext_resource type="Texture2D" uid="uid://l4n6g4m7wngp" path="res://Assets/bouncing_potion_frame.png" id="1_tewha"]
+[ext_resource type="Texture2D" uid="uid://dt6mwaw0aspwi" path="res://Assets/bouncing_potion_icon.png" id="2_0g4j5"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_axv3i"]
 
 [resource]
@@ -10,4 +10,4 @@ frame_texture = ExtResource("1_tewha")
 id = "lesser_bouncing_potion"
 name = "Lesser Bouncing Potion"
 icon = ExtResource("2_0g4j5")
-description = "Boing boing boing"
+description = "Did you know that tree frogs can jump up to 150 times their body length? Now so can you! (divided by a factor of 10). This gooey green liquid is your solution to reaching all high places and getting back down! Tastes like jam, but green."

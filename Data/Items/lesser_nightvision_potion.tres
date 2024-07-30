@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://ctgvbx31a5ngf"]
 
-[ext_resource type="Texture2D" uid="uid://bgwpesp1navh3" path="res://Assets/night_vision_potion_frame.png" id="1_wdlms"]
-[ext_resource type="Texture2D" uid="uid://drwnw70g1mkf2" path="res://Assets/night_vision_potion_icon.png" id="2_d3mdo"]
+[ext_resource type="Texture2D" uid="uid://dsqq7u3xmv2gc" path="res://Assets/night_vision_potion_frame.png" id="1_wdlms"]
+[ext_resource type="Texture2D" uid="uid://b8mqdayip8cl" path="res://Assets/night_vision_potion_icon.png" id="2_d3mdo"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_eksxw"]
 
 [resource]
@@ -10,4 +10,4 @@ frame_texture = ExtResource("1_wdlms")
 id = "lesser_nightvision_potion"
 name = "Lesser Potion of Night Vision"
 icon = ExtResource("2_d3mdo")
-description = "Make dark bright"
+description = "Why anyone would ever purchase this over a glow potion is unknown, but people do. This murky purple potion does exactly what it says on the bottle, letting you master the dark of night, and move through shadows with ease. Just don’t drink it during the day. Tastes like carrots."

@@ -41,7 +41,7 @@ Welcome to the mines.",
 "speaker": 2
 },
 "1_10": {
-"dialogue": "Remember, the ladder is your main way back to the shop, simply climb up it.",
+"dialogue": "Don't forget, the ladder is your main way back to the shop, simply climb up it.",
 "offset": Vector2(440, 360),
 "options": {
 0: {
@@ -63,7 +63,7 @@ Welcome to the mines.",
 "text": ""
 }
 },
-"size": Vector2(300, 240),
+"size": Vector2(300, 320),
 "speaker": 2
 },
 "1_3": {
@@ -81,7 +81,7 @@ Also, don't forget about your Telekinesis. You can use it on objects like the wo
 "speaker": 2
 },
 "1_4": {
-"dialogue": "Nice work getting that trapdoor open. Now that you are down here, lets get foraging. See all these plants? Take them. The shadow government can't stop you. You can just take them home for free.",
+"dialogue": "Nice work getting that trapdoor open! Now that you're down here, let's start foraging. See all these plants? Take them. The shadow government can't stop you. You can just take them home for free.",
 "offset": Vector2(-280, 20),
 "options": {
 0: {
@@ -120,7 +120,7 @@ Also, don't forget about your Telekinesis. You can use it on objects like the wo
 "speaker": 2
 },
 "1_7": {
-"dialogue": "Nice job getting back up here. It looks real dark down there, and you can only dispel darkness for so long.",
+"dialogue": "Nice job getting back up here. It looks real dark down there, and you can only dispel the darkness for so long.",
 "offset": Vector2(-280, 360),
 "options": {
 0: {
@@ -129,11 +129,11 @@ Also, don't forget about your Telekinesis. You can use it on objects like the wo
 "text": ""
 }
 },
-"size": Vector2(300, 240),
+"size": Vector2(300, 260),
 "speaker": 2
 },
 "1_8": {
-"dialogue": "I say lets get back up to the shop for now. You can use that key on the door to left by using what the modern folk call... the \"E\" key.",
+"dialogue": "I say let's get back up to the shop for now. You can use that key on the door to the left by using what the modern folk call... the \"E\" key.",
 "offset": Vector2(80, 360),
 "options": {
 0: {
@@ -142,7 +142,7 @@ Also, don't forget about your Telekinesis. You can use it on objects like the wo
 "text": ""
 }
 },
-"size": Vector2(300, 240),
+"size": Vector2(300, 300),
 "speaker": 2
 },
 "1_9": {

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://tphs23onta5g"]
 
-[ext_resource type="Texture2D" uid="uid://d3awjixirgkha" path="res://Assets/Lions_Might_Potion_frame.png" id="1_ybccp"]
-[ext_resource type="Texture2D" uid="uid://2m4uls8b15ax" path="res://Assets/Lions_Might_Potion_icon.png" id="2_32htp"]
+[ext_resource type="Texture2D" uid="uid://bbyt5bsssg3cl" path="res://Assets/Lions_Might_Potion_frame.png" id="1_ybccp"]
+[ext_resource type="Texture2D" uid="uid://c283jjktqt0xy" path="res://Assets/Lions_Might_Potion_icon.png" id="2_32htp"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_rynfv"]
 
 [resource]
@@ -10,4 +10,4 @@ frame_texture = ExtResource("1_ybccp")
 id = "lesser_lionsmight_potion"
 name = "Lesser Potion of Lions Might"
 icon = ExtResource("2_32htp")
-description = "Lion go rawr"
+description = "With the courage and pride of a lion, the insatiable urge for battle flows through you. With the might of the lion, your combat prowess will be unmatched (for 4 minutes), leaving your foes groveling at your feet! (for 5 minutes). Tastes like the blood of your enemies."
