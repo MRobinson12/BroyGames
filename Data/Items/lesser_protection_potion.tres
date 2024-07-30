@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="PotionItem" load_steps=4 format=3 uid="uid://y8octg4adejs"]
 
-[ext_resource type="Texture2D" uid="uid://b5jwmnef87ed8" path="res://Assets/Stalwart_potion_frame.png" id="1_nw46n"]
+[ext_resource type="Texture2D" uid="uid://dj4sdckrw6a4j" path="res://Assets/Stalwart_potion_frame.png" id="1_nw46n"]
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_item.gd" id="2_eruxr"]
-[ext_resource type="Texture2D" uid="uid://bvvnidumwbi3e" path="res://Assets/Stalwart_potion_icon.png" id="2_vrt0a"]
+[ext_resource type="Texture2D" uid="uid://bs86tsa4v8it" path="res://Assets/Stalwart_potion_icon.png" id="2_vrt0a"]
 
 [resource]
 script = ExtResource("2_eruxr")
@@ -10,4 +10,4 @@ frame_texture = ExtResource("1_nw46n")
 id = "lesser_protection_potion"
 name = "Lesser Protection Potion"
 icon = ExtResource("2_vrt0a")
-description = "Always wear protection"
+description = "In a great time of need, one must step up. Not to fight, but to defend, and you know what they say; A great defense is a good offense, or something like that anyway. Tastes like a hard day's work."

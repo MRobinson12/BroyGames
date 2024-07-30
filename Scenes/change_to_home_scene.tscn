@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnmkojoy17d2j"]
+
+[ext_resource type="Script" path="res://Scripts/change_to_home_scene.gd" id="1_04b1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53f67"]
+size = Vector2(32.5, 32.5)
+
+[node name="ChangeToHomeScene" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_04b1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -0.25)
+shape = SubResource("RectangleShape2D_53f67")
