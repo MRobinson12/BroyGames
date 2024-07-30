@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://8joncykm2rn7"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/trapdoor.gd" id="1_da0xr"]
-[ext_resource type="Texture2D" uid="uid://v2lklrhtufeg" path="res://Assets/trapdoor.png" id="2_cxlq2"]
-[ext_resource type="Texture2D" uid="uid://d2wm6djpf6g5f" path="res://Assets/trapdoor_otherside.png" id="3_mbes4"]
-[ext_resource type="AudioStream" uid="uid://ctpnymut48465" path="res://Audio/SFX/trapdoorOpen.mp3" id="4_55x03"]
-[ext_resource type="AudioStream" uid="uid://cudfisnlx5bm0" path="res://Audio/SFX/trapdoorClose.mp3" id="5_rgdl1"]
+[ext_resource type="Texture2D" uid="uid://6gph75mboklm" path="res://Assets/trapdoor.png" id="2_cxlq2"]
+[ext_resource type="Texture2D" uid="uid://c2nvo3yg184g6" path="res://Assets/trapdoor_otherside.png" id="3_mbes4"]
+[ext_resource type="AudioStream" uid="uid://ytea8nkpg41w" path="res://Audio/SFX/trapdoorOpen.mp3" id="4_55x03"]
+[ext_resource type="AudioStream" uid="uid://c5xk8mqbnxccy" path="res://Audio/SFX/trapdoorClose.mp3" id="5_rgdl1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8jkw"]
 atlas = ExtResource("2_cxlq2")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://baub6qvkpfjab"]
+[gd_scene load_steps=8 format=3 uid="uid://baub6qvkpfjab"]
 
 [ext_resource type="Script" path="res://Scripts/Inventory/potion_select_entry.gd" id="1_5c5gy"]
+[ext_resource type="FontFile" uid="uid://dv4rnn0ml62q3" path="res://addons/dialogue_nodes/themes/Poppins-Bold.ttf" id="2_ilhgl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a4gky"]
 
@@ -38,6 +39,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_2c0ym")
 
 [node name="NameLabel" type="Label" parent="VBoxContainer/Name"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ilhgl")
 text = "test_item2"
 autowrap_mode = 2
 

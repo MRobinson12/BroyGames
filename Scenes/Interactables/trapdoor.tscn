@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://do72ml5j1dfws"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/trapdoor.gd" id="1_c1t8s"]
-[ext_resource type="Texture2D" uid="uid://v2lklrhtufeg" path="res://Assets/trapdoor.png" id="1_rqb0i"]
-[ext_resource type="AudioStream" uid="uid://ctpnymut48465" path="res://Audio/SFX/trapdoorOpen.mp3" id="3_26bbt"]
-[ext_resource type="AudioStream" uid="uid://cudfisnlx5bm0" path="res://Audio/SFX/trapdoorClose.mp3" id="4_kyl7h"]
+[ext_resource type="Texture2D" uid="uid://6gph75mboklm" path="res://Assets/trapdoor.png" id="1_rqb0i"]
+[ext_resource type="AudioStream" uid="uid://ytea8nkpg41w" path="res://Audio/SFX/trapdoorOpen.mp3" id="3_26bbt"]
+[ext_resource type="AudioStream" uid="uid://c5xk8mqbnxccy" path="res://Audio/SFX/trapdoorClose.mp3" id="4_kyl7h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8jkw"]
 atlas = ExtResource("1_rqb0i")
@@ -50,6 +50,8 @@ shape = SubResource("RectangleShape2D_igs5k")
 
 [node name="TrapdoorOpen" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_26bbt")
+bus = &"SFX"
 
 [node name="TrapdoorClose" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_kyl7h")
+bus = &"SFX"

@@ -36,4 +36,4 @@ func check_player_inventory():
 			$DoorOpen.play()
 			open()
 			return
-	# Add door rattle sound here
+	$DoorRattle.play()

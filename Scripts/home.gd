@@ -17,6 +17,9 @@ func _ready() -> void:
 	dialogue_box.custom_effects[0].char_displayed.connect(_on_char_displayed)
 	if GlobalData.day == 1:
 		dialogue_box.start('CI1')
+	if GlobalData.day >= 2:
+		$UI/LeaveButton.hide()
+		$UI/EndDemoButton.show()
 
 func open_shop(recipes : Array[CraftRecipe]):
 	if GlobalData.day > 1:
@@ -100,6 +103,22 @@ func _on_no_craft_pressed() -> void:
 func _on_leave_button_button_down() -> void:
 	GlobalData.day += 1
 	get_tree().change_scene_to_file("res://Scenes/Levels/cave_level_tutorial.tscn")
+	# CHANGE THIS TO LEVEL 1 ONCE IT IS IMPLEMENTED
 
 func _on_char_displayed(idx):
 	$DialogueBlip.play()
+
+
+func _on_end_demo_button_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+
+
+func _on_leave_button_mouse_entered() -> void:
+	$Trapdoor.open()
+
+func _on_leave_button_mouse_exited() -> void:
+	$Trapdoor.close()
+
+
+func _on_secret_button_button_down() -> void:
+	$SecretNoise.play()

@@ -69,6 +69,7 @@ size_flags_vertical = 3
 
 [node name="PotionList" type="VBoxContainer" parent="Potion Select/VBoxContainer/ScrollContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="Upgrades" type="MarginContainer" parent="."]
 visible = false
