@@ -2,7 +2,7 @@ shader_type canvas_item;
 uniform vec2 player_position;
 uniform vec4 color : source_color = vec4(0.305, 0.298, 0.341,1);
 uniform float camera_zoom = 1;
-uniform vec2 lights[2];
+uniform vec2 lights[10];
 
 const float ASPECT_RATIO = 0.5625;
 const float SCALE = 0.15; //0.15
@@ -28,7 +28,9 @@ float other_vignette(vec2 screen, vec2 light_position, float scale){
 void fragment(){
 	float lightest_val = player_vignette(UV);
 	for (int i = 0; i < lights.length(); i++){
-		float light_val = other_vignette(UV, lights[i], 0.05);
+		if (lights[i] == vec2(0.0,0.0))
+			continue;
+		float light_val = other_vignette(UV, lights[i], 0.10);
 		if (light_val < lightest_val)
 			lightest_val = light_val;
 	}
