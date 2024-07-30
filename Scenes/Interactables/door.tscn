@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cm8kn8up46shg"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/door.gd" id="1_pu0cp"]
-[ext_resource type="Texture2D" uid="uid://cxugwekdm1msw" path="res://Assets/door.png" id="2_fhig4"]
+[ext_resource type="Texture2D" uid="uid://cru55a3uvohij" path="res://Assets/door.png" id="2_fhig4"]
 [ext_resource type="AudioStream" uid="uid://bmniju51ygsh0" path="res://Audio/SFX/doorOpen.mp3" id="3_mkg7p"]
 [ext_resource type="AudioStream" uid="uid://cjhpw8248ki8j" path="res://Audio/SFX/doorRattle.mp3" id="4_77844"]
 

@@ -2,7 +2,7 @@ shader_type canvas_item;
 uniform vec2 player_position;
 uniform vec4 color : source_color = vec4(0.305, 0.298, 0.341,1);
 uniform float camera_zoom = 1;
-uniform vec2 lights[10];
+uniform vec2 lights[50];
 
 const float ASPECT_RATIO = 0.5625;
 const float SCALE = 0.15; //0.15

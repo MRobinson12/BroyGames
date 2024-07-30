@@ -11,7 +11,7 @@ var camera : Camera2D
 var light_positions : Array[Vector2]
 
 func _ready():
-	light_positions.resize(2)
+	light_positions.resize(50)
 	
 	target_marker = get_parent().find_child("Player").find_child("LightPosition")
 	shadow_shader = get_parent().get_node("ShaderLayer/PlayerVignette")

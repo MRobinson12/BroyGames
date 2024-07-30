@@ -103,14 +103,14 @@ func _on_no_craft_pressed() -> void:
 
 func _on_leave_button_button_down() -> void:
 	GlobalData.day += 1
-	get_tree().change_scene_to_file("res://Scenes/Levels/cave_level_tutorial.tscn")
-	# CHANGE THIS TO LEVEL 1 ONCE IT IS IMPLEMENTED
+	get_tree().change_scene_to_file("res://Scenes/Levels/cave_level_1a.tscn")
 
 func _on_char_displayed(idx):
 	$DialogueBlip.play()
 
 
 func _on_end_demo_button_button_down() -> void:
+	GlobalData.day = 1
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 
 

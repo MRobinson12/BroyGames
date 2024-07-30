@@ -7,7 +7,8 @@ script = ExtResource("1_bio7r")
 starts = {
 "CI1": &"0_1",
 "CI2": &"0_2",
-"CI3": &"0_3"
+"CI3": &"0_3",
+"LORE1": &"0_4"
 }
 nodes = {
 "0_1": {
@@ -24,6 +25,11 @@ nodes = {
 "link": &"3_1",
 "offset": Vector2(-700, 360),
 "start_id": "CI3"
+},
+"0_4": {
+"link": &"1_11",
+"offset": Vector2(-560, -700),
+"start_id": "LORE1"
 },
 "1_1": {
 "dialogue": "Hello. 
@@ -43,6 +49,71 @@ Welcome to the mines.",
 "1_10": {
 "dialogue": "Don't forget, the ladder back where we started is your main way back to the shop, simply climb up it.",
 "offset": Vector2(440, 360),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_11": {
+"dialogue": "Seems like a lifetime ago, doesn't it?",
+"offset": Vector2(-280, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_12": {
+"dialogue": "[wait speed=4]...[/wait]",
+"offset": Vector2(160, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_13": {
+"dialogue": "[color=red]Do you remember how much it hurt?[/color]",
+"offset": Vector2(580, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 2
+},
+"1_14": {
+"dialogue": "[wait speed=4][color=red][shake]. . .[/shake][/color][/wait]",
+"offset": Vector2(980, -700),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": 1
+},
+"1_15": {
+"dialogue": "You should probably get back before your light runs out.",
+"offset": Vector2(1380, -700),
 "options": {
 0: {
 "condition": {},
