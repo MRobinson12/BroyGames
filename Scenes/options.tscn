@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://duhchkpfr0cw4"]
+[gd_scene load_steps=8 format=3 uid="uid://duhchkpfr0cw4"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/options.gd" id="1_kaji4"]
+[ext_resource type="Theme" uid="uid://be1covwh814fe" path="res://Scenes/UI/buttontheme.tres" id="1_nfqrl"]
 [ext_resource type="Texture2D" uid="uid://o7gxmed0f7v2" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="2_atnsi"]
 [ext_resource type="PackedScene" uid="uid://dm6te08dk6173" path="res://Scenes/UI/volume_slider.tscn" id="2_u5o7d"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="3_l7b0c"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_nfqrl")
 script = ExtResource("1_kaji4")
 
 [node name="DownthehatchMainmenuPixelatedNoText" type="Sprite2D" parent="."]
@@ -78,9 +80,9 @@ bus_name = "SFX"
 [node name="Return" type="Button" parent="."]
 layout_mode = 0
 offset_left = 304.0
-offset_top = 490.0
-offset_right = 381.0
-offset_bottom = 540.0
+offset_top = 526.0
+offset_right = 388.0
+offset_bottom = 577.0
 theme_override_font_sizes/font_size = 30
 text = "Back"
 

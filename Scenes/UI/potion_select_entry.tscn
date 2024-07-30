@@ -14,6 +14,7 @@ font_size = 14
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnoc5"]
 
 [node name="PotionSelectEntry" type="HBoxContainer"]
+size_flags_vertical = 4
 theme_override_constants/separation = 10
 script = ExtResource("1_5c5gy")
 
@@ -66,3 +67,4 @@ alignment = 1
 
 [node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 2
+size_flags_vertical = 4

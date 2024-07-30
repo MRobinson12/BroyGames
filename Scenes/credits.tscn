@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs776o4pxw0ou"]
+[gd_scene load_steps=8 format=3 uid="uid://cs776o4pxw0ou"]
 
+[ext_resource type="Theme" uid="uid://be1covwh814fe" path="res://Scenes/UI/buttontheme.tres" id="1_c2v0p"]
 [ext_resource type="Script" path="res://Scripts/Scene/credits.gd" id="1_tfl5p"]
 [ext_resource type="AudioStream" uid="uid://ds24bknbmlys2" path="res://Audio/OST/Roll For Credits (Credits theme).mp3" id="2_vq1bc"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="2_xbycf"]
-[ext_resource type="Texture2D" uid="uid://caas8nf76c2mp" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="3_rd50e"]
-[ext_resource type="Texture2D" uid="uid://0d6rg17k4csu" path="res://Assets/BROY_GAMES_LOGO.png" id="5_6hv2b"]
+[ext_resource type="Texture2D" uid="uid://o7gxmed0f7v2" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="3_rd50e"]
+[ext_resource type="Texture2D" uid="uid://niok623qkg7f" path="res://Assets/BROY_GAMES_LOGO.png" id="5_6hv2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_62dcw"]
 shader = ExtResource("2_xbycf")
@@ -21,6 +22,7 @@ offset_right = 316.0
 offset_bottom = 127.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_c2v0p")
 script = ExtResource("1_tfl5p")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -40,15 +42,15 @@ texture = ExtResource("3_rd50e")
 texture_filter = 6
 layout_direction = 1
 layout_mode = 0
-offset_left = -193.0
+offset_left = -261.0
 offset_top = 87.0
-offset_right = 473.0
+offset_right = 482.0
 offset_bottom = 457.0
 
 [node name="Label6" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Ben: Game Developer + Sound"
+text = "Ben: Developer and Composer"
 
 [node name="Label5" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -63,7 +65,7 @@ text = "Kyle: Level Designer and Developer"
 [node name="Label2" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Morgan:  Project Manager + Developer"
+text = "Morgan:  Project Manager and Developer"
 
 [node name="Label3" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -90,5 +92,5 @@ position = Vector2(665, 212)
 scale = Vector2(4, 4)
 texture = ExtResource("5_6hv2b")
 
-[connection signal="pressed" from="Return" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_play_pressed"]

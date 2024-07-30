@@ -41,7 +41,7 @@ Welcome to the mines.",
 "speaker": 2
 },
 "1_10": {
-"dialogue": "Don't forget, the ladder is your main way back to the shop, simply climb up it.",
+"dialogue": "Don't forget, the ladder back where we started is your main way back to the shop, simply climb up it.",
 "offset": Vector2(440, 360),
 "options": {
 0: {
