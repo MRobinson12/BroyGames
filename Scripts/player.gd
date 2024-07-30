@@ -45,9 +45,9 @@ func _physics_process(delta):
 		current_idle_anim = "idle"
 		current_run_anim = "run"
 
-	if Input.is_action_pressed("ui_leftclick"):
+	if Input.is_action_pressed("ui_leftclick") and on_ladder == false and is_climbing == false:
 		_lift_object(mouse_position)
-	if Input.is_action_just_pressed("ui_leftclick"):
+	if Input.is_action_just_pressed("ui_leftclick") and on_ladder == false and is_climbing == false:
 		$AnimatedSprite2D.play("idleTele")
 
 	if Input.is_action_just_released("ui_leftclick"):
@@ -86,7 +86,11 @@ func _physics_process(delta):
 		
 	# Add the gravity.
 	if not is_on_floor():
+		if current_state != State.JUMP and on_ladder == false:
+			$AnimatedSprite2D.play("jump")
+			current_state = State.JUMP
 		velocity.y += gravity * delta
+		_stop_running_sound()
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

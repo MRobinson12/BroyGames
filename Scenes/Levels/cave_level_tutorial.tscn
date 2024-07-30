@@ -256,15 +256,16 @@ position_smoothing_enabled = true
 unique_name_in_owner = true
 layer = 5
 visible = false
-offset = Vector2(400, 100)
+offset = Vector2(400, 35)
 scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 400, 100)
+transform = Transform2D(2, 0, 0, 2, 400, 35)
 
 [node name="PlayerLight" parent="Player_Nodes" node_paths=PackedStringArray("lights") instance=ExtResource("4_ko0i4")]
 position = Vector2(0, -4)
 lights = [NodePath("../../Interactables/WallTorch"), NodePath("../../Interactables/WallTorch2")]
 
 [node name="Player" parent="Player_Nodes" instance=ExtResource("5_mea2j")]
+unique_name_in_owner = true
 position = Vector2(59, -18)
 
 [node name="ShaderLayer" parent="Player_Nodes" instance=ExtResource("6_ykjf5")]
