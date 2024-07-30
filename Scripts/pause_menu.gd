@@ -1,6 +1,9 @@
 extends CanvasLayer
 
-@onready var main = $"../../"
+var main
+
+func _ready():
+	main = get_tree().root
 
 func _on_resume_pressed() -> void:
 	main.pauseMenu()
