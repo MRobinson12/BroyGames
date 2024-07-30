@@ -1,14 +1,14 @@
-[gd_scene load_steps=30 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=38 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="Texture2D" uid="uid://diloa4r78qrlm" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://b5xyaadxlcend" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
-[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://dmmigpp7x6l0j" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
+[ext_resource type="Texture2D" uid="uid://bvrfkhr7ojjro" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
-[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
+[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
-[ext_resource type="Texture2D" uid="uid://h0k0qlwjhb7d" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
+[ext_resource type="Texture2D" uid="uid://djx514fkotppi" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="8_hxi5o"]
@@ -18,6 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://drapbkylk73vs" path="res://Scenes/item_pickup.tscn" id="13_r5vo4"]
 [ext_resource type="Resource" uid="uid://bjrixtppiu03h" path="res://Data/Items/key_item.tres" id="14_h5qaw"]
 [ext_resource type="PackedScene" uid="uid://d0pti8btoojyf" path="res://Scenes/wooden_crate.tscn" id="16_6kgx5"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="19_epkpw"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="20_d2wew"]
+[ext_resource type="Resource" uid="uid://baek1cffn0ti7" path="res://Data/Dialogue/cat_tutorial.tres" id="20_it6n6"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="21_nvph5"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="22_t2r1j"]
 
 [sub_resource type="GDScript" id="GDScript_755xa"]
 script/source = "extends Node2D
@@ -190,6 +195,15 @@ sources/1 = SubResource("TileSetAtlasSource_8hg70")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnqmr"]
 size = Vector2(189, 143)
 
+[sub_resource type="RichTextEffect" id="RichTextEffect_mxxgr"]
+script = ExtResource("20_d2wew")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_xa72n"]
+script = ExtResource("21_nvph5")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_v4qjy"]
+script = ExtResource("22_t2r1j")
+
 [node name="Tutorial" type="Node2D"]
 script = SubResource("GDScript_755xa")
 level_name = "tutorial"
@@ -234,9 +248,6 @@ position = Vector2(59, -18)
 [node name="ShaderLayer" parent="." instance=ExtResource("6_ykjf5")]
 visible = false
 
-[node name="Cat" parent="." instance=ExtResource("7_8hkwl")]
-position = Vector2(131, -11)
-
 [node name="Trapdoor" parent="." instance=ExtResource("8_hxi5o")]
 position = Vector2(304, -9)
 
@@ -260,14 +271,40 @@ texture_filter = 1
 position = Vector2(626, 117)
 item = ExtResource("14_h5qaw")
 
+[node name="Cat" parent="." instance=ExtResource("7_8hkwl")]
+position = Vector2(131, -11)
+dialogue_id = "CI1"
+
 [node name="Cat2" parent="." instance=ExtResource("7_8hkwl")]
 position = Vector2(305, 245)
+dialogue_id = "CI2"
 
 [node name="Cat3" parent="." instance=ExtResource("7_8hkwl")]
 position = Vector2(628, -11)
+dialogue_id = "CI3"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(740.5, -47.5)
 shape = SubResource("RectangleShape2D_tnqmr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.5
+offset_top = 125.0
+offset_right = 377.5
+offset_bottom = 316.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_epkpw")
+data = ExtResource("20_it6n6")
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_mxxgr"), SubResource("RichTextEffect_xa72n"), SubResource("RichTextEffect_v4qjy")])
