@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://cs776o4pxw0ou"]
 
-[ext_resource type="Theme" uid="uid://be1covwh814fe" path="res://Scenes/UI/buttontheme.tres" id="1_c2v0p"]
+[ext_resource type="Theme" uid="uid://dw7x1c47wnwhn" path="res://Scenes/UI/buttontheme.tres" id="1_c2v0p"]
 [ext_resource type="Script" path="res://Scripts/Scene/credits.gd" id="1_tfl5p"]
 [ext_resource type="AudioStream" uid="uid://ds24bknbmlys2" path="res://Audio/OST/Roll For Credits (Credits theme).mp3" id="2_vq1bc"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="2_xbycf"]
-[ext_resource type="Texture2D" uid="uid://o7gxmed0f7v2" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="3_rd50e"]
-[ext_resource type="Texture2D" uid="uid://niok623qkg7f" path="res://Assets/BROY_GAMES_LOGO.png" id="5_6hv2b"]
+[ext_resource type="Texture2D" uid="uid://caas8nf76c2mp" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated_no_text.png" id="3_rd50e"]
+[ext_resource type="Texture2D" uid="uid://0d6rg17k4csu" path="res://Assets/BROY_GAMES_LOGO.png" id="5_6hv2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_62dcw"]
 shader = ExtResource("2_xbycf")
@@ -25,6 +25,11 @@ grow_vertical = 2
 theme = ExtResource("1_c2v0p")
 script = ExtResource("1_tfl5p")
 
+[node name="DownthehatchMainmenuPixelatedNoText" type="Sprite2D" parent="."]
+position = Vector2(324.055, 233)
+scale = Vector2(3.754, 3.75)
+texture = ExtResource("3_rd50e")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_62dcw")
 layout_mode = 0
@@ -32,11 +37,6 @@ offset_left = -213.0
 offset_top = 6.0
 offset_right = 852.0
 offset_bottom = 452.0
-
-[node name="DownthehatchMainmenuPixelatedNoText" type="Sprite2D" parent="."]
-position = Vector2(324, 234)
-scale = Vector2(3.75, 3.75)
-texture = ExtResource("3_rd50e")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 texture_filter = 6

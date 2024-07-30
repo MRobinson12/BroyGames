@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpuwmmlu0n5vu"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/mainmenu.gd" id="1_6q4mq"]
-[ext_resource type="Texture2D" uid="uid://cuduqjd7lsnqt" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated.png" id="2_2cl0x"]
+[ext_resource type="Texture2D" uid="uid://cyadbi8npujxy" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated.png" id="2_2cl0x"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="2_mf0j4"]
-[ext_resource type="Theme" uid="uid://be1covwh814fe" path="res://Scenes/UI/buttontheme.tres" id="4_cqxyd"]
+[ext_resource type="Theme" uid="uid://dw7x1c47wnwhn" path="res://Scenes/UI/buttontheme.tres" id="4_cqxyd"]
 [ext_resource type="AudioStream" uid="uid://b2kop3cm1f11c" path="res://Audio/OST/Down the Hatch (Main Theme).mp3" id="4_wxg2m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_edao2"]
@@ -22,8 +22,8 @@ script = ExtResource("1_6q4mq")
 [node name="DownthehatchMainmenuPixelated" type="Sprite2D" parent="."]
 z_index = -31
 z_as_relative = false
-position = Vector2(639.75, 359)
-scale = Vector2(3.75, 3.75)
+position = Vector2(640.003, 360)
+scale = Vector2(3.75365, 3.75)
 texture = ExtResource("2_2cl0x")
 
 [node name="ColorRect" type="ColorRect" parent="."]
