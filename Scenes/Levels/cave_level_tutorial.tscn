@@ -1,14 +1,14 @@
 [gd_scene load_steps=30 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://dbwjfa8qplk5n" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://hjfv883bs4cs" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
-[ext_resource type="Texture2D" uid="uid://c6sr0plqqxrc" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://b5xyaadxlcend" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
+[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
 [ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
-[ext_resource type="PackedScene" uid="uid://lbbh7occk8nv" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
-[ext_resource type="Texture2D" uid="uid://cdbxqolfrckf4" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
+[ext_resource type="Texture2D" uid="uid://h0k0qlwjhb7d" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="8_hxi5o"]
@@ -254,7 +254,6 @@ activator_paths = Array[NodePath]([NodePath("../Pressureplate")])
 
 [node name="LockedDoor" parent="." instance=ExtResource("12_gte3w")]
 position = Vector2(498, -16)
-required_key_id = "01"
 
 [node name="DoorKey" parent="." instance=ExtResource("13_r5vo4")]
 texture_filter = 1

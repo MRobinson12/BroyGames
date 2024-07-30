@@ -290,7 +290,6 @@ visible = false
 
 [node name="Tutorial_Door_Open" parent="." instance=ExtResource("7_3cbnr")]
 position = Vector2(-495, 16)
-is_open = true
 
 [node name="Tutorial_Trapdoor_Open" parent="." instance=ExtResource("7_058pp")]
 position = Vector2(-689, 23)
@@ -302,7 +301,6 @@ is_on = true
 
 [node name="1a_ LockedDoor" parent="." instance=ExtResource("7_3cbnr")]
 position = Vector2(218, -48)
-required_key_id = "01"
 
 [node name="1a_Key" parent="." instance=ExtResource("8_2rsq1")]
 position = Vector2(663, -48)

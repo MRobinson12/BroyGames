@@ -11,17 +11,17 @@ func _ready():
 	update_appearance()
 
 func _on_body_entered(body):
-	if (body.is_in_group("WoodenCrate") or body.is_in_group("Player")) and not is_on:
+	if (body is CharacterBody2D or body.is_in_group("WoodenCrate")) and not is_on:
 		$PressurePlatePressed.play()
 		toggle()
 
 func _on_body_exited(body):
-	if (body.is_in_group("WoodenCrate") or body.is_in_group("Player")) and is_on:
+	if (body is CharacterBody2D or body.is_in_group("WoodenCrate")) and is_on:
 		# Check if there are still valid bodies on the pressure plate
 		var bodies = get_overlapping_bodies()
 		var still_pressed = false
 		for overlapping_body in bodies:
-			if overlapping_body.is_in_group("WoodenCrate") or overlapping_body.is_in_group("Player"):
+			if overlapping_body is CharacterBody2D or overlapping_body.is_in_group("WoodenCrate"):
 				still_pressed = true
 				break
 		
