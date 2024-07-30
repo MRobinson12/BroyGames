@@ -10,11 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_ykm0p"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_hlbgl"]
 [ext_resource type="Texture2D" uid="uid://c8kwu6p65b6ml" path="res://Assets/wizardrun_telekinesis.png" id="7_kd7lj"]
-[ext_resource type="AudioStream" uid="uid://cwxq2n78vxone" path="res://Audio/ladder_climb.mp3" id="8_4vf45"]
-[ext_resource type="AudioStream" uid="uid://c67apjknpyrpl" path="res://Audio/SFX/telekinesisHum.mp3" id="11_q2vx6"]
+[ext_resource type="AudioStream" uid="uid://dw6bcd0xm88gr" path="res://Audio/ladder_climb.mp3" id="8_4vf45"]
+[ext_resource type="AudioStream" uid="uid://cs2l6yv4oxb5r" path="res://Audio/SFX/telekinesisHum.mp3" id="11_q2vx6"]
 [ext_resource type="Texture2D" uid="uid://cac80jc5bpb1y" path="res://Assets/Icons/keyboard_e.png" id="12_4eykg"]
-[ext_resource type="AudioStream" uid="uid://bp2moacwvh5fv" path="res://Audio/SFX/itemPickupREVERB2.mp3" id="12_5hmx6"]
-[ext_resource type="AudioStream" uid="uid://dn437wuh0nps5" path="res://Audio/SFX/deathSound.mp3" id="12_5upt0"]
+[ext_resource type="AudioStream" uid="uid://bdyni4ajw6sf3" path="res://Audio/SFX/itemPickupREVERB2.mp3" id="12_5hmx6"]
+[ext_resource type="AudioStream" uid="uid://dltc5opx8m40e" path="res://Audio/SFX/deathSound.mp3" id="12_5upt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyjbw"]
 atlas = ExtResource("2_mwet1")
