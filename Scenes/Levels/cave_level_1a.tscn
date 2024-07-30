@@ -276,17 +276,16 @@ tile_set = SubResource("TileSet_8olek")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(2464, 399)
+position = Vector2(1297, 100)
 zoom = Vector2(4, 4)
 
 [node name="Player" parent="." instance=ExtResource("2_ssmh8")]
-position = Vector2(2464, 399)
+position = Vector2(1297, 100)
 
 [node name="PlayerLight" parent="." instance=ExtResource("3_yevbq")]
 position = Vector2(-44, -2)
 
 [node name="ShaderLayer" parent="." instance=ExtResource("1_imi35")]
-visible = false
 
 [node name="Tutorial_Door_Open" parent="." instance=ExtResource("7_3cbnr")]
 position = Vector2(-495, 16)

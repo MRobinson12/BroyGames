@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpuwmmlu0n5vu"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/mainmenu.gd" id="1_6q4mq"]
-[ext_resource type="Texture2D" uid="uid://cyadbi8npujxy" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated.png" id="2_2cl0x"]
+[ext_resource type="Texture2D" uid="uid://fc886u3neikk" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated.png" id="2_2cl0x"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="2_mf0j4"]
 [ext_resource type="Theme" uid="uid://dw7x1c47wnwhn" path="res://Scenes/UI/buttontheme.tres" id="4_cqxyd"]
 [ext_resource type="AudioStream" uid="uid://b2kop3cm1f11c" path="res://Audio/OST/Down the Hatch (Main Theme).mp3" id="4_wxg2m"]

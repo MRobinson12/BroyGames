@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://8joncykm2rn7"]
+[gd_scene load_steps=10 format=3 uid="uid://8joncykm2rn7"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/trapdoor.gd" id="1_da0xr"]
 [ext_resource type="Texture2D" uid="uid://v2lklrhtufeg" path="res://Assets/trapdoor.png" id="2_cxlq2"]
 [ext_resource type="Texture2D" uid="uid://d2wm6djpf6g5f" path="res://Assets/trapdoor_otherside.png" id="3_mbes4"]
+[ext_resource type="AudioStream" uid="uid://ctpnymut48465" path="res://Audio/SFX/trapdoorOpen.mp3" id="4_55x03"]
+[ext_resource type="AudioStream" uid="uid://cudfisnlx5bm0" path="res://Audio/SFX/trapdoorClose.mp3" id="5_rgdl1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8jkw"]
 atlas = ExtResource("2_cxlq2")
@@ -46,3 +48,9 @@ animation = &"door_open"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_igs5k")
+
+[node name="TrapdoorOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_55x03")
+
+[node name="TrapdoorClose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rgdl1")
