@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=42 format=4 uid="uid://bo8cm1qv601ii"]
 
 [ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://h0k0qlwjhb7d" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
+[ext_resource type="Texture2D" uid="uid://f5qrcu5pn3yo" path="res://Assets/warning_sign.png" id="7_n1ft4"]
 [ext_resource type="PackedScene" uid="uid://bh38b7f68popm" path="res://Scenes/spawn_point.tscn" id="7_p51gn"]
+[ext_resource type="PackedScene" uid="uid://bnmkojoy17d2j" path="res://Scenes/change_to_home_scene.tscn" id="8_0pamu"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="8_hxi5o"]
 [ext_resource type="PackedScene" uid="uid://2yi53ock65go" path="res://Scenes/Interactables/pressureplate.tscn" id="9_vxldi"]
 [ext_resource type="Script" path="res://Scripts/Interactables/door_controller.gd" id="11_k04to"]
@@ -188,10 +190,16 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 1:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1rqm"]
+texture = ExtResource("7_n1ft4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_xjii5"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_awtpg")
 sources/1 = SubResource("TileSetAtlasSource_8hg70")
+sources/2 = SubResource("TileSetAtlasSource_h1rqm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnqmr"]
 size = Vector2(189, 143)
@@ -223,7 +231,7 @@ tile_set = SubResource("TileSet_xjii5")
 [node name="TileMapProps" type="TileMapLayer" parent="."]
 z_index = -1
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAGAAQAAQAAAAAAAAAGAAUAAQAAAAEAAAAGAAYAAQAAAAIAAAAHAAQAAQABAAAAAAAHAAUAAQABAAEAAAAHAAYAAQABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAGAAQAAQAAAAAAAAAGAAUAAQAAAAEAAAAGAAYAAQAAAAIAAAAHAAQAAQABAAAAAAAHAAUAAQABAAEAAAAHAAYAAQABAAIAAAAOAAcAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_xjii5")
 
 [node name="SpawnPoint" parent="." instance=ExtResource("7_p51gn")]
@@ -231,6 +239,9 @@ position = Vector2(59, -38)
 
 [node name="SpawnPoint2" parent="." instance=ExtResource("7_p51gn")]
 position = Vector2(465, 241)
+
+[node name="ChangeToHomeScene" parent="." instance=ExtResource("8_0pamu")]
+position = Vector2(16, -263)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true

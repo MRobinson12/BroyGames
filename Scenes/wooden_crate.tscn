@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0pti8btoojyf"]
 
 [ext_resource type="Script" path="res://Scripts/Interactables/wooden_crate.gd" id="1_0bixs"]
-[ext_resource type="Texture2D" uid="uid://b4b4kprpghax7" path="res://Assets/puzzle_crate.png" id="1_sy0i5"]
-[ext_resource type="AudioStream" uid="uid://c4o6r3iw1darr" path="res://Audio/SFX/crateCollision.mp3" id="3_tjiwu"]
+[ext_resource type="Texture2D" uid="uid://ulo3eb4h8ans" path="res://Assets/puzzle_crate.png" id="1_sy0i5"]
+[ext_resource type="AudioStream" uid="uid://ctp3orepluxdq" path="res://Audio/SFX/crateCollision.mp3" id="3_tjiwu"]
 [ext_resource type="Script" path="res://Scripts/Sound/collision_sound.gd" id="4_n5dfd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmg5c"]
