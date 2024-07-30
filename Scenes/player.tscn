@@ -1,18 +1,20 @@
-[gd_scene load_steps=31 format=3 uid="uid://bfl4mpbg12kf7"]
+[gd_scene load_steps=44 format=3 uid="uid://bfl4mpbg12kf7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fngfp"]
-[ext_resource type="Texture2D" uid="uid://b2y28ukfcx47n" path="res://Assets/wizardidle.png" id="2_8ywdc"]
-[ext_resource type="Texture2D" uid="uid://deg3ykmiewdym" path="res://Assets/wizard_climb.png" id="2_mwet1"]
-[ext_resource type="Texture2D" uid="uid://cfvcglvdd31dn" path="res://Assets/wizardjump.png" id="3_36vxw"]
-[ext_resource type="Texture2D" uid="uid://l54kh0lwnvid" path="res://Assets/wizardrun.png" id="4_5s0fb"]
-[ext_resource type="Texture2D" uid="uid://btsmsnwu1hwv5" path="res://Assets/wizard_static_telekinesis.png" id="4_ycm81"]
+[ext_resource type="Texture2D" uid="uid://djdhsq7vaod6x" path="res://Assets/wizardidle.png" id="2_8ywdc"]
+[ext_resource type="Texture2D" uid="uid://b64rmokgsjldn" path="res://Assets/wizard_climb.png" id="2_mwet1"]
+[ext_resource type="Texture2D" uid="uid://cn2uai3qn7ioc" path="res://Assets/wizard_death.png" id="3_2kgn1"]
+[ext_resource type="Texture2D" uid="uid://bphsu2qx8ekqx" path="res://Assets/wizardjump.png" id="3_36vxw"]
+[ext_resource type="Texture2D" uid="uid://dkay2ddylyjem" path="res://Assets/wizardrun.png" id="4_5s0fb"]
+[ext_resource type="Texture2D" uid="uid://df6f82nn6e56g" path="res://Assets/wizard_static_telekinesis.png" id="4_ycm81"]
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_ykm0p"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_hlbgl"]
-[ext_resource type="Texture2D" uid="uid://dok5vrcuvl40g" path="res://Assets/wizardrun_telekinesis.png" id="7_kd7lj"]
-[ext_resource type="AudioStream" uid="uid://dw6bcd0xm88gr" path="res://Audio/ladder_climb.mp3" id="8_4vf45"]
-[ext_resource type="AudioStream" uid="uid://cs2l6yv4oxb5r" path="res://Audio/SFX/telekinesisHum.mp3" id="11_q2vx6"]
-[ext_resource type="Texture2D" uid="uid://te0yke28tqyb" path="res://Assets/Icons/keyboard_e.png" id="12_4eykg"]
-[ext_resource type="AudioStream" uid="uid://bdyni4ajw6sf3" path="res://Audio/SFX/itemPickupREVERB2.mp3" id="12_5hmx6"]
+[ext_resource type="Texture2D" uid="uid://c8kwu6p65b6ml" path="res://Assets/wizardrun_telekinesis.png" id="7_kd7lj"]
+[ext_resource type="AudioStream" uid="uid://cwxq2n78vxone" path="res://Audio/ladder_climb.mp3" id="8_4vf45"]
+[ext_resource type="AudioStream" uid="uid://c67apjknpyrpl" path="res://Audio/SFX/telekinesisHum.mp3" id="11_q2vx6"]
+[ext_resource type="Texture2D" uid="uid://cac80jc5bpb1y" path="res://Assets/Icons/keyboard_e.png" id="12_4eykg"]
+[ext_resource type="AudioStream" uid="uid://bp2moacwvh5fv" path="res://Audio/SFX/itemPickupREVERB2.mp3" id="12_5hmx6"]
+[ext_resource type="AudioStream" uid="uid://dn437wuh0nps5" path="res://Audio/SFX/deathSound.mp3" id="12_5upt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyjbw"]
 atlas = ExtResource("2_mwet1")
@@ -21,6 +23,50 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mjew"]
 atlas = ExtResource("2_mwet1")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xprq1"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f67an"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfnln"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puabm"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la3t4"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_venft"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blrk6"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke01d"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xenpy"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urhl5"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2bum"]
+atlas = ExtResource("3_2kgn1")
+region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0n4l"]
 atlas = ExtResource("2_8ywdc")
@@ -90,6 +136,44 @@ animations = [{
 "loop": true,
 "name": &"climb_idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xprq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f67an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfnln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puabm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la3t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_venft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blrk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke01d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xenpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urhl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2bum")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -185,7 +269,7 @@ script = ExtResource("1_fngfp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6un3u")
-animation = &"runTele"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3)
@@ -213,6 +297,11 @@ bus = &"SFX"
 [node name="TelekinesisSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_q2vx6")
 volume_db = 8.433
+bus = &"SFX"
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_5upt0")
+volume_db = 8.432
 bus = &"SFX"
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

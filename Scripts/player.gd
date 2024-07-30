@@ -14,6 +14,7 @@ var current_run_anim = null
 var current_idle_anim = null
 var on_ladder = false
 var is_climbing = false
+var spawn_point: Vector2
 
 enum State {
 	IDLE,
@@ -30,7 +31,7 @@ var current_state = State.IDLE
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	$AnimatedSprite2D.animation_finished.connect(_on_landing_animation_finished)
-
+	set_spawn_point()
 	
 func _physics_process(delta):
 	var mouse_position = get_global_mouse_position()
@@ -174,6 +175,42 @@ func _handle_climbing(delta):
 		$AnimatedSprite2D.stop()
 		is_climbing = false
 		_stop_climbing_sound()
+		
+func set_spawn_point():
+	var spawn_points = get_tree().get_nodes_in_group("spawn_points")
+	
+	if spawn_points.size() > 0:
+		var closest_spawn = spawn_points[0]
+		var closest_distance = global_position.distance_squared_to(closest_spawn.global_position)
+		
+		for spawn in spawn_points:
+			var distance = global_position.distance_squared_to(spawn.global_position)
+			if distance < closest_distance:
+				closest_spawn = spawn
+				closest_distance = distance
+		
+		spawn_point = closest_spawn.global_position
+	else:
+		spawn_point = global_position
+
+func respawn():
+	set_spawn_point()  # Find the closest spawn point again
+	global_position = spawn_point
+	velocity = Vector2.ZERO
+	current_state = State.IDLE
+	$AnimatedSprite2D.play("idle")
+	# Re-enable player input
+	set_process_input(true)
+	set_physics_process(true)
+
+func handle_death():
+	current_state = State.DEATH
+	$AnimatedSprite2D.play("death")
+	$DeathSound.play()
+	set_process_input(false)
+	set_physics_process(false)
+	await $AnimatedSprite2D.animation_finished
+	respawn()
 
 func _on_ladder_area_entered(_area):
 	on_ladder = true
