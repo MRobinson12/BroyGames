@@ -1,18 +1,18 @@
-[gd_scene load_steps=58 format=4 uid="uid://bo8cm1qv601ii"]
+[gd_scene load_steps=59 format=4 uid="uid://bo8cm1qv601ii"]
 
-[ext_resource type="Texture2D" uid="uid://diloa4r78qrlm" path="res://Assets/caverntileset.png" id="1_h0ljc"]
+[ext_resource type="Texture2D" uid="uid://bm56elq8ry5hv" path="res://Assets/caverntileset.png" id="1_h0ljc"]
 [ext_resource type="Script" path="res://Scripts/Scene/tutorial.gd" id="1_hodqh"]
 [ext_resource type="PackedScene" uid="uid://bu3jw5u4rdx6n" path="res://Scenes/Interactables/ladder.tscn" id="2_bj58i"]
-[ext_resource type="Texture2D" uid="uid://dmmigpp7x6l0j" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
-[ext_resource type="Texture2D" uid="uid://bvrfkhr7ojjro" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
+[ext_resource type="Texture2D" uid="uid://b5xyaadxlcend" path="res://Assets/rubble_rocks.png" id="2_jbbnp"]
+[ext_resource type="Texture2D" uid="uid://d33wfpfau355l" path="res://Assets/caverntilemapbackground.png" id="3_rh23y"]
 [ext_resource type="PackedScene" uid="uid://65u0gclxhccd" path="res://Scenes/Interactables/spikes.tscn" id="4_26xtc"]
-[ext_resource type="PackedScene" uid="uid://c4eb7lw1ilvoe" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
+[ext_resource type="PackedScene" path="res://Scenes/player_light.tscn" id="4_ko0i4"]
 [ext_resource type="PackedScene" uid="uid://lbbh7occk8nv" path="res://Scenes/UI/pause_menu.tscn" id="5_l5f1m"]
 [ext_resource type="PackedScene" uid="uid://bfl4mpbg12kf7" path="res://Scenes/player.tscn" id="5_mea2j"]
-[ext_resource type="Texture2D" uid="uid://djx514fkotppi" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
+[ext_resource type="Texture2D" uid="uid://h0k0qlwjhb7d" path="res://Assets/Lich_Statue.png" id="5_wrcuo"]
 [ext_resource type="PackedScene" uid="uid://bh5x4yqwy836l" path="res://Scenes/shader_layer.tscn" id="6_ykjf5"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="7_8hkwl"]
-[ext_resource type="Texture2D" uid="uid://budhweh432npq" path="res://Assets/warning_sign.png" id="7_n1ft4"]
+[ext_resource type="Texture2D" uid="uid://f5qrcu5pn3yo" path="res://Assets/warning_sign.png" id="7_n1ft4"]
 [ext_resource type="PackedScene" uid="uid://bh38b7f68popm" path="res://Scenes/spawn_point.tscn" id="7_p51gn"]
 [ext_resource type="PackedScene" uid="uid://bnmkojoy17d2j" path="res://Scenes/change_to_home_scene.tscn" id="8_0pamu"]
 [ext_resource type="PackedScene" uid="uid://do72ml5j1dfws" path="res://Scenes/Interactables/trapdoor.tscn" id="8_hxi5o"]
@@ -27,7 +27,8 @@
 [ext_resource type="Theme" uid="uid://bu0af5niw4fbw" path="res://Scenes/UI/dialogueboxtheme.tres" id="22_pnwpl"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="22_t2r1j"]
 [ext_resource type="AudioStream" uid="uid://bin1ei6yesmjv" path="res://examples/voice.ogg" id="28_jajfa"]
-[ext_resource type="PackedScene" uid="uid://bnt0vsolhehbf" path="res://Scenes/wall_torch.tscn" id="29_6qopi"]
+[ext_resource type="PackedScene" path="res://Scenes/wall_torch.tscn" id="29_6qopi"]
+[ext_resource type="PackedScene" uid="uid://qtiowajktb53" path="res://Scenes/tutorial_invis_wall.tscn" id="30_ef2ab"]
 [ext_resource type="PackedScene" uid="uid://doqcmflhgidbx" path="res://Scenes/foragable.tscn" id="30_j1648"]
 [ext_resource type="Texture2D" uid="uid://de0fxxfwds4vg" path="res://Assets/UNPICKED/greendle_ground_unpicked.png" id="31_813ca"]
 [ext_resource type="Texture2D" uid="uid://c0unr6w7817a0" path="res://Assets/PICKED/greendle_ground_picked.png" id="32_6p7v2"]
@@ -278,6 +279,7 @@ unique_name_in_owner = true
 position = Vector2(104, -19)
 
 [node name="ShaderLayer" parent="Player_Nodes" instance=ExtResource("6_ykjf5")]
+visible = false
 
 [node name="Cats" type="Node2D" parent="."]
 
@@ -339,6 +341,7 @@ activator_paths = Array[NodePath]([NodePath("../Pressureplate")])
 [node name="LockedDoor" parent="Interactables" instance=ExtResource("12_gte3w")]
 position = Vector2(498, -16)
 required_key_id = "01"
+door_id = "01"
 
 [node name="WallTorch" parent="Interactables" instance=ExtResource("29_6qopi")]
 position = Vector2(252, 171)
@@ -349,6 +352,11 @@ position = Vector2(594, 217)
 [node name="KeyPickup" parent="Interactables" instance=ExtResource("36_yk3qe")]
 position = Vector2(624, 110)
 id = "01"
+
+[node name="TutorialInvisWall" parent="Interactables" instance=ExtResource("30_ef2ab")]
+position = Vector2(16, -94)
+door_id = "01"
+door_path = NodePath("../LockedDoor")
 
 [node name="Foragables" type="Node2D" parent="."]
 
