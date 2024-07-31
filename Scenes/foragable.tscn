@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://doqcmflhgidbx"]
+[gd_scene load_steps=6 format=3 uid="uid://doqcmflhgidbx"]
 
 [ext_resource type="Script" path="res://Scripts/foragable.gd" id="1_whr4b"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pickup_spawn.gdshader" id="2_7ui3d"]
+[ext_resource type="Texture2D" uid="uid://bofg6jgp3323f" path="res://Assets/Icons/keyboard_e.png" id="3_y6c2w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a7et"]
 size = Vector2(16, 21.3333)
@@ -15,6 +16,8 @@ shader_parameter/shine_frequency = 1.0
 shader_parameter/enabled = 1.0
 
 [node name="Foragable" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_whr4b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,3 +29,12 @@ material = SubResource("ShaderMaterial_1wii7")
 
 [node name="Picked" type="Sprite2D" parent="."]
 visible = false
+
+[node name="InputPrompt" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-9, -4.76837e-07)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_y6c2w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

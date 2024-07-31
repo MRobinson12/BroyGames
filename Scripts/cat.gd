@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var dialogue_box = %DialogueBox
+@onready var prompt = $InputPrompt
 @export var dialogue_id : String
 var player_in_range : bool = false
 
@@ -20,9 +21,9 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body is CharacterBody2D:
 		player_in_range = true
-		$InputPrompt.show()
+		prompt.show()
 
 func _on_body_exited(body):
 	if body is CharacterBody2D:
 		player_in_range = false
-		$InputPrompt.hide()
+		prompt.hide()
