@@ -16,3 +16,4 @@ func check_upgrade():
 func _on_upgrade_inventory_pressed() -> void:
 	GlobalData.inventory_size = 15
 	GlobalData.gold -= cost
+	GlobalData.gold_updated.emit()

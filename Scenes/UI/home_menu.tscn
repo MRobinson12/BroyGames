@@ -94,4 +94,8 @@ autowrap_mode = 2
 layout_mode = 2
 text = "Purchase"
 
+[node name="Cost" type="Label" parent="Upgrades/UpgradeList/InventorySize"]
+layout_mode = 2
+text = "50"
+
 [connection signal="pressed" from="Upgrades/UpgradeList/InventorySize/UpgradeInventory" to="Upgrades/UpgradeList/InventorySize" method="_on_upgrade_inventory_pressed"]

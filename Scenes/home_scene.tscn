@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://d0oxhy6bqc4tn"]
+[gd_scene load_steps=75 format=3 uid="uid://d0oxhy6bqc4tn"]
 
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_cd4gh"]
 [ext_resource type="Script" path="res://Scripts/home.gd" id="1_xy1ba"]
@@ -6,14 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dwgdycnwfhw10" path="res://Scenes/UI/home_menu.tscn" id="2_ye0aa"]
 [ext_resource type="PackedScene" uid="uid://dh7dece7uaj7c" path="res://Scenes/UI/crafting_menu.tscn" id="3_dryjk"]
 [ext_resource type="PackedScene" uid="uid://cg6nbrcghq5kp" path="res://Scenes/UI/inventory_scene.tscn" id="4_1xgd4"]
-[ext_resource type="Texture2D" uid="uid://b2y28ukfcx47n" path="res://Assets/wizardidle.png" id="4_q2egp"]
-[ext_resource type="Texture2D" uid="uid://cfvcglvdd31dn" path="res://Assets/wizardjump.png" id="5_3i8d0"]
+[ext_resource type="Texture2D" uid="uid://nmyx2k3oljqn" path="res://Assets/wizardidle.png" id="4_q2egp"]
+[ext_resource type="Texture2D" uid="uid://c27aeglda7frk" path="res://Assets/wizardjump.png" id="5_3i8d0"]
 [ext_resource type="Script" path="res://Scripts/add_item.gd" id="5_ai3n5"]
 [ext_resource type="Theme" uid="uid://dw7x1c47wnwhn" path="res://Scenes/UI/buttontheme.tres" id="6_adp6f"]
-[ext_resource type="Texture2D" uid="uid://l54kh0lwnvid" path="res://Assets/wizardrun.png" id="6_k8vap"]
+[ext_resource type="Texture2D" uid="uid://bv32m07xvbygm" path="res://Assets/wizardrun.png" id="6_k8vap"]
 [ext_resource type="Resource" uid="uid://l7nk2ohpwhaw" path="res://Data/Items/greendle.tres" id="6_pid5h"]
 [ext_resource type="Resource" uid="uid://cntjkbdakb4ob" path="res://Data/Items/blattashroom.tres" id="7_7my3p"]
-[ext_resource type="Texture2D" uid="uid://byarkvy2dm13q" path="res://Assets/potion_frame_blank.png" id="7_v1lnr"]
+[ext_resource type="Texture2D" uid="uid://xog2sj7n6wp5" path="res://Assets/potion_frame_blank.png" id="7_v1lnr"]
 [ext_resource type="Resource" uid="uid://djw6qkrpc7flq" path="res://Data/Items/anpel.tres" id="8_y45fn"]
 [ext_resource type="Resource" uid="uid://ce20uu6x0kta3" path="res://Data/Items/gloomberry.tres" id="9_i633h"]
 [ext_resource type="Resource" uid="uid://d1b611ejm1prm" path="res://Data/Items/slate_slime.tres" id="10_vx6oo"]
@@ -24,12 +24,13 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="14_n4vx7"]
 [ext_resource type="Theme" uid="uid://bu0af5niw4fbw" path="res://Scenes/UI/dialogueboxtheme.tres" id="15_8117k"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="15_f6vks"]
-[ext_resource type="Texture2D" uid="uid://bne1ybjjmig8u" path="res://Assets/potion_shop.png" id="15_ttdwj"]
+[ext_resource type="Texture2D" uid="uid://buwsr64dys4xe" path="res://Assets/potion_shop.png" id="15_ttdwj"]
 [ext_resource type="Resource" uid="uid://b30kmgqmlxbv0" path="res://Data/Dialogue/potion_selling.tres" id="15_ublkc"]
-[ext_resource type="Texture2D" uid="uid://bvpc7ujqyovbi" path="res://Assets/cauldron.png" id="16_hxtu8"]
+[ext_resource type="Texture2D" uid="uid://cmlpega4nc16w" path="res://Assets/cauldron.png" id="16_hxtu8"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="16_wyvvm"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="17_ltftl"]
-[ext_resource type="Texture2D" uid="uid://ce7y12ohjiihb" path="res://Assets/shop_counter.png" id="20_sh3ep"]
+[ext_resource type="Texture2D" uid="uid://imu4uqiptue3" path="res://Assets/coin.png" id="18_84gwy"]
+[ext_resource type="Texture2D" uid="uid://bbtffkdvb4njg" path="res://Assets/shop_counter.png" id="20_sh3ep"]
 [ext_resource type="FontFile" uid="uid://dv4rnn0ml62q3" path="res://addons/dialogue_nodes/themes/Poppins-Bold.ttf" id="24_sw5op"]
 [ext_resource type="FontFile" uid="uid://bhtf12vvs2yjq" path="res://addons/dialogue_nodes/themes/Poppins-BoldItalic.ttf" id="25_ti7a4"]
 [ext_resource type="FontFile" uid="uid://bcg26eik2m2o8" path="res://addons/dialogue_nodes/themes/Poppins-Italic.ttf" id="26_m2yir"]
@@ -41,15 +42,6 @@
 [ext_resource type="AudioStream" uid="uid://bin1ei6yesmjv" path="res://examples/voice.ogg" id="32_w6ey1"]
 [ext_resource type="PackedScene" uid="uid://ev2g2nqf3koe" path="res://Scenes/cat.tscn" id="34_n0vev"]
 [ext_resource type="AudioStream" uid="uid://7cuwhjw81e4h" path="res://Audio/SFX/SecretNoise.mp3" id="35_61368"]
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_ubakh"]
-script = ExtResource("15_f6vks")
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_5gfgb"]
-script = ExtResource("16_wyvvm")
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_qwab8"]
-script = ExtResource("17_ltftl")
 
 [sub_resource type="StyleBoxFlat" id="2"]
 content_margin_left = 6.0
@@ -264,6 +256,15 @@ VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wljlf")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_fk2kj")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_1lowl")
 
+[sub_resource type="RichTextEffect" id="RichTextEffect_ubakh"]
+script = ExtResource("15_f6vks")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5gfgb"]
+script = ExtResource("16_wyvvm")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_qwab8"]
+script = ExtResource("17_ltftl")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ugqo4"]
 atlas = ExtResource("16_hxtu8")
 region = Rect2(0, 0, 32, 32)
@@ -429,26 +430,6 @@ glinting_glassrock = ExtResource("12_ht7km")
 stal_wart = ExtResource("13_iy7va")
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogueBox" type="Panel" parent="UI"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -378.0
-offset_top = 192.0
-offset_right = 378.0
-offset_bottom = 352.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme = ExtResource("15_8117k")
-script = ExtResource("14_n4vx7")
-data = ExtResource("15_ublkc")
-custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_ubakh"), SubResource("RichTextEffect_5gfgb"), SubResource("RichTextEffect_qwab8")])
-
 [node name="InventoryDisplay" parent="UI" instance=ExtResource("4_1xgd4")]
 visible = false
 
@@ -471,6 +452,13 @@ offset_right = 731.0
 offset_bottom = 609.0
 text = "No crafts available"
 
+[node name="GoldIcon" type="TextureRect" parent="UI"]
+offset_left = 1149.0
+offset_top = 13.0
+offset_right = 1189.0
+offset_bottom = 53.0
+texture = ExtResource("18_84gwy")
+
 [node name="GoldLabel" type="Label" parent="UI"]
 offset_left = 1195.0
 offset_top = 21.0
@@ -479,6 +467,7 @@ offset_bottom = 44.0
 text = "0"
 
 [node name="LeaveButton" type="Button" parent="UI"]
+unique_name_in_owner = true
 z_index = 2
 offset_left = 164.0
 offset_top = 577.0
@@ -503,6 +492,26 @@ offset_right = 121.0
 offset_bottom = 355.0
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_bmt0v")
+
+[node name="DialogueBox" type="Panel" parent="UI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = 192.0
+offset_right = 378.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("15_8117k")
+script = ExtResource("14_n4vx7")
+data = ExtResource("15_ublkc")
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_ubakh"), SubResource("RichTextEffect_5gfgb"), SubResource("RichTextEffect_qwab8")])
 
 [node name="Tower Background" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -606,7 +615,6 @@ scale = Vector2(2.813, 2.813)
 
 [connection signal="pressed" from="UI/OpenShopButton" to="UI" method="_on_open_shop_button_pressed"]
 [connection signal="pressed" from="UI/AddItem" to="UI/AddItem" method="_on_pressed"]
-[connection signal="dialogue_signal" from="UI/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 [connection signal="pressed" from="UI/MoveInv" to="UI/MoveInv" method="_on_pressed"]
 [connection signal="pressed" from="UI/NoCraft" to="." method="_on_no_craft_pressed"]
 [connection signal="button_down" from="UI/LeaveButton" to="." method="_on_leave_button_button_down"]
@@ -614,5 +622,6 @@ scale = Vector2(2.813, 2.813)
 [connection signal="mouse_exited" from="UI/LeaveButton" to="." method="_on_leave_button_mouse_exited"]
 [connection signal="button_down" from="UI/EndDemoButton" to="." method="_on_end_demo_button_button_down"]
 [connection signal="button_down" from="UI/SecretButton" to="." method="_on_secret_button_button_down"]
+[connection signal="dialogue_signal" from="UI/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 [connection signal="body_entered" from="DialogueArea" to="." method="_on_dialogue_area_body_entered"]
 [connection signal="body_entered" from="DespawnArea" to="." method="_on_despawn_area_body_entered"]

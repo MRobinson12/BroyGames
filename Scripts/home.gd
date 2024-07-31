@@ -4,6 +4,7 @@ var customer_scene = preload("res://Scenes/customer.tscn")
 @onready var dialogue_box = %DialogueBox
 @onready var crafting_menu = %CraftingMenu
 @onready var home_menu = %HomeMenu
+@onready var leave_button = %LeaveButton
 var crafted_potion : Item
 
 var available_potions  : Array[CraftRecipe]
@@ -20,8 +21,10 @@ func _ready() -> void:
 	if GlobalData.day >= 2:
 		$UI/LeaveButton.hide()
 		$UI/EndDemoButton.show()
+		
 
 func open_shop(recipes : Array[CraftRecipe]):
+	hide_buttons()
 	if GlobalData.day > 1:
 		dialogue_box.start('day2')
 	available_potions = recipes
@@ -29,6 +32,7 @@ func open_shop(recipes : Array[CraftRecipe]):
 	next_customer()
 
 func close_shop():
+	$UI/LeaveButton.show()
 	home_menu.disable_selection()
 	home_menu.show()
 
