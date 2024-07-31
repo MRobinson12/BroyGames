@@ -1,15 +1,15 @@
 [gd_scene load_steps=43 format=3 uid="uid://bfl4mpbg12kf7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_fngfp"]
-[ext_resource type="Texture2D" uid="uid://nmyx2k3oljqn" path="res://Assets/wizardidle.png" id="2_8ywdc"]
-[ext_resource type="Texture2D" uid="uid://vybwbvbi87ua" path="res://Assets/wizard_climb.png" id="2_mwet1"]
-[ext_resource type="Texture2D" uid="uid://6bqbwmwwtko0" path="res://Assets/wizard_death.png" id="3_2kgn1"]
-[ext_resource type="Texture2D" uid="uid://c27aeglda7frk" path="res://Assets/wizardjump.png" id="3_36vxw"]
-[ext_resource type="Texture2D" uid="uid://bv32m07xvbygm" path="res://Assets/wizardrun.png" id="4_5s0fb"]
-[ext_resource type="Texture2D" uid="uid://v4u01eips246" path="res://Assets/wizard_static_telekinesis.png" id="4_ycm81"]
+[ext_resource type="Texture2D" uid="uid://djdhsq7vaod6x" path="res://Assets/wizardidle.png" id="2_8ywdc"]
+[ext_resource type="Texture2D" uid="uid://b64rmokgsjldn" path="res://Assets/wizard_climb.png" id="2_mwet1"]
+[ext_resource type="Texture2D" uid="uid://cn2uai3qn7ioc" path="res://Assets/wizard_death.png" id="3_2kgn1"]
+[ext_resource type="Texture2D" uid="uid://bphsu2qx8ekqx" path="res://Assets/wizardjump.png" id="3_36vxw"]
+[ext_resource type="Texture2D" uid="uid://dkay2ddylyjem" path="res://Assets/wizardrun.png" id="4_5s0fb"]
+[ext_resource type="Texture2D" uid="uid://df6f82nn6e56g" path="res://Assets/wizard_static_telekinesis.png" id="4_ycm81"]
 [ext_resource type="AudioStream" uid="uid://c5bwope4aasx8" path="res://Audio/running.mp3" id="5_ykm0p"]
 [ext_resource type="AudioStream" uid="uid://tccf1c55tyt" path="res://Audio/whoosh.mp3" id="6_hlbgl"]
-[ext_resource type="Texture2D" uid="uid://0ui4kbcbsut6" path="res://Assets/wizardrun_telekinesis.png" id="7_kd7lj"]
+[ext_resource type="Texture2D" uid="uid://c8kwu6p65b6ml" path="res://Assets/wizardrun_telekinesis.png" id="7_kd7lj"]
 [ext_resource type="AudioStream" uid="uid://dw6bcd0xm88gr" path="res://Audio/ladder_climb.mp3" id="8_4vf45"]
 [ext_resource type="AudioStream" uid="uid://cs2l6yv4oxb5r" path="res://Audio/SFX/telekinesisHum.mp3" id="11_q2vx6"]
 [ext_resource type="AudioStream" uid="uid://bdyni4ajw6sf3" path="res://Audio/SFX/itemPickupREVERB2.mp3" id="12_5hmx6"]
@@ -300,7 +300,7 @@ bus = &"SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_5upt0")
-volume_db = 8.432
+volume_db = 20.0
 bus = &"SFX"
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
