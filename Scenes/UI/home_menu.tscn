@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwgdycnwfhw10"]
+[gd_scene load_steps=13 format=3 uid="uid://dwgdycnwfhw10"]
 
 [ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="1_mgc8e"]
 [ext_resource type="Script" path="res://Scripts/Scene/home_menu.gd" id="1_twqwg"]
 [ext_resource type="Script" path="res://Scripts/Inventory/upgrade_inventory.gd" id="3_kovh2"]
+[ext_resource type="Script" path="res://Scripts/Inventory/craft_recipe.gd" id="3_yl7w4"]
+[ext_resource type="Resource" uid="uid://dtpss46r7q57b" path="res://Data/Recipes/lesser_glow_recipe.tres" id="4_3qbg7"]
+[ext_resource type="Resource" uid="uid://cq8abvcihm4v0" path="res://Data/Recipes/lesser_bouncing_recipe.tres" id="5_okxic"]
+[ext_resource type="Resource" uid="uid://be14d6r0jw678" path="res://Data/Recipes/lesser_endurance_recipe.tres" id="6_crg8n"]
+[ext_resource type="Resource" uid="uid://7i0rgnqhaddw" path="res://Data/Recipes/lesser_health_recipe.tres" id="7_qhrdr"]
+[ext_resource type="Resource" uid="uid://coo13q51r0sdj" path="res://Data/Recipes/lesser_lionsmight_recipe.tres" id="8_m7l7r"]
+[ext_resource type="Resource" uid="uid://drqxtuyj46emi" path="res://Data/Recipes/lesser_magic_recipe.tres" id="9_1r0sm"]
+[ext_resource type="Resource" uid="uid://cnl5ici3qg5jx" path="res://Data/Recipes/lesser_nightvision_recipe.tres" id="10_p5jom"]
+[ext_resource type="Resource" uid="uid://8n8dc8otarm0" path="res://Data/Recipes/lesser_protection_recipe.tres" id="11_8x25w"]
 
 [node name="HomeMenu" type="TabContainer"]
 anchors_preset = 8
@@ -20,6 +29,7 @@ theme = ExtResource("1_mgc8e")
 current_tab = 2
 tab_focus_mode = 0
 script = ExtResource("1_twqwg")
+recipe_list = Array[ExtResource("3_yl7w4")]([ExtResource("4_3qbg7"), ExtResource("7_qhrdr"), ExtResource("5_okxic"), ExtResource("6_crg8n"), ExtResource("8_m7l7r"), ExtResource("9_1r0sm"), ExtResource("10_p5jom"), ExtResource("11_8x25w")])
 
 [node name="Inventory" type="MarginContainer" parent="."]
 visible = false

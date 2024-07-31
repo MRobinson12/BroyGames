@@ -6,8 +6,8 @@ var item_list_entry = preload("res://Scenes/UI/item_list_entry.tscn")
 
 var potion_select_entry = preload("res://Scenes/UI/potion_select_entry.tscn")
 var ingredient_entry = preload("res://Scenes/UI/ingredient_entry.tscn")
-var recipe_dir = "res://Data/Recipes"
-var dir = DirAccess.open(recipe_dir)
+
+@export var recipe_list : Array[CraftRecipe]
 
 func _ready() -> void:
 	GlobalData.home_inv_updated.connect(update_inventory)
@@ -58,8 +58,7 @@ func disable_selection():
 func populate_potions():
 	for child in find_child("PotionList").get_children():
 		child.queue_free()
-	for file in dir.get_files():
-		var recipe : CraftRecipe = load(recipe_dir + "/" + file)
+	for recipe in recipe_list:
 		var new_craft = potion_select_entry.instantiate()
 		new_craft.recipe = recipe
 		new_craft.find_child("IconTexture").set_texture(recipe.output.item.icon)
