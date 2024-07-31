@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dnr2no5jdgfsq"]
+
+[ext_resource type="Texture2D" uid="uid://df2a6xpywpwfy" path="res://Assets/UNPICKED/glinting_glassrock_ground_unpicked.png" id="1_j0sqb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsies"]
+atlas = ExtResource("1_j0sqb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov6uk"]
+atlas = ExtResource("1_j0sqb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vawhw"]
+atlas = ExtResource("1_j0sqb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7goa"]
+atlas = ExtResource("1_j0sqb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gumfv"]
+atlas = ExtResource("1_j0sqb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b3nn"]
+atlas = ExtResource("1_j0sqb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an71i"]
+atlas = ExtResource("1_j0sqb")
+region = Rect2(192, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsies")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov6uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vawhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7goa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gumfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b3nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an71i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
