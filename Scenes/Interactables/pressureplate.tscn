@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://vytheabluyn3" path="res://Assets/pressure_plate.png" id="1_lm2yx"]
 [ext_resource type="Script" path="res://Scripts/Interactables/pressureplate.gd" id="1_ro81y"]
-[ext_resource type="AudioStream" uid="uid://cqndatdqnqaqg" path="res://Audio/SFX/stonePressurePlate.mp3" id="3_pbshe"]
+[ext_resource type="AudioStream" uid="uid://smxejkhgpxkv" path="res://Audio/SFX/stonePressurePlate.mp3" id="3_pbshe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpv80"]
 atlas = ExtResource("1_lm2yx")
@@ -36,7 +36,7 @@ size = Vector2(26, 7)
 
 [node name="Pressureplate" type="Area2D"]
 collision_layer = 16
-collision_mask = 10
+collision_mask = 26
 script = ExtResource("1_ro81y")
 
 [node name="PressureplateSprite" type="AnimatedSprite2D" parent="."]
