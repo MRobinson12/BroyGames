@@ -76,7 +76,6 @@ func start_music():
 	$ShopMusic.play()
 
 func show_buttons():
-	$UI/LeaveButton.show()
 	$UI/OpenShopButton.show()
 
 func hide_buttons():

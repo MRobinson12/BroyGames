@@ -140,7 +140,7 @@ func _physics_process(delta):
 	
 	#pickup item
 	if Input.is_action_just_pressed("interact"):
-		if nearest_item != null:
+		if nearest_item != null and not GlobalData.player_inventory.is_full:
 			if nearest_item is Foragable and not nearest_item.picked:
 				GlobalData.player_inventory.add_item(nearest_item.item)
 				nearest_item.pick()

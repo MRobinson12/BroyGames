@@ -14,6 +14,6 @@ func check_upgrade():
 		buy_button.disabled = true
 
 func _on_upgrade_inventory_pressed() -> void:
-	GlobalData.inventory_size = 15
+	GlobalData.resize_inventory(15)
 	GlobalData.gold -= cost
 	GlobalData.gold_updated.emit()
