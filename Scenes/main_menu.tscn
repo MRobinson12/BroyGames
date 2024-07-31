@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpuwmmlu0n5vu"]
 
 [ext_resource type="Script" path="res://Scripts/Scene/mainmenu.gd" id="1_6q4mq"]
-[ext_resource type="Texture2D" uid="uid://fc886u3neikk" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated.png" id="2_2cl0x"]
+[ext_resource type="Texture2D" uid="uid://cwhuyn3qu4i1u" path="res://Assets/Main Menu/downthehatch_mainmenu_pixelated.png" id="2_2cl0x"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pause_menu.gdshader" id="2_mf0j4"]
 [ext_resource type="Theme" uid="uid://dw7x1c47wnwhn" path="res://Scenes/UI/buttontheme.tres" id="4_cqxyd"]
 [ext_resource type="AudioStream" uid="uid://b2kop3cm1f11c" path="res://Audio/OST/Down the Hatch (Main Theme).mp3" id="4_wxg2m"]
@@ -59,11 +59,6 @@ texture_filter = 2
 layout_mode = 2
 text = "Credits"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
-texture_filter = 2
-layout_mode = 2
-text = "Exit"
-
 [node name="DownTheHatch(mainTheme)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_wxg2m")
 autoplay = true
@@ -73,4 +68,3 @@ bus = &"BGM"
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

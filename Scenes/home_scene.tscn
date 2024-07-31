@@ -445,11 +445,10 @@ script = ExtResource("14_7adyi")
 metadata/_edit_use_anchors_ = true
 
 [node name="NoCraft" type="Button" parent="UI"]
-visible = false
 offset_left = 579.0
-offset_top = 578.0
+offset_top = 625.0
 offset_right = 731.0
-offset_bottom = 609.0
+offset_bottom = 656.0
 text = "No crafts available"
 
 [node name="GoldIcon" type="TextureRect" parent="UI"]
