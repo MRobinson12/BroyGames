@@ -11,6 +11,7 @@ var dir = DirAccess.open(recipe_dir)
 
 func _ready() -> void:
 	GlobalData.home_inv_updated.connect(update_inventory)
+	update_inventory()
 	populate_potions()
 
 func update_inventory():

@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Inventory/item.gd" id="1_rgad3"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_82650"]
-size = Vector2(25, 25)
+[sub_resource type="ImageTexture" id="ImageTexture_ottra"]
 
 [resource]
 script = ExtResource("1_rgad3")
 id = "null_item"
 name = "null"
-icon = SubResource("PlaceholderTexture2D_82650")
+icon = SubResource("ImageTexture_ottra")
 description = ""

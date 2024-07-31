@@ -18,9 +18,9 @@ func create_slots():
 		var new_slot = item_slot.instantiate()
 		grid_container.add_child(new_slot)
 
-func open():
+func _on_toggle_inventory_pressed() -> void:
 	update()
-	show()
-	
-func close():
-	hide()
+	if visible:
+		hide()
+	else:
+		show()

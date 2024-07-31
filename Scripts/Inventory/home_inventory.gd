@@ -15,7 +15,10 @@ func add_item(item : Item):
 		else:
 			contents[item.id] = contents[item.id] + 1
 	else:
-		contents[item.id] = 1
+		if item.id == "greendle":
+			contents[item.id] = 3
+		else:
+			contents[item.id] = 1
 	GlobalData.home_inv_updated.emit()
 
 func remove_item(item: Item):
