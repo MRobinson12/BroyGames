@@ -630,6 +630,12 @@ position = Vector2(1202, 113)
 [node name="SpawnPoint2" parent="Cave_1b" instance=ExtResource("21_v6hoq")]
 position = Vector2(1876, 335)
 
+[node name="SpawnPoint3" parent="Cave_1b" instance=ExtResource("21_v6hoq")]
+position = Vector2(1359, 311)
+
+[node name="SpawnPoint4" parent="Cave_1b" instance=ExtResource("21_v6hoq")]
+position = Vector2(1681, 311)
+
 [node name="1b_Trapdoor" parent="Cave_1b" instance=ExtResource("7_058pp")]
 position = Vector2(1232, 247)
 
@@ -724,6 +730,18 @@ position = Vector2(1921, 54)
 [node name="WallTorch14" parent="Torches" instance=ExtResource("14_twjct")]
 position = Vector2(1726, -41)
 
+[node name="WallTorch15" parent="Torches" instance=ExtResource("14_twjct")]
+position = Vector2(1824, -252)
+
+[node name="WallTorch16" parent="Torches" instance=ExtResource("14_twjct")]
+position = Vector2(2399, 50)
+
+[node name="WallTorch17" parent="Torches" instance=ExtResource("14_twjct")]
+position = Vector2(2463, -71)
+
+[node name="WallTorch18" parent="Torches" instance=ExtResource("14_twjct")]
+position = Vector2(3264, 157)
+
 [node name="Cave_1c" type="Node2D" parent="."]
 
 [node name="SpawnPoint" parent="Cave_1c" instance=ExtResource("21_v6hoq")]
@@ -742,7 +760,7 @@ position = Vector2(2330, 207)
 position = Vector2(2330, 175)
 
 [node name="1c_WoodenCrate" parent="Cave_1c" instance=ExtResource("17_ta2fj")]
-position = Vector2(2027, 180)
+position = Vector2(2067, 180)
 
 [node name="1c_DoorController1" type="Node" parent="Cave_1c"]
 script = ExtResource("15_v81qt")
@@ -880,7 +898,7 @@ picked_sprite = ExtResource("48_nty48")
 item = ExtResource("49_6f2iu")
 
 [node name="Slate_Slime" parent="Foragables" instance=ExtResource("17_w5wca")]
-position = Vector2(556, -49)
+position = Vector2(556, -48)
 unpicked_sprite = ExtResource("50_20vr0")
 picked_sprite = ExtResource("51_pmegc")
 item = ExtResource("52_w4bkj")
