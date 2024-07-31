@@ -20,7 +20,6 @@ func _ready() -> void:
 		dialogue_box.start('CI1')
 	if GlobalData.day >= 2:
 		$UI/LeaveButton.hide()
-		$UI/EndDemoButton.show()
 		
 
 func open_shop(recipes : Array[CraftRecipe]):
@@ -32,7 +31,10 @@ func open_shop(recipes : Array[CraftRecipe]):
 	next_customer()
 
 func close_shop():
-	$UI/LeaveButton.show()
+	if GlobalData.day == 1:
+		$UI/LeaveButton.show()
+	else:
+		$UI/EndDemoButton.show()
 	home_menu.disable_selection()
 	home_menu.show()
 

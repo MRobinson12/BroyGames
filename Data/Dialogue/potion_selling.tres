@@ -511,7 +511,7 @@ nodes = {
 "speaker": 2
 },
 "1_4": {
-"dialogue": "Thank you!",
+"dialogue": "Thank you! Here is 10 gold!",
 "offset": Vector2(-200, -940),
 "options": {
 0: {
